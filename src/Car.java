@@ -37,6 +37,10 @@ public abstract class Car implements Movable{
         return currentSpeed;
     }
 
+    public String getModelName(){
+        return modelName;
+    }
+
 
     public Color getColor() {
         return color;
