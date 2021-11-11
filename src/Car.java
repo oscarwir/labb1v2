@@ -85,7 +85,7 @@ public abstract class Car implements Movable{
             incrementSpeed(amount);
         }
        else {
-           throw new IllegalArgumentException("du har pedalen i motor rummet");
+           throw new IllegalArgumentException("gas amount is lower than 0 or higer than 1");
        }
     }
 
@@ -96,7 +96,7 @@ public abstract class Car implements Movable{
             decrementSpeed(amount);
         }
         else {
-            throw new IllegalArgumentException("du har pedalen i motor rummet");
+            throw new IllegalArgumentException("break amount is lower than 0 or higer than 1");
         }
     }
 
