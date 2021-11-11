@@ -1,6 +1,6 @@
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class Saab95Test {
     Saab95 testSaab = new Saab95();
@@ -8,14 +8,14 @@ public class Saab95Test {
     @Test
     void setTurboOn_should_enable_turbo() {
         testSaab.setTurboOn();
-        assertEquals(true, testSaab.turboOn);
+        assertTrue(testSaab.turboOn);
     }
 
     @Test
     void setTurboOff_should_disable_turbo() {
         testSaab.setTurboOn();
         testSaab.setTurboOff();
-        assertEquals(false, testSaab.turboOn);
+        assertFalse(testSaab.turboOn);
     }
 
     @Test
@@ -28,7 +28,7 @@ public class Saab95Test {
     void increment_speed_should_not_decrease_car_speed() {
         double oldSpeed = testSaab.getCurrentSpeed();
         testSaab.incrementSpeed(0.5);
-        assertEquals( true,oldSpeed < testSaab.getCurrentSpeed());
+        assertTrue(oldSpeed < testSaab.getCurrentSpeed());
     }
 
     @Test
@@ -47,7 +47,7 @@ public class Saab95Test {
     void decrement_speed_should_not_increase_speed() {
         double oldSpeed = testSaab.getCurrentSpeed();
         testSaab.decrementSpeed(0.5);
-        assertEquals(true, oldSpeed >= testSaab.getCurrentSpeed());
+        assertTrue(oldSpeed >= testSaab.getCurrentSpeed());
     }
 
     @Test
@@ -70,7 +70,7 @@ public class Saab95Test {
         testSaab.setTurboOn();
         double oldspeed = testSaab.getCurrentSpeed();
         testSaab.incrementSpeed(0.5);
-        assertEquals( true,oldspeed < testSaab.getCurrentSpeed());
+        assertTrue(oldspeed < testSaab.getCurrentSpeed());
     }
 
     @Test
@@ -92,7 +92,7 @@ public class Saab95Test {
         testSaab.setTurboOn();
         double oldSpeed = testSaab.getCurrentSpeed();
         testSaab.decrementSpeed(0.5);
-        assertEquals(true, oldSpeed >= testSaab.getCurrentSpeed());
+        assertTrue(oldSpeed >= testSaab.getCurrentSpeed());
     }
 
     @Test
