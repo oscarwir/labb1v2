@@ -28,7 +28,7 @@ public class Saab95Test {
     void increment_speed_should_not_decrease_car_speed() {
         double oldSpeed = testSaab.getCurrentSpeed();
         testSaab.gas(0.5);
-        assertTrue(oldSpeed < testSaab.getCurrentSpeed());
+        assertTrue(oldSpeed <= testSaab.getCurrentSpeed());
     }
 
     @Test
@@ -70,7 +70,7 @@ public class Saab95Test {
         testSaab.setTurboOn();
         double oldspeed = testSaab.getCurrentSpeed();
         testSaab.gas(0.5);
-        assertTrue(oldspeed < testSaab.getCurrentSpeed());
+        assertTrue(oldspeed <= testSaab.getCurrentSpeed());
     }
 
     @Test
