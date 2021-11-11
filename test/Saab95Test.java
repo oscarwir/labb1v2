@@ -40,14 +40,14 @@ public class Saab95Test {
     @Test
     void decrement_speed_should_decrease_speed() {
         testSaab.decrementSpeed(0.5);
-        assertEquals(-0.85, testSaab.getCurrentSpeed());
+        assertEquals(0, testSaab.getCurrentSpeed());
     }
 
     @Test
     void decrement_speed_should_not_increase_speed() {
         double oldSpeed = testSaab.getCurrentSpeed();
         testSaab.decrementSpeed(0.5);
-        assertEquals(true, oldSpeed > testSaab.getCurrentSpeed());
+        assertEquals(true, oldSpeed >= testSaab.getCurrentSpeed());
     }
 
     @Test
@@ -84,7 +84,7 @@ public class Saab95Test {
     void decrement_speed_should_decrease_speed_with_turbo() {
         testSaab.setTurboOn();
         testSaab.decrementSpeed(0.5);
-        assertEquals(-1.105, testSaab.getCurrentSpeed());
+        assertEquals(0, testSaab.getCurrentSpeed());
     }
 
     @Test
@@ -92,7 +92,7 @@ public class Saab95Test {
         testSaab.setTurboOn();
         double oldSpeed = testSaab.getCurrentSpeed();
         testSaab.decrementSpeed(0.5);
-        assertEquals(true, oldSpeed > testSaab.getCurrentSpeed());
+        assertEquals(true, oldSpeed >= testSaab.getCurrentSpeed());
     }
 
     @Test
