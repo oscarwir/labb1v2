@@ -66,11 +66,18 @@ public abstract class Car implements Movable{
         currentSpeed = 0;
     }
 
+    abstract double speedFactor();
 
-    abstract void incrementSpeed(double amount);
+
+    public void incrementSpeed(double amount) {
+        setCurrentSpeed(Math.min(getCurrentSpeed() + speedFactor() * amount, getEnginePower()));
+    }
+
+    public void decrementSpeed(double amount) {
+        setCurrentSpeed(Math.max(getCurrentSpeed() - speedFactor() * amount,0));
+    }
 
 
-    abstract void decrementSpeed(double amount);
 
     // TODO fix this method according to lab pm
     public void gas(double amount) {
