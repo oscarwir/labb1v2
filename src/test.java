@@ -1,3 +1,4 @@
+/*
 
 // Old test file without JUnit
 // This isn't used
@@ -32,3 +33,4 @@ public class test {
     }
 
 }
+*/
