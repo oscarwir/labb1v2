@@ -34,6 +34,7 @@ public class Saab95Test {
     @Test
     void gas_should_not_increase_car_speed_if_given_amount_is_zero() {
         testSaab.gas(0);
+        System.out.println(testSaab.getCurrentSpeed());
         assertEquals(0, testSaab.getCurrentSpeed());
     }
 
