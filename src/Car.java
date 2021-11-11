@@ -3,14 +3,14 @@ import java.awt.*;
 public abstract class Car implements Movable{
 
 
-    protected int nrDoors; // Number of doors on the car
-    protected double enginePower; // Engine power of the car
-    protected double currentSpeed; // The current speed of the car
-    protected Color color; // Color of the car
-    protected String modelName; // The car model name
-    protected Point location;
-    protected Direction direction;
-    protected int turningRadius; //The turning radius of the car
+    private int nrDoors; // Number of doors on the car
+    private double enginePower; // Engine power of the car
+    private double currentSpeed; // The current speed of the car
+    private Color color; // Color of the car
+    private String modelName; // The car model name
+    private Point location;
+    private Direction direction;
+    private int turningRadius; //The turning radius of the car
 
     public Car(String modelName, int turningRadius, Point location, Direction direction, int nrDoors, Color color, int enginePower){
         this.modelName = modelName;
@@ -22,6 +22,7 @@ public abstract class Car implements Movable{
         this.enginePower = enginePower;
         stopEngine();
     }
+
 
 
     public int getNrDoors() {
@@ -36,12 +37,17 @@ public abstract class Car implements Movable{
         return currentSpeed;
     }
 
+
     public Color getColor() {
         return color;
     }
 
     public void setColor(Color clr) {
         color = clr;
+    }
+
+    public void setCurrentSpeed(double currentSpeed){
+        this.currentSpeed = currentSpeed;
     }
 
     public int getTurningRadius(){
