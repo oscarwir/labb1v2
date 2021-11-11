@@ -54,8 +54,8 @@ public abstract class Car implements Movable{
         return turningRadius;
     }
 
-    public void setTurningRadius(int trn){
-        turningRadius = trn;
+    public void setTurningRadius(int turningRadius){
+        this.turningRadius = turningRadius;
     }
 
     public void startEngine() {
