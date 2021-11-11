@@ -108,7 +108,6 @@ public abstract class Car implements Movable{
         y = location.getY() + Math.sin(direction.getDirection()) * currentSpeed;
         location.setLocation(x, y);
 
-        //Vi kanske borde konstruera en class för koordinater?
     }
 
     public void turnLeft(){
