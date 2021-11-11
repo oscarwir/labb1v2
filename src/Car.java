@@ -8,10 +8,20 @@ public abstract class Car implements Movable{
     protected double currentSpeed; // The current speed of the car
     protected Color color; // Color of the car
     protected String modelName; // The car model name
-    Point location;
+    protected Point location;
     protected Direction direction;
     protected int turningRadius; //The turning radius of the car
 
+    public Car(String modelName, int turningRadius, Point location, Direction direction, int nrDoors, Color color, int enginePower){
+        this.modelName = modelName;
+        this.turningRadius = turningRadius;
+        this.location = location;
+        this.direction = direction;
+        this.nrDoors = nrDoors;
+        this.color = color;
+        this.enginePower = enginePower;
+        stopEngine();
+    }
 
 
     public int getNrDoors() {
