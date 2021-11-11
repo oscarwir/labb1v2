@@ -88,6 +88,9 @@ public abstract class Car implements Movable{
        if (amount > 0 && amount <= 1){
             incrementSpeed(amount);
         }
+       else {
+           throw new IllegalArgumentException("du har pedalen i motor rummet");
+       }
     }
 
 
@@ -95,6 +98,9 @@ public abstract class Car implements Movable{
     public void brake(double amount) {
         if (amount > 0 && amount <= 1) {
             decrementSpeed(amount);
+        }
+        else {
+            throw new IllegalArgumentException("du har pedalen i motor rummet");
         }
     }
 
