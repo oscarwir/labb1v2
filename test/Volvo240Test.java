@@ -29,7 +29,7 @@ public class Volvo240Test {
     @Test
     void brake_should_decrease_speed() {
         testVolvo.gas(0.5);
-        testVolvo.brake(0.5);
+        testVolvo.brake(19.0/30);
         assertEquals(0, testVolvo.getCurrentSpeed());
     }
 

@@ -11,8 +11,9 @@ public abstract class Car implements Movable{
     private Point location;
     private Direction direction;
     private int turningRadius; //The turning radius of the car
+    private double breakFactor;
 
-    public Car(String modelName, int turningRadius, Point location, Direction direction, int nrDoors, Color color, int enginePower){
+    public Car(String modelName, int turningRadius, Point location, Direction direction, int nrDoors, Color color, int enginePower, double brakeFactor){
         this.modelName = modelName;
         this.turningRadius = turningRadius;
         this.location = location;
@@ -20,6 +21,7 @@ public abstract class Car implements Movable{
         this.nrDoors = nrDoors;
         this.color = color;
         this.enginePower = enginePower;
+        this.breakFactor = brakeFactor;
         stopEngine();
     }
 
@@ -69,12 +71,14 @@ public abstract class Car implements Movable{
     abstract double speedFactor();
 
 
+
+
     private void incrementSpeed(double amount) {
         currentSpeed = (Math.min(getCurrentSpeed() + speedFactor() * amount, getEnginePower()));
     }
 
     private void decrementSpeed(double amount) {
-        currentSpeed = (Math.max(getCurrentSpeed() - speedFactor() * amount,0));
+        currentSpeed = (Math.max(getCurrentSpeed() - breakFactor * amount,0));
     }
 
 
