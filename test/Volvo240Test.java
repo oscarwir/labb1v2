@@ -1,5 +1,7 @@
 import org.junit.jupiter.api.Test;
 
+import java.awt.*;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class Volvo240Test {
@@ -44,5 +46,20 @@ public class Volvo240Test {
     void brake_should_not_decrease_speed_if_given_amount_is_zero() {
         testVolvo.brake(0);
         assertEquals(0, testVolvo.getCurrentSpeed());
+    }
+
+    @Test
+    void move_should_chance_position_according_to_dir_and_speed(){
+        Volvo240 volvo240 = new Volvo240();
+        volvo240.gas(1.0);
+        double speed = volvo240.getCurrentSpeed();
+        System.out.println(speed);
+        Point oldPosition = volvo240.getLocation();
+        Direction direction = volvo240.getDirection();
+
+        volvo240.move();
+
+        Point newPosition = volvo240.getLocation();
+
     }
 }

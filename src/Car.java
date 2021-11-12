@@ -43,6 +43,14 @@ public abstract class Car implements Movable{
         return modelName;
     }
 
+    public Point getLocation(){
+        return location;
+    }
+
+    public Direction getDirection(){
+        return direction;
+    }
+
 
     public Color getColor() {
         return color;
@@ -60,6 +68,7 @@ public abstract class Car implements Movable{
         this.turningRadius = turningRadius;
     }
 
+
     public void startEngine() {
         currentSpeed = 0.1;
     }
@@ -74,11 +83,11 @@ public abstract class Car implements Movable{
 
 
     private void incrementSpeed(double amount) {
-        currentSpeed = (Math.min(getCurrentSpeed() + speedFactor() * amount, getEnginePower()));
+        currentSpeed = Math.min(getCurrentSpeed() + speedFactor() * amount, getEnginePower());
     }
 
     private void decrementSpeed(double amount) {
-        currentSpeed = (Math.max(getCurrentSpeed() - breakFactor * amount,0));
+        currentSpeed = Math.max(getCurrentSpeed() - breakFactor * amount,0);
     }
 
 
