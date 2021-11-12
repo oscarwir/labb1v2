@@ -131,6 +131,40 @@ public class Saab95Test {
         assertEquals(testDirection.getDirection(), testSaab.getDirection());
     }
 
+    @Test
+    void move_after_turnLeft_should_move_correctly() {
+        double old_x = testSaab.getLocation().getX();
+        double old_y = testSaab.getLocation().getY();
 
+        testSaab.move();
+        testSaab.turnLeft();
+
+        double new_x = testSaab.getLocation().getX();
+        double new_y = testSaab.getLocation().getY();
+
+        double deltaY = Math.sin(Math.toRadians(testSaab.getDirection())) * testSaab.getCurrentSpeed();
+        double deltaX = Math.cos(Math.toRadians(testSaab.getDirection())) * testSaab.getCurrentSpeed();
+
+        assertEquals(old_x + deltaX, new_x);
+        assertEquals(old_y + deltaY, new_y);
+    }
+
+    @Test
+    void move_after_turnRight_should_move_correctly() {
+        double old_x = testSaab.getLocation().getX();
+        double old_y = testSaab.getLocation().getY();
+
+        testSaab.move();
+        testSaab.turnRight();
+
+        double new_x = testSaab.getLocation().getX();
+        double new_y = testSaab.getLocation().getY();
+
+        double deltaY = Math.sin(Math.toRadians(testSaab.getDirection())) * testSaab.getCurrentSpeed();
+        double deltaX = Math.cos(Math.toRadians(testSaab.getDirection())) * testSaab.getCurrentSpeed();
+
+        assertEquals(old_x + deltaX, new_x);
+        assertEquals(old_y + deltaY, new_y);
+    }
 
 }
