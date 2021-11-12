@@ -117,8 +117,8 @@ public abstract class Car implements Movable{
         double x;
         double y;
 
-        x = location.getX() + Math.cos(direction.getDirection()) * currentSpeed;
-        y = location.getY() + Math.sin(direction.getDirection()) * currentSpeed;
+        x = location.getX() + Math.cos(Math.toRadians(direction.getDirection())) * currentSpeed;
+        y = location.getY() + Math.sin(Math.toRadians(direction.getDirection())) * currentSpeed;
         location.setLocation(x, y);
 
     }
