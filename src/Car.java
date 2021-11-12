@@ -8,11 +8,13 @@ public abstract class Car implements Movable{
     private double currentSpeed; // The current speed of the car
     private Color color; // Color of the car
     private String modelName; // The car model name
-    private Point location;
-    private Direction direction;
+    private Point location; //The position the car has using Java's built in Point class
+    private Direction direction; //The direction the car has using degrees
     private int turningRadius; //The turning radius of the car
-    private double breakFactor;
+    private double breakFactor; //A factor that determine an arbitrary car's breaking capability
 
+
+    //A constructor for all the declared variables above
     public Car(String modelName, int turningRadius, Point location, Direction direction, int nrDoors, Color color, int enginePower, double brakeFactor){
         this.modelName = modelName;
         this.turningRadius = turningRadius;
@@ -26,18 +28,22 @@ public abstract class Car implements Movable{
     }
 
 
+    //All the getters and setters
 
     public int getNrDoors() {
         return nrDoors;
     }
 
+
     public double getEnginePower() {
         return enginePower;
     }
 
+
     public double getCurrentSpeed() {
         return currentSpeed;
     }
+
 
     public String getModelName(){
         return modelName;
@@ -50,7 +56,6 @@ public abstract class Car implements Movable{
     public Direction getDirection(){
         return direction;
     }
-
 
     public Color getColor() {
         return color;
@@ -69,6 +74,7 @@ public abstract class Car implements Movable{
     }
 
 
+    //Methods for starting or stopping an engine by giving currentSpeed a value
     public void startEngine() {
         currentSpeed = 0.1;
     }
@@ -77,11 +83,12 @@ public abstract class Car implements Movable{
         currentSpeed = 0;
     }
 
+    //An abstract concept of which both cars utilize in different ways
     abstract double speedFactor();
 
 
 
-
+    //The methods
     private void incrementSpeed(double amount) {
         currentSpeed = Math.min(getCurrentSpeed() + speedFactor() * amount, getEnginePower());
     }
@@ -92,7 +99,6 @@ public abstract class Car implements Movable{
 
 
 
-    // TODO fix this method according to lab pm
     public void gas(double amount) {
        if (amount >= 0 && amount <= 1){
             incrementSpeed(amount);
@@ -103,7 +109,7 @@ public abstract class Car implements Movable{
     }
 
 
-    // TODO fix this method according to lab pm
+
     public void brake(double amount) {
         if (amount >= 0 && amount <= 1) {
             decrementSpeed(amount);

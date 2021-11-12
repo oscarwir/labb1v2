@@ -28,4 +28,9 @@ public class CarGetTest {
         assertEquals(10, testSaab.getTurningRadius());
     }
 
+    @Test
+    void get_ModelName_should_return_Saab95(){
+        assertEquals("Saab95", testSaab.getModelName());
+    }
+
 }
