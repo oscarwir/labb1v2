@@ -102,4 +102,9 @@ public class Saab95Test {
         assertEquals(0, testSaab.getCurrentSpeed());
     }
 
+    @Test
+    void move_should_change_position_if_car_has_a_speed() {
+
+    }
+
 }

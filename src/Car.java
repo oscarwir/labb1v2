@@ -115,17 +115,11 @@ public abstract class Car implements Movable{
     }
 
     public void turnLeft(){
-        if (currentSpeed > 0){
-            direction.setDirection(direction.getDirection() + turningRadius);
-        }
-
-
+        direction.setDirection(direction.getDirection() + turningRadius);
     }
 
     public void turnRight(){
-        if (currentSpeed > 0){
-            direction.setDirection(direction.getDirection() - turningRadius);
-        }
+        direction.setDirection(direction.getDirection() - turningRadius);
     }
 
 
