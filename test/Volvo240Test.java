@@ -55,5 +55,11 @@ public class Volvo240Test {
         double speed = volvo240.getCurrentSpeed();
         System.out.println(speed);
         Point oldPosition = volvo240.getLocation();
+        Direction direction = volvo240.getDirection();
+
+        volvo240.move();
+
+        Point newPosition = volvo240.getLocation();
+
     }
 }
