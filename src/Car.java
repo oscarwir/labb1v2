@@ -119,6 +119,7 @@ public abstract class Car implements Movable{
             direction.setDirection(direction.getDirection() + turningRadius);
         }
 
+
     }
 
     public void turnRight(){
