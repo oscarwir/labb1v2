@@ -127,6 +127,13 @@ public class Saab95Test {
         assertEquals(testDirection.getDirection(), testSaab.getDirection().getDirection());
     }
 
+    @Test
+    void turnRight_should_change_direction(){
+        Direction testDirection = new Direction(-10);
+        testSaab.turnRight();
+        assertEquals(testDirection.getDirection(), testSaab.getDirection().getDirection());
+    }
+
 
 
 }
