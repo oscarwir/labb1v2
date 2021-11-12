@@ -74,6 +74,10 @@ public abstract class Car implements Movable{
         this.turningRadius = turningRadius;
     }
 
+    public boolean getEngineOn(){
+        return engineOn;
+    }
+
 
     //Methods for starting or stopping an engine by changing the boolean to true or false.
     public void startEngine() {
