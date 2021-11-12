@@ -64,6 +64,22 @@ public class Volvo240Test {
         assertEquals(old_x - speed, new_x);
         assertEquals(old_y, new_y);
 
+        testVolvo.turnLeft();
+
+        old_x = testVolvo.getLocation().getX();
+        old_y = testVolvo.getLocation().getY();
+
+        testVolvo.move();
+
+        new_x = testVolvo.getLocation().getX();
+        new_y = testVolvo.getLocation().getY();
+
+        double deltaY = Math.sin(Math.toRadians(testVolvo.getDirection())) * speed;
+        double deltaX = Math.cos(Math.toRadians(testVolvo.getDirection())) * speed;
+
+        assertEquals(old_x + deltaX, new_x);
+        assertEquals(old_y + deltaY, new_y);
+
     }
 
     @Test
