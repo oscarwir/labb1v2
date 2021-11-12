@@ -6,6 +6,24 @@ public class Saab95Test {
     Saab95 testSaab = new Saab95();
 
     @Test
+    void engine_should_be_off_as_default(){
+        assertFalse(testSaab.getEngineOn());
+    }
+
+    @Test
+    void startEngine_should_start_the_engine(){
+        testSaab.startEngine();
+        assertTrue(testSaab.getEngineOn());
+    }
+
+    @Test
+    void engineStop_should_stop_engine_if_on(){
+        testSaab.startEngine();
+        testSaab.stopEngine();
+        assertFalse(testSaab.getEngineOn());
+    }
+
+    @Test
     void setTurboOn_should_enable_turbo() {
         testSaab.setTurboOn();
         assertTrue(testSaab.turboOn);
@@ -20,6 +38,7 @@ public class Saab95Test {
 
     @Test
     void gas_should_increase_car_speed() {
+        testSaab.startEngine();
         testSaab.gas(0.5);
         assertEquals(0.85, testSaab.getCurrentSpeed());
     }
@@ -33,6 +52,7 @@ public class Saab95Test {
 
     @Test
     void gas_should_not_increase_car_speed_if_given_amount_is_zero() {
+        testSaab.startEngine();
         testSaab.gas(0);
         assertEquals(0, testSaab.getCurrentSpeed());
     }
@@ -60,6 +80,7 @@ public class Saab95Test {
 
     @Test
     void gas_should_increase_car_speed_with_turbo() {
+        testSaab.startEngine();
         testSaab.setTurboOn();
         testSaab.gas(0.5);
         assertEquals(1.105, testSaab.getCurrentSpeed());
@@ -67,6 +88,7 @@ public class Saab95Test {
 
     @Test
     void gas_should_not_decrease_car_speed_with_turbo() {
+        testSaab.startEngine();
         testSaab.setTurboOn();
         double oldspeed = testSaab.getCurrentSpeed();
         testSaab.gas(0.5);
@@ -75,6 +97,7 @@ public class Saab95Test {
 
     @Test
     void gas_should_not_increase_car_speed_if_given_amount_is_zero_with_turbo() {
+        testSaab.startEngine();
         testSaab.setTurboOn();
         testSaab.gas(0);
         assertEquals(0, testSaab.getCurrentSpeed());
@@ -104,6 +127,7 @@ public class Saab95Test {
 
     @Test
     void move_should_change_position_if_car_has_a_speed() {
+        testSaab.startEngine();
         testSaab.gas(0.5);
         testSaab.move();
         assertEquals(100.85,testSaab.getLocation().getX());
@@ -133,6 +157,7 @@ public class Saab95Test {
 
     @Test
     void move_after_turnLeft_should_move_correctly() {
+        testSaab.startEngine();
         double old_x = testSaab.getLocation().getX();
         double old_y = testSaab.getLocation().getY();
 
@@ -151,6 +176,7 @@ public class Saab95Test {
 
     @Test
     void move_after_turnRight_should_move_correctly() {
+        testSaab.startEngine();
         double old_x = testSaab.getLocation().getX();
         double old_y = testSaab.getLocation().getY();
 
