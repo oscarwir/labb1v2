@@ -15,7 +15,7 @@ public abstract class Car implements Movable{
     private boolean engineOn;
 
     //A constructor for all the declared variables above
-    public Car(String modelName, int turningRadius, PointDouble location, Direction direction, int nrDoors, Color color, int enginePower, double brakeFactor, boolean engineOn){
+    public Car(String modelName, int turningRadius, PointDouble location, Direction direction, int nrDoors, Color color, int enginePower, double brakeFactor){
         this.modelName = modelName;
         this.turningRadius = turningRadius;
         this.location = location;
