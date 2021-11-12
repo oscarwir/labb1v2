@@ -1,4 +1,4 @@
-//overriding Point due to the of double.
+//overriding Point due to the need of double.
 
 public class Point {
 
