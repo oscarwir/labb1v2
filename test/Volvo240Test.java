@@ -10,12 +10,14 @@ public class Volvo240Test {
 
     @Test
     void gas_should_increase_car_speed() {
+        testVolvo.startEngine();
         testVolvo.gas(0.5);
         assertEquals(0.9375, testVolvo.getCurrentSpeed());
     }
 
     @Test
     void gas_should_not_decrease_car_speed() {
+        testVolvo.startEngine();
         double oldSpeed = testVolvo.getCurrentSpeed();
         testVolvo.gas(0.5);
         assertTrue(oldSpeed < testVolvo.getCurrentSpeed());
@@ -36,6 +38,7 @@ public class Volvo240Test {
 
     @Test
     void brake_should_not_increase_speed() {
+        testVolvo.startEngine();
         double oldSpeed = testVolvo.getCurrentSpeed();
         testVolvo.brake(0.5);
         assertTrue(oldSpeed >= testVolvo.getCurrentSpeed());
@@ -49,7 +52,7 @@ public class Volvo240Test {
 
     @Test
     void move_should_chance_position_according_to_dir_and_speed(){
-
+        testVolvo.startEngine();
         testVolvo.gas(1.0);
         double speed = testVolvo.getCurrentSpeed();
 
@@ -99,18 +102,19 @@ public class Volvo240Test {
     }
 
     @Test
-    void engine_off_should_not_be_able_to_move(){
+    void engine_off_should_not_be_able_to_increase_speed(){
+        testVolvo.startEngine();
         testVolvo.gas(1.0);
-        testVolvo.stopEngine();
-        double oldX = testVolvo.getLocation().getX();
-        double oldY = testVolvo.getLocation().getY();
-        testVolvo.gas(1.0);
-        testVolvo.move();
-        double newX = testVolvo.getLocation().getX();
-        double newY = testVolvo.getLocation().getY();
 
-        assertEquals(oldX, newX);
-        assertEquals(oldY, newY);
+        double oldspeed = testVolvo.getCurrentSpeed();
+
+        testVolvo.stopEngine();
+
+        testVolvo.gas(1.0);
+
+        double newspeed = testVolvo.getCurrentSpeed();
+
+        assertEquals(oldspeed, newspeed);
 
     }
 }
