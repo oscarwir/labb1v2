@@ -1,5 +1,8 @@
 import org.junit.jupiter.api.Test;
 
+import javax.lang.model.type.ArrayType;
+import java.awt.*;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class Saab95Test {
@@ -104,7 +107,26 @@ public class Saab95Test {
 
     @Test
     void move_should_change_position_if_car_has_a_speed() {
-
+        testSaab.gas(0.5);
+        testSaab.move();
+        assertEquals(100.85,testSaab.getLocation().getX());
+        assertEquals(100.0, testSaab.getLocation().getY());
     }
+
+    @Test
+    void move_should_not_change_position_if_car_has_no_speed() {
+        PointDouble oldPoint = testSaab.getLocation();
+        testSaab.move();
+        assertEquals(oldPoint, testSaab.getLocation());
+    }
+
+    @Test
+    void turnLeft_should_change_direction(){
+        Direction testDirection = new Direction(10);
+        testSaab.turnLeft();
+        assertEquals(testDirection.getDirection(), testSaab.getDirection().getDirection());
+    }
+
+
 
 }
