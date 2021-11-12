@@ -76,55 +76,6 @@ public class Saab95Test {
         assertEquals(0, testSaab.getCurrentSpeed());
     }
 
-    // Same tests as above but with turbo enabled
-
-    @Test
-    void gas_should_increase_car_speed_with_turbo() {
-        testSaab.startEngine();
-        testSaab.setTurboOn();
-        testSaab.gas(0.5);
-        assertEquals(1.105, testSaab.getCurrentSpeed());
-    }
-
-    @Test
-    void gas_should_not_decrease_car_speed_with_turbo() {
-        testSaab.startEngine();
-        testSaab.setTurboOn();
-        double oldspeed = testSaab.getCurrentSpeed();
-        testSaab.gas(0.5);
-        assertTrue(oldspeed <= testSaab.getCurrentSpeed());
-    }
-
-    @Test
-    void gas_should_not_increase_car_speed_if_given_amount_is_zero_with_turbo() {
-        testSaab.startEngine();
-        testSaab.setTurboOn();
-        testSaab.gas(0);
-        assertEquals(0, testSaab.getCurrentSpeed());
-    }
-
-    @Test
-    void break_should_decrease_speed_with_turbo() {
-        testSaab.setTurboOn();
-        testSaab.brake(0.5);
-        assertEquals(0, testSaab.getCurrentSpeed());
-    }
-
-    @Test
-    void break_should_not_increase_speed_with_turbo() {
-        testSaab.setTurboOn();
-        double oldSpeed = testSaab.getCurrentSpeed();
-        testSaab.brake(0.5);
-        assertTrue(oldSpeed >= testSaab.getCurrentSpeed());
-    }
-
-    @Test
-    void break_should_not_decrease_speed_if_given_amount_is_zero_with_turbo() {
-        testSaab.setTurboOn();
-        testSaab.brake(0);
-        assertEquals(0, testSaab.getCurrentSpeed());
-    }
-
     @Test
     void move_should_change_position_if_car_has_a_speed() {
         testSaab.startEngine();
@@ -177,6 +128,105 @@ public class Saab95Test {
     @Test
     void move_after_turnRight_should_move_correctly() {
         testSaab.startEngine();
+        double old_x = testSaab.getLocation().getX();
+        double old_y = testSaab.getLocation().getY();
+
+        testSaab.move();
+        testSaab.turnRight();
+
+        double new_x = testSaab.getLocation().getX();
+        double new_y = testSaab.getLocation().getY();
+
+        double deltaY = Math.sin(Math.toRadians(testSaab.getDirection())) * testSaab.getCurrentSpeed();
+        double deltaX = Math.cos(Math.toRadians(testSaab.getDirection())) * testSaab.getCurrentSpeed();
+
+        assertEquals(old_x + deltaX, new_x);
+        assertEquals(old_y + deltaY, new_y);
+    }
+
+    // Same tests as above but with turbo enabled
+
+    @Test
+    void gas_should_increase_car_speed_with_turbo() {
+        testSaab.startEngine();
+        testSaab.setTurboOn();
+        testSaab.gas(0.5);
+        assertEquals(1.105, testSaab.getCurrentSpeed());
+    }
+
+    @Test
+    void gas_should_not_decrease_car_speed_with_turbo() {
+        testSaab.startEngine();
+        testSaab.setTurboOn();
+        double oldspeed = testSaab.getCurrentSpeed();
+        testSaab.gas(0.5);
+        assertTrue(oldspeed <= testSaab.getCurrentSpeed());
+    }
+
+    @Test
+    void gas_should_not_increase_car_speed_if_given_amount_is_zero_with_turbo() {
+        testSaab.startEngine();
+        testSaab.setTurboOn();
+        testSaab.gas(0);
+        assertEquals(0, testSaab.getCurrentSpeed());
+    }
+
+    @Test
+    void break_should_decrease_speed_with_turbo() {
+        testSaab.setTurboOn();
+        testSaab.brake(0.5);
+        assertEquals(0, testSaab.getCurrentSpeed());
+    }
+
+    @Test
+    void break_should_not_increase_speed_with_turbo() {
+        testSaab.setTurboOn();
+        double oldSpeed = testSaab.getCurrentSpeed();
+        testSaab.brake(0.5);
+        assertTrue(oldSpeed >= testSaab.getCurrentSpeed());
+    }
+
+    @Test
+    void break_should_not_decrease_speed_if_given_amount_is_zero_with_turbo() {
+        testSaab.setTurboOn();
+        testSaab.brake(0);
+        assertEquals(0, testSaab.getCurrentSpeed());
+    }
+
+    @Test
+    void move_should_change_position_if_car_has_a_speed_with_turbo() {
+        testSaab.startEngine();
+        testSaab.setTurboOn();
+        testSaab.gas(0.5);
+        testSaab.move();
+        assertEquals(101.105,testSaab.getLocation().getX());
+        assertEquals(100.0, testSaab.getLocation().getY());
+    }
+
+    @Test
+    void move_after_turnLeft_should_move_correctly_with_turbo() {
+        testSaab.startEngine();
+        testSaab.setTurboOn();
+        double old_x = testSaab.getLocation().getX();
+        double old_y = testSaab.getLocation().getY();
+
+        testSaab.move();
+        testSaab.turnLeft();
+
+        double new_x = testSaab.getLocation().getX();
+        double new_y = testSaab.getLocation().getY();
+
+        double deltaY = Math.sin(Math.toRadians(testSaab.getDirection())) * testSaab.getCurrentSpeed();
+        double deltaX = Math.cos(Math.toRadians(testSaab.getDirection())) * testSaab.getCurrentSpeed();
+
+        assertEquals(old_x + deltaX, new_x);
+        assertEquals(old_y + deltaY, new_y);
+    }
+
+    @Test
+    void move_after_turnRight_should_move_correctly_with_turbo() {
+        testSaab.startEngine();
+        testSaab.setTurboOn();
         double old_x = testSaab.getLocation().getX();
         double old_y = testSaab.getLocation().getY();
 
