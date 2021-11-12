@@ -149,6 +149,6 @@ public abstract class Car implements Movable{
         direction.setDirection(direction.getDirection() - turningRadius);
     }
 
-
+    //This comment is is
 }
 
