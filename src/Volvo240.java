@@ -5,7 +5,7 @@ public class Volvo240 extends Car{
     public final static double trimFactor = 1.25;
     
     public Volvo240(){
-        super("Volvo240", 20, new Point(150,100), new Direction(180),4,Color.red,150, 1.5);
+        super("Volvo240", 20, new PointDouble(150,100), new Direction(180),4,Color.red,150, 1.5);
     }
 
     @Override

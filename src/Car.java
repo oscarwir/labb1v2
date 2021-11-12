@@ -10,12 +10,15 @@ public abstract class Car implements Movable{
     private String modelName; // The car model name
     private Point location; //The position the car has using Java's built in Point class
     private Direction direction; //The direction the car has using degrees
+    private PointDouble location;
+    private Direction direction;
     private int turningRadius; //The turning radius of the car
     private double breakFactor; //A factor that determine an arbitrary car's breaking capability
 
 
     //A constructor for all the declared variables above
     public Car(String modelName, int turningRadius, Point location, Direction direction, int nrDoors, Color color, int enginePower, double brakeFactor){
+    public Car(String modelName, int turningRadius, PointDouble location, Direction direction, int nrDoors, Color color, int enginePower, double brakeFactor){
         this.modelName = modelName;
         this.turningRadius = turningRadius;
         this.location = location;
@@ -49,7 +52,7 @@ public abstract class Car implements Movable{
         return modelName;
     }
 
-    public Point getLocation(){
+    public PointDouble getLocation(){
         return location;
     }
 
@@ -88,7 +91,7 @@ public abstract class Car implements Movable{
 
 
 
-    //The methods
+
     private void incrementSpeed(double amount) {
         currentSpeed = Math.min(getCurrentSpeed() + speedFactor() * amount, getEnginePower());
     }

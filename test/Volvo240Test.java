@@ -54,15 +54,12 @@ public class Volvo240Test {
         double speed = volvo240.getCurrentSpeed();
         Direction dir = volvo240.getDirection();
 
-        System.out.println(speed);
-        System.out.println(dir.getDirection());
-
+        PointDouble oldpoint = volvo240.getLocation();
         volvo240.move();
+        PointDouble newponit = volvo240.getLocation();
 
-
-        System.out.println(volvo240.getLocation());
-        volvo240.move();
-        System.out.println(volvo240.getLocation());
+        assertEquals(oldpoint.getX() - speed, newponit.getX());
+        assertEquals(oldpoint.getY(), newponit.getY());
 
 
 
