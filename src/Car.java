@@ -53,8 +53,8 @@ public abstract class Car implements Movable{
         return location;
     }
 
-    public Direction getDirection(){
-        return direction;
+    public int getDirection(){
+        return direction.getDirection();
     }
 
     public Color getColor() {

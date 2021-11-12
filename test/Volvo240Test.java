@@ -61,6 +61,13 @@ public class Volvo240Test {
         double new_x = testVolvo.getLocation().getX();
         double new_y = testVolvo.getLocation().getY();
 
+        for (int i = 0; i <= 9; i++){
+            testVolvo.turnLeft();
+        }
+
+        System.out.println(testVolvo.getDirection());
+
+
 
         assertEquals(old_x - speed, new_x);
         assertEquals(old_y, new_y);
@@ -71,13 +78,13 @@ public class Volvo240Test {
     void turnLeft_should_change_direction(){
         Direction testDirection = new Direction(200);
         testVolvo.turnLeft();
-        assertEquals(testDirection.getDirection(), testVolvo.getDirection().getDirection());
+        assertEquals(testDirection.getDirection(), testVolvo.getDirection());
     }
 
     @Test
     void turnRight_should_change_direction(){
         Direction testDirection = new Direction(160);
         testVolvo.turnRight();
-        assertEquals(testDirection.getDirection(), testVolvo.getDirection().getDirection());
+        assertEquals(testDirection.getDirection(), testVolvo.getDirection());
     }
 }

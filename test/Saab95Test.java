@@ -1,8 +1,5 @@
 import org.junit.jupiter.api.Test;
 
-import javax.lang.model.type.ArrayType;
-import java.awt.*;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 public class Saab95Test {
@@ -124,14 +121,14 @@ public class Saab95Test {
     void turnLeft_should_change_direction(){
         Direction testDirection = new Direction(10);
         testSaab.turnLeft();
-        assertEquals(testDirection.getDirection(), testSaab.getDirection().getDirection());
+        assertEquals(testDirection.getDirection(), testSaab.getDirection());
     }
 
     @Test
     void turnRight_should_change_direction(){
         Direction testDirection = new Direction(-10);
         testSaab.turnRight();
-        assertEquals(testDirection.getDirection(), testSaab.getDirection().getDirection());
+        assertEquals(testDirection.getDirection(), testSaab.getDirection());
     }
 
 
