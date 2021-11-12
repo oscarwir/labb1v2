@@ -65,6 +65,8 @@ public class Volvo240Test {
         assertEquals(old_y, new_y);
 
         testVolvo.turnLeft();
+        testVolvo.turnLeft();
+        testVolvo.turnRight();
 
         old_x = testVolvo.getLocation().getX();
         old_y = testVolvo.getLocation().getY();
@@ -94,5 +96,21 @@ public class Volvo240Test {
         Direction testDirection = new Direction(160);
         testVolvo.turnRight();
         assertEquals(testDirection.getDirection(), testVolvo.getDirection());
+    }
+
+    @Test
+    void engine_off_should_not_be_able_to_move(){
+        testVolvo.gas(1.0);
+        testVolvo.stopEngine();
+        double oldX = testVolvo.getLocation().getX();
+        double oldY = testVolvo.getLocation().getY();
+        testVolvo.gas(1.0);
+        testVolvo.move();
+        double newX = testVolvo.getLocation().getX();
+        double newY = testVolvo.getLocation().getY();
+
+        assertEquals(oldX, newX);
+        assertEquals(oldY, newY);
+
     }
 }
