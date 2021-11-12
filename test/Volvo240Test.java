@@ -45,4 +45,12 @@ public class Volvo240Test {
         testVolvo.brake(0);
         assertEquals(0, testVolvo.getCurrentSpeed());
     }
+
+    @Test
+    void move_should_chance_position_according_to_dir_and_speed(){
+        Volvo240 volvo240 = new Volvo240();
+        volvo240.gas(1.0);
+        double speed = volvo240.getCurrentSpeed();
+        System.out.println(speed);
+    }
 }
