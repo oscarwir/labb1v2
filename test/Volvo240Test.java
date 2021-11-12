@@ -49,17 +49,21 @@ public class Volvo240Test {
 
     @Test
     void move_should_chance_position_according_to_dir_and_speed(){
-        Volvo240 volvo240 = new Volvo240();
-        volvo240.gas(1.0);
-        double speed = volvo240.getCurrentSpeed();
-        Direction dir = volvo240.getDirection();
 
-        PointDouble oldpoint = volvo240.getLocation();
-        volvo240.move();
-        PointDouble newponit = volvo240.getLocation();
+        testVolvo.gas(1.0);
+        double speed = testVolvo.getCurrentSpeed();
 
-        assertEquals(oldpoint.getX() - speed, newponit.getX());
-        assertEquals(oldpoint.getY(), newponit.getY());
+        double oldx = testVolvo.getLocation().getX();
+        double oldy = testVolvo.getLocation().getY();
+
+        testVolvo.move();
+
+        double newx = testVolvo.getLocation().getX();
+        double newy = testVolvo.getLocation().getY();
+
+
+        assertEquals(oldx - speed, newx);
+        assertEquals(oldy, newy);
 
 
 
