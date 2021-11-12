@@ -53,17 +53,17 @@ public class Volvo240Test {
         testVolvo.gas(1.0);
         double speed = testVolvo.getCurrentSpeed();
 
-        double oldx = testVolvo.getLocation().getX();
-        double oldy = testVolvo.getLocation().getY();
+        double old_x = testVolvo.getLocation().getX();
+        double old_y = testVolvo.getLocation().getY();
 
         testVolvo.move();
 
-        double newx = testVolvo.getLocation().getX();
-        double newy = testVolvo.getLocation().getY();
+        double new_x = testVolvo.getLocation().getX();
+        double new_y = testVolvo.getLocation().getY();
 
 
-        assertEquals(oldx - speed, newx);
-        assertEquals(oldy, newy);
+        assertEquals(old_x - speed, new_x);
+        assertEquals(old_y, new_y);
 
     }
 
