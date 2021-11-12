@@ -8,12 +8,12 @@ public abstract class Car implements Movable{
     private double currentSpeed; // The current speed of the car
     private Color color; // Color of the car
     private String modelName; // The car model name
-    private Point location;
+    private PointDouble location;
     private Direction direction;
     private int turningRadius; //The turning radius of the car
     private double breakFactor;
 
-    public Car(String modelName, int turningRadius, Point location, Direction direction, int nrDoors, Color color, int enginePower, double brakeFactor){
+    public Car(String modelName, int turningRadius, PointDouble location, Direction direction, int nrDoors, Color color, int enginePower, double brakeFactor){
         this.modelName = modelName;
         this.turningRadius = turningRadius;
         this.location = location;
@@ -43,7 +43,7 @@ public abstract class Car implements Movable{
         return modelName;
     }
 
-    public Point getLocation(){
+    public PointDouble getLocation(){
         return location;
     }
 
