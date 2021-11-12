@@ -65,7 +65,19 @@ public class Volvo240Test {
         assertEquals(oldx - speed, newx);
         assertEquals(oldy, newy);
 
+    }
 
+    @Test
+    void turnLeft_should_change_direction(){
+        Direction testDirection = new Direction(200);
+        testVolvo.turnLeft();
+        assertEquals(testDirection.getDirection(), testVolvo.getDirection().getDirection());
+    }
 
+    @Test
+    void turnRight_should_change_direction(){
+        Direction testDirection = new Direction(160);
+        testVolvo.turnRight();
+        assertEquals(testDirection.getDirection(), testVolvo.getDirection().getDirection());
     }
 }
