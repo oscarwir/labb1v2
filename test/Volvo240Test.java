@@ -61,14 +61,6 @@ public class Volvo240Test {
         double new_x = testVolvo.getLocation().getX();
         double new_y = testVolvo.getLocation().getY();
 
-        for (int i = 0; i <= 9; i++){
-            testVolvo.turnLeft();
-        }
-
-        System.out.println(testVolvo.getDirection());
-
-
-
         assertEquals(old_x - speed, new_x);
         assertEquals(old_y, new_y);
 
