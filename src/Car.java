@@ -12,10 +12,10 @@ public abstract class Car implements Movable{
     private PointDouble location;   // The position the car has using Java's built-in Point class
     private int turningRadius; //The turning radius of the car
     private double breakFactor; //A factor that determine an arbitrary car's breaking capability
-
+    private boolean engineOn;
 
     //A constructor for all the declared variables above
-    public Car(String modelName, int turningRadius, PointDouble location, Direction direction, int nrDoors, Color color, int enginePower, double brakeFactor){
+    public Car(String modelName, int turningRadius, PointDouble location, Direction direction, int nrDoors, Color color, int enginePower, double brakeFactor, boolean engineOn){
         this.modelName = modelName;
         this.turningRadius = turningRadius;
         this.location = location;
@@ -24,6 +24,7 @@ public abstract class Car implements Movable{
         this.color = color;
         this.enginePower = enginePower;
         this.breakFactor = brakeFactor;
+        this.engineOn = false;
         stopEngine();
     }
 
@@ -74,13 +75,13 @@ public abstract class Car implements Movable{
     }
 
 
-    //Methods for starting or stopping an engine by giving currentSpeed a value
+    //Methods for starting or stopping an engine by changing the boolean to true or false.
     public void startEngine() {
-        currentSpeed = 0.1;
+        engineOn = true;
     }
 
     public void stopEngine() {
-        currentSpeed = 0;
+        engineOn = false;
     }
 
     //An abstract concept of which both cars utilize in different ways. Inherited by Volvo
@@ -103,12 +104,13 @@ public abstract class Car implements Movable{
     //The method gas calls the method incrementSpeed to increase the speed. It purposely sets up boundaries
     //for the amount that you can increaseSpeed and if the conditions are not met an Exception is raised.
     public void gas(double amount) {
-       if (amount >= 0 && amount <= 1){
-            incrementSpeed(amount);
+        if (engineOn) {
+            if (amount >= 0 && amount <= 1) {
+                incrementSpeed(amount);
+            } else {
+                throw new IllegalArgumentException("Gas amount is lower than 0 or higher than 1");
+            }
         }
-       else {
-           throw new IllegalArgumentException("Gas amount is lower than 0 or higher than 1");
-       }
     }
 
 
@@ -149,6 +151,5 @@ public abstract class Car implements Movable{
         direction.setDirection(direction.getDirection() - turningRadius);
     }
 
-    //This comment is is
 }
 
