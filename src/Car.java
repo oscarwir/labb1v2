@@ -43,6 +43,10 @@ public abstract class Car implements Movable{
         return modelName;
     }
 
+    public Point getLocation(){
+        return location;
+    }
+
 
     public Color getColor() {
         return color;
@@ -59,6 +63,7 @@ public abstract class Car implements Movable{
     public void setTurningRadius(int turningRadius){
         this.turningRadius = turningRadius;
     }
+
 
     public void startEngine() {
         currentSpeed = 0.1;

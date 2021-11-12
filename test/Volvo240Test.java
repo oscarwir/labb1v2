@@ -1,5 +1,7 @@
 import org.junit.jupiter.api.Test;
 
+import java.awt.*;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class Volvo240Test {
@@ -52,5 +54,6 @@ public class Volvo240Test {
         volvo240.gas(1.0);
         double speed = volvo240.getCurrentSpeed();
         System.out.println(speed);
+        Point oldPosition = volvo240.getLocation();
     }
 }
