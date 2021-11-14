@@ -25,7 +25,6 @@ public abstract class Car implements Movable{
         this.enginePower = enginePower;
         this.breakFactor = brakeFactor;
         this.engineOn = false;
-        stopEngine();
     }
 
 
@@ -89,7 +88,7 @@ public abstract class Car implements Movable{
     }
 
     //An abstract concept of which both cars utilize in different ways. Inherited by Volvo
-    //and saab and its purpose is the implement Volvos trim and Saabs turbo.
+    //and saab and its purpose is the implement Volvo's trim and Saab's turbo.
     abstract double speedFactor();
 
 
@@ -125,7 +124,7 @@ public abstract class Car implements Movable{
             decrementSpeed(amount);
         }
         else {
-            throw new IllegalArgumentException("break amount is lower than 0 or higer than 1");
+            throw new IllegalArgumentException("Break amount is lower than 0 or higher than 1");
         }
     }
 
