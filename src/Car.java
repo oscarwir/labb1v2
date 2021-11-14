@@ -128,7 +128,7 @@ public abstract class Car implements Movable{
         }
     }
 
-    //The method move uses trigonometry to calculate the new point which the vehicle travels to.
+    //The method move comes from the interface. In Car it uses trigonometry to calculate the new point which the vehicle travels to.
     //It implements currentSpeed combined with the angle of which the car's direction is in.
     public void move(){
         double x;
@@ -142,7 +142,7 @@ public abstract class Car implements Movable{
     }
 
 
-    //The methods turnLeft and turnRight changes the direction the car is directed in by using
+    //The methods turnLeft and turnRight is inherited from the interface Movable. They changes the direction the car is directed in by using
     //the old angle (the car's current direction) combined with the turning radius. Whether you
     //turn left or right it is plus or minus. This is based on the unit circle due to the previous usage
     //of radians.
