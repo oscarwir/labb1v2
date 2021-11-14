@@ -205,11 +205,15 @@ public class Saab95Test {
 
     @Test
     void move_after_turnLeft_should_move_correctly_with_turbo() {
+        //Setup for the test
         testSaab.startEngine();
         testSaab.setTurboOn();
+
+        //We save both the old coordinates before using the method from the interface.
         double old_x = testSaab.getLocation().getX();
         double old_y = testSaab.getLocation().getY();
 
+        //Felaktig, turnLeft före move.
         testSaab.move();
         testSaab.turnLeft();
 
@@ -227,6 +231,7 @@ public class Saab95Test {
     void move_after_turnRight_should_move_correctly_with_turbo() {
         testSaab.startEngine();
         testSaab.setTurboOn();
+
         double old_x = testSaab.getLocation().getX();
         double old_y = testSaab.getLocation().getY();
 
