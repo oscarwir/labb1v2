@@ -108,19 +108,25 @@ public class Saab95Test {
 
     @Test
     void move_after_turnLeft_should_move_correctly() {
+        //Setup
         testSaab.startEngine();
+        //Save the old coordinates in two variables.
         double old_x = testSaab.getLocation().getX();
         double old_y = testSaab.getLocation().getY();
 
+        //Turn left and then turn with the
         testSaab.turnLeft();
         testSaab.move();
 
+        //Then we load the new variables after the movement in two new variables.
         double new_x = testSaab.getLocation().getX();
         double new_y = testSaab.getLocation().getY();
 
+        //With trigonometry the new coordinates are manually calculated.
         double deltaY = Math.sin(Math.toRadians(testSaab.getDirection())) * testSaab.getCurrentSpeed();
         double deltaX = Math.cos(Math.toRadians(testSaab.getDirection())) * testSaab.getCurrentSpeed();
 
+        //The comparison between the coordinates that our program calculated vs the manually calculated coordinates.
         assertEquals(old_x + deltaX, new_x);
         assertEquals(old_y + deltaY, new_y);
     }
