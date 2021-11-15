@@ -12,7 +12,7 @@ public abstract class Car implements Movable{
     private PointDouble location;   // The position the car has using Java's built-in Point class
     private int turningRadius; //The turning radius of the car
     private double breakFactor; //A factor that determine an arbitrary car's breaking capability
-    private boolean engineOn;
+    private boolean engineOn; //A boolean that serves as condition to drive the car
 
     //A constructor for all the declared variables above
     public Car(String modelName, int turningRadius, PointDouble location, Direction direction, int nrDoors, Color color, int enginePower, double brakeFactor){
