@@ -112,8 +112,8 @@ public class Saab95Test {
         double old_x = testSaab.getLocation().getX();
         double old_y = testSaab.getLocation().getY();
 
-        testSaab.move();
         testSaab.turnLeft();
+        testSaab.move();
 
         double new_x = testSaab.getLocation().getX();
         double new_y = testSaab.getLocation().getY();
@@ -131,8 +131,8 @@ public class Saab95Test {
         double old_x = testSaab.getLocation().getX();
         double old_y = testSaab.getLocation().getY();
 
-        testSaab.move();
         testSaab.turnRight();
+        testSaab.move();
 
         double new_x = testSaab.getLocation().getX();
         double new_y = testSaab.getLocation().getY();
@@ -213,9 +213,8 @@ public class Saab95Test {
         double old_x = testSaab.getLocation().getX();
         double old_y = testSaab.getLocation().getY();
 
-        //Felaktig, turnLeft före move.
-        testSaab.move();
         testSaab.turnLeft();
+        testSaab.move();
 
         double new_x = testSaab.getLocation().getX();
         double new_y = testSaab.getLocation().getY();
@@ -235,8 +234,8 @@ public class Saab95Test {
         double old_x = testSaab.getLocation().getX();
         double old_y = testSaab.getLocation().getY();
 
-        testSaab.move();
         testSaab.turnRight();
+        testSaab.move();
 
         double new_x = testSaab.getLocation().getX();
         double new_y = testSaab.getLocation().getY();
