@@ -150,6 +150,29 @@ public class Saab95Test {
         assertEquals(old_y + deltaY, new_y);
     }
 
+    @Test
+    void move_after_turnRight_and_turnLeft_should_cancel_out_direction_without_turbo(){
+
+        testSaab.startEngine();
+
+        double old_x = testSaab.getLocation().getX();
+        double old_y = testSaab.getLocation().getY();
+
+        testSaab.turnRight();
+        testSaab.turnLeft();
+        testSaab.move();
+
+        double new_x = testSaab.getLocation().getX();
+        double new_y = testSaab.getLocation().getY();
+
+        double deltaY = Math.sin(Math.toRadians(testSaab.getDirection())) * testSaab.getCurrentSpeed();
+        double deltaX = Math.cos(Math.toRadians(testSaab.getDirection())) * testSaab.getCurrentSpeed();
+
+        assertEquals(old_x + deltaX, new_x);
+        assertEquals(old_y + deltaY, new_y);
+    }
+
+
     // Same tests as above but with turbo enabled
 
     @Test
@@ -252,5 +275,29 @@ public class Saab95Test {
         assertEquals(old_x + deltaX, new_x);
         assertEquals(old_y + deltaY, new_y);
     }
+
+    @Test
+    void move_after_turnRight_and_turnLeft_should_cancel_out_direction_with_turbo(){
+
+        testSaab.startEngine();
+        testSaab.setTurboOn();
+
+        double old_x = testSaab.getLocation().getX();
+        double old_y = testSaab.getLocation().getY();
+
+        testSaab.turnRight();
+        testSaab.turnLeft();
+        testSaab.move();
+
+        double new_x = testSaab.getLocation().getX();
+        double new_y = testSaab.getLocation().getY();
+
+        double deltaY = Math.sin(Math.toRadians(testSaab.getDirection())) * testSaab.getCurrentSpeed();
+        double deltaX = Math.cos(Math.toRadians(testSaab.getDirection())) * testSaab.getCurrentSpeed();
+
+        assertEquals(old_x + deltaX, new_x);
+        assertEquals(old_y + deltaY, new_y);
+    }
+
 
 }
