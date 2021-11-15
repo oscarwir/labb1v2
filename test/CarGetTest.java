@@ -58,5 +58,4 @@ public class CarGetTest {
         assertFalse(testSaab.getEngineOn());
     }
 
-
 }
