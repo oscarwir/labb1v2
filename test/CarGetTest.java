@@ -19,6 +19,31 @@ public class CarGetTest {
     }
 
     @Test
+    void get_current_speed_should_return_0(){
+        assertEquals(0, testSaab.getCurrentSpeed());
+    }
+
+    @Test
+    void get_ModelName_should_return_Saab95(){
+        assertEquals("Saab95", testSaab.getModelName());
+    }
+
+    @Test
+    void get_location_of_x_should_return_start_point_which_is_a_double_with_value_100(){
+        assertEquals(100,testSaab.getLocation().getX());
+    }
+
+    @Test
+    void get_location_of_y_should_return_start_point_which_is_a_double_with_value_100(){
+        assertEquals(100,testSaab.getLocation().getY());
+    }
+
+    @Test
+    void get_direction_should_return_0_degrees(){
+        assertEquals(0, testSaab.getDirection());
+    }
+
+    @Test
     void get_color_should_return_white(){
         assertEquals(Color.white, testSaab.getColor());
     }
@@ -29,8 +54,9 @@ public class CarGetTest {
     }
 
     @Test
-    void get_ModelName_should_return_Saab95(){
-        assertEquals("Saab95", testSaab.getModelName());
+    void get_engine_on_should_return_false(){
+        assertFalse(testSaab.getEngineOn());
     }
+
 
 }
