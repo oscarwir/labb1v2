@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
 import java.awt.*;
@@ -57,5 +58,10 @@ public class CarGetTest {
     void get_engine_on_should_return_false(){
         assertFalse(testSaab.getEngineOn());
     }
+
+    //AfterEach uncertain if we must add these, but asked another group and they said
+    //it was mandatory...
+
+    //AfterAll
 
 }
