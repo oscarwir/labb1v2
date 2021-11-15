@@ -142,10 +142,10 @@ public abstract class Car implements Movable{
     }
 
 
-    //The methods turnLeft and turnRight is inherited from the interface Movable. They changes the direction the car is directed in by using
-    //the old angle (the car's current direction) combined with the turning radius. Whether you
-    //turn left or right it is plus or minus. This is based on the unit circle due to the previous usage
-    //of radians.
+    //The methods turnLeft and turnRight is inherited from the interface Movable. They change the direction the car
+    // is directed in by using the old angle (the car's current direction) combined with the turning radius.
+    // Whether you turn left or right it is plus or minus. This is based on the unit circle due to the
+    // previous usage of radians.
     public void turnLeft(){
         direction.setDirection(direction.getDirection() + turningRadius);
     }
