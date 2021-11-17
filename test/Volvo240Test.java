@@ -124,9 +124,9 @@ public class Volvo240Test {
 
         testVolvo.gas(1.0);
 
-        double newspeed = testVolvo.getCurrentSpeed();
+        double newSpeed = testVolvo.getCurrentSpeed();
 
-        assertEquals(oldSpeed, newspeed);
+        assertEquals(oldSpeed, newSpeed);
 
     }
 }
