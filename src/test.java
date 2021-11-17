@@ -136,7 +136,7 @@ private class FrameClose extends WindowAdapter {
     }
 
     public void renderGame(Graphics2D g) {
-        g.setColor(Color.BLACK);
+        g.setColor(Color.WHITE);
         g.fillRect(0, 0, width, height);
     }
 
