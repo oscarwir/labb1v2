@@ -2,7 +2,6 @@ import java.awt.*;
 
 public abstract class Car implements Movable{
 
-
     private int nrDoors; // Number of doors on the car
     private double enginePower; // Engine power of the car
     private double currentSpeed; // The current speed of the car
@@ -87,12 +86,9 @@ public abstract class Car implements Movable{
         engineOn = false;
     }
 
-    //An abstract concept of which both cars utilize in different ways. Inherited by Volvo
-    //and saab and its purpose is the implement Volvo's trim and Saab's turbo.
+    /*An abstract concept of which both cars utilize in different ways. Inherited by Volvo
+    and saab and its purpose is the implement Volvo's trim and Saab's turbo.*/
     abstract double speedFactor();
-
-
-
 
     //Increment- and DecrementSpeed increases or decreases the speed based on the current speed.
     private void incrementSpeed(double amount) {
@@ -104,8 +100,8 @@ public abstract class Car implements Movable{
     }
 
 
-    //The method gas calls the method incrementSpeed to increase the speed. It purposely sets up boundaries
-    //for the amount that you can increaseSpeed and if the conditions are not met an Exception is raised.
+    /*The method gas calls the method incrementSpeed to increase the speed. It purposely sets up boundaries
+    for the amount that you can increaseSpeed and if the conditions are not met an Exception is raised.*/
     public void gas(double amount) {
         if (engineOn) {
             if (amount >= 0 && amount <= 1) {
@@ -117,8 +113,8 @@ public abstract class Car implements Movable{
     }
 
 
-    //The method gas calls the method decrementSpeed to decrease the speed. It purposely sets up boundaries
-    //for the amount that you can decreaseSpeed and if the conditions are not met an Exception is raised.
+    /*The method gas calls the method decrementSpeed to decrease the speed. It purposely sets up boundaries
+    for the amount that you can decreaseSpeed and if the conditions are not met an Exception is raised.*/
     public void brake(double amount) {
         if (amount >= 0 && amount <= 1) {
             decrementSpeed(amount);
@@ -128,8 +124,8 @@ public abstract class Car implements Movable{
         }
     }
 
-    //The method move comes from the interface. In Car it uses trigonometry to calculate the new point which the vehicle travels to.
-    //It implements currentSpeed combined with the angle of which the car's direction is in.
+    /*The method move comes from the interface. In Car it uses trigonometry to calculate the new point which the vehicle travels to.
+    It implements currentSpeed combined with the angle of which the car's direction is in.*/
     public void move(){
         double x;
         double y;
@@ -142,10 +138,10 @@ public abstract class Car implements Movable{
     }
 
 
-    //The methods turnLeft and turnRight is inherited from the interface Movable. They change the direction the car
-    // is directed in by using the old angle (the car's current direction) combined with the turning radius.
-    // Whether you turn left or right it is plus or minus. This is based on the unit circle due to the
-    // previous usage of radians.
+    /*The methods turnLeft and turnRight is inherited from the interface Movable. They change the direction the car
+    is directed in by using the old angle (the car's current direction) combined with the turning radius.
+    Whether you turn left or right it is plus or minus. This is based on the unit circle due to the
+    previous usage of radians.*/
     public void turnLeft(){
         direction.setDirection(direction.getDirection() + turningRadius);
     }
