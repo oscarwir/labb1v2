@@ -14,7 +14,12 @@ public abstract class Truck extends AutoVehicle {
         this.platform = new TruckPlatform(truckPlatformInterval, truckPlatformAngleStep, this);
     }
 
-
+    @Override
+    public void gas(double amount){
+        if (platform.isPlatformClosed()){
+            super.gas(amount);
+        }
+    }
 
 
     //All the getters
