@@ -1,7 +1,7 @@
 public class TruckPlatform {
 
     private double angle;
-    private double angleStep = 1.0;
+    private double angleStep;
     private double[] interval;
     private Truck myTruck;
 
@@ -14,6 +14,12 @@ public class TruckPlatform {
 
     public boolean isPlatformClosed(){
         return angle == interval[0];
+    }
+
+    public void lowerPlatform(){
+        if (myTruck.getCurrentSpeed() == 0.0){
+
+        }
     }
 
 }
