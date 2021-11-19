@@ -22,4 +22,8 @@ public class TruckPlatform {
         }
     }
 
+    public void raisePlatform(){
+
+    }
+
 }
