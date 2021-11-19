@@ -9,6 +9,7 @@ public abstract class Truck extends AutoVehicle {
     public Truck(String modelName, int turningRadius, PointDouble location, Direction direction,
                  int nrDoors, Color color, int enginePower, double brakeFactor,
                  double[] truckPlatformInterval, double truckPlatformAngleStep) {
+
         super(modelName, turningRadius, location, direction, color, enginePower, brakeFactor);
         this.nrDoors = nrDoors;
         this.platform = new TruckPlatform(truckPlatformInterval, truckPlatformAngleStep, this);
