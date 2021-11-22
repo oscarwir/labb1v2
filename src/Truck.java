@@ -45,6 +45,9 @@ public abstract class Truck extends AutoVehicle {
     }
 
 
+    /**
+     * @return number of doors
+     */
     public int getNrDoors() {
         return nrDoors;
     }
