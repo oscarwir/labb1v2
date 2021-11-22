@@ -57,6 +57,19 @@ public abstract class Truck extends AutoVehicle {
         platform.raisePlatform();
     }
 
+    /**
+     * @return True if the angle attribute of the TruckPlatform object is equal to maxAngle, else False
+     */
+    public boolean isPlatformFullyOpen(){
+        return platform.isPlatformFullyOpen();
+    }
+
+    /**
+     * @return True if the angle attribute of the TruckPlatform object is zero, else False
+     */
+    public boolean isPlatformClosed(){
+        return platform.isPlatformClosed();
+    }
 
 
 
