@@ -5,7 +5,7 @@ import java.awt.*;
  */
 public abstract class Truck extends AutoVehicle {
 
-    private TruckPlatform platform;
+    private CargoPlatform platform;
 
 
     /**
@@ -17,16 +17,16 @@ public abstract class Truck extends AutoVehicle {
      * @param color color
      * @param enginePower Higher enginePower results in Higher max speed
      * @param brakeFactor Higher brakeFactor results in heavier deceleration
-     * @param truckPlatformMaxAngle max open angle for truck platform, 0 degrees being fully closed
-     * @param truckPlatformAngleStep the angle speed for lowering and lifting truck platform
      */
     //A constructor for all the declared variables above
     public Truck(String modelName, int turningRadius, PointDouble location, Direction direction,
-                 int nrDoors, Color color, int enginePower, double brakeFactor,
-                 double truckPlatformMaxAngle, double truckPlatformAngleStep) {
+                 int nrDoors, Color color, int enginePower, double brakeFactor) {
 
         super(modelName, turningRadius, location, direction, color, enginePower, brakeFactor, nrDoors);
-        this.platform = new TruckPlatform(truckPlatformMaxAngle, truckPlatformAngleStep, this);
+    }
+
+    protected void setCargoPlatform(CargoPlatform platform){
+        this.platform = platform;
     }
 
     /**
@@ -44,31 +44,39 @@ public abstract class Truck extends AutoVehicle {
     }
 
     /**
-     * This lowerPlatform method increases the angle attribute of the TruckPlatform object, when the trucks CurrentSpeed attribute is zero
+     * This lowerPlatform method increases the angle attribute of the CargoPlatform object, when the trucks CurrentSpeed attribute is zero
      */
     public void lowerPlatform(){
         platform.lowerPlatform();
     }
 
     /**
-     * This raisePlatform method decreases the angle attribute of the TruckPlatform object
+     * This raisePlatform method decreases the angle attribute of the CargoPlatform object
      */
     public void raisePlatform(){
         platform.raisePlatform();
     }
 
     /**
-     * @return True if the angle attribute of the TruckPlatform object is equal to maxAngle, else False
+     * @return True if the angle attribute of the CargoPlatform object is equal to maxAngle, else False
      */
     public boolean isPlatformFullyOpen(){
         return platform.isPlatformFullyOpen();
     }
 
     /**
-     * @return True if the angle attribute of the TruckPlatform object is zero, else False
+     * @return True if the angle attribute of the CargoPlatform object is zero, else False
      */
     public boolean isPlatformClosed(){
         return platform.isPlatformClosed();
+    }
+
+    <T> T unloadCargo(){
+        return platform.unloadCargo();
+    }
+
+    <T> void loadCargo(T object){
+        platform.loadCargo(object);
     }
 
 
