@@ -27,7 +27,9 @@ public class TruckPlatform {
         return angle == 0;
     }
 
-
+    /**
+     * @return True if the angle attribute of the TruckPlatform object is equal to maxAngle, else False
+     */
     public boolean isPlatformFullyOpen(){
         return angle == maxAngle;
     }
