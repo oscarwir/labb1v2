@@ -63,16 +63,28 @@ public abstract class AutoVehicle implements Movable{
         return color;
     }
 
-    public void setColor(Color clr) {
-        color = clr;
-    }
-
     public int getTurningRadius(){
         return turningRadius;
     }
 
+    public boolean getEngineOn(){
+        return engineOn;
+    }
+
     public void setTurningRadius(int turningRadius){
         this.turningRadius = turningRadius;
+    }
+
+    public void setColor(Color clr) {
+        color = clr;
+    }
+
+    public void setPosition(PointDouble location){
+        this.location = location;
+    }
+
+    public void setDirection(Direction direction){
+        this.direction = direction;
     }
 
     /**
@@ -86,9 +98,8 @@ public abstract class AutoVehicle implements Movable{
         engineOn = false;
     }
 
-    public boolean getEngineOn(){
-        return engineOn;
-    }
+
+
 
     /*An abstract concept of which both cars utilize in different ways. Inherited by Volvo
     and saab and its purpose is the implement Volvo's trim and Saab's turbo.*/

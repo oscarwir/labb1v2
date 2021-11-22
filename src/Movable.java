@@ -9,4 +9,8 @@ interface Movable {
 
     void turnRight();
 
+    void setPosition(PointDouble location);
+
+    void setDirection(Direction direction);
+
 }

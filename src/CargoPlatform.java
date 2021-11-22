@@ -2,9 +2,11 @@ public interface CargoPlatform {
 
     void moveCargo();
 
-    <T> T unloadCargo();
+    void turnCargo();
 
-    <T> void loadCargo(T object);
+    Movable unloadCargo();
+
+    void loadCargo(Movable object);
 
     void raisePlatform();
 

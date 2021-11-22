@@ -1,7 +1,11 @@
+import java.util.ArrayList;
+
 public class CarHaulerX2000CargoPlatform implements CargoPlatform{
 
     private double angle;
     private Truck myTruck;
+    private ArrayList<Car> cargoCars = new ArrayList<Car>();
+
 
     /**
      * @param myTruck the Truck object that uses the platform
@@ -42,15 +46,32 @@ public class CarHaulerX2000CargoPlatform implements CargoPlatform{
     }
 
 
-    public <T> T unloadCargo(){
+    public Movable unloadCargo(){
+        if (isPlatformFullyOpen()){
+            if (cargoCars.size() == 1) {
+                return cargoCars.remove(cargoCars.size() - 1);
+            }
+        }
         return null;
     }
 
-    public <T> void loadCargo(T object){
-
+    public void loadCargo(Movable car){
+        if (isPlatformFullyOpen()){
+            cargoCars.add((Car)car);
+        }
     }
 
     public void moveCargo() {
+        for (int i = 0; i < cargoCars.size(); i++) {
+            Car car = cargoCars.get(i);
+            car.setPosition(myTruck.getLocation());
+        }
+    }
 
+    public void turnCargo(){
+        for (int i = 0; i < cargoCars.size(); i++) {
+            Car car = cargoCars.get(i);
+            car.setDirection(new Direction(myTruck.getDirection()));
+        }
     }
 }

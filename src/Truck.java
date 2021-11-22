@@ -43,6 +43,25 @@ public abstract class Truck extends AutoVehicle {
         }
     }
 
+    @Override
+    public void move(){
+        super.move();
+        platform.moveCargo();
+    }
+
+    @Override
+    public void turnLeft(){
+        super.turnLeft();
+        platform.turnCargo();
+    }
+
+    @Override
+    public void turnRight(){
+        super.turnRight();
+        platform.turnCargo();
+    }
+
+
     /**
      * This lowerPlatform method increases the angle attribute of the CargoPlatform object, when the trucks CurrentSpeed attribute is zero
      */
@@ -71,11 +90,11 @@ public abstract class Truck extends AutoVehicle {
         return platform.isPlatformClosed();
     }
 
-    <T> T unloadCargo(){
+    public Movable unloadCargo(){
         return platform.unloadCargo();
     }
 
-    <T> void loadCargo(T object){
+    public void loadCargo(Movable object){
         platform.loadCargo(object);
     }
 
