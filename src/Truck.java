@@ -1,33 +1,44 @@
 import java.awt.*;
 
+/**
+ * Is a super class to all Trucks
+ */
 public abstract class Truck extends AutoVehicle {
 
     private TruckPlatform platform;
-    private int nrDoors; // Number of doors on the car
+    private int nrDoors;
 
     //A constructor for all the declared variables above
     public Truck(String modelName, int turningRadius, PointDouble location, Direction direction,
                  int nrDoors, Color color, int enginePower, double brakeFactor,
-                 double[] truckPlatformInterval, double truckPlatformAngleStep) {
+                 double truckPlatformMaxAngle, double truckPlatformAngleStep) {
 
         super(modelName, turningRadius, location, direction, color, enginePower, brakeFactor);
         this.nrDoors = nrDoors;
-        this.platform = new TruckPlatform(truckPlatformInterval, truckPlatformAngleStep, this);
+        this.platform = new TruckPlatform(truckPlatformMaxAngle, truckPlatformAngleStep, this);
     }
 
+    /**
+     * Sets acceleration, 0 if platform is not closed
+     * @param amount throttle percentage
+     */
     @Override
     public void gas(double amount){
         if (platform.isPlatformClosed()){
             super.gas(amount);
         }
+        else {
+            super.gas(0);
+        }
     }
 
-
-    //All the getters
 
     public int getNrDoors() {
         return nrDoors;
     }
+
+
+
 
 
 

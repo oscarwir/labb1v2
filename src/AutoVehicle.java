@@ -66,7 +66,9 @@ public abstract class AutoVehicle implements Movable{
         this.turningRadius = turningRadius;
     }
 
-    //Methods for starting or stopping an engine by changing the boolean to true or false.
+    /**
+     * Methods for starting or stopping an engine by changing the boolean to true or false.
+     */
     public void startEngine() {
         engineOn = true;
     }
@@ -93,8 +95,11 @@ public abstract class AutoVehicle implements Movable{
         currentSpeed = Math.max(getCurrentSpeed() - breakFactor * amount,0);
     }
 
-    /*The method gas calls the method incrementSpeed to increase the speed. It purposely sets up boundaries
-for the amount that you can increaseSpeed and if the conditions are not met an Exception is raised.*/
+    /**
+     * The method gas calls the method incrementSpeed to increase the speed. It purposely sets up boundaries
+     * for the amount that you can increaseSpeed and if the conditions are not met an Exception is raised
+     * @param amount throttle percentage
+     */
     public void gas(double amount) {
         if (engineOn) {
             if (amount >= 0 && amount <= 1) {
@@ -106,8 +111,11 @@ for the amount that you can increaseSpeed and if the conditions are not met an E
     }
 
 
-    /*The method gas calls the method decrementSpeed to decrease the speed. It purposely sets up boundaries
-    for the amount that you can decreaseSpeed and if the conditions are not met an Exception is raised.*/
+    /**
+     * The method gas calls the method decrementSpeed to decrease the speed. It purposely sets up boundaries
+     * for the amount that you can decreaseSpeed and if the conditions are not met an Exception is raised
+     * @param amount brake percentage
+     */
     public void brake(double amount) {
         if (amount >= 0 && amount <= 1) {
             decrementSpeed(amount);
@@ -117,8 +125,10 @@ for the amount that you can increaseSpeed and if the conditions are not met an E
         }
     }
 
-    /*The method move comes from the interface. In Car it uses trigonometry to calculate the new point which the vehicle travels to.
-    It implements currentSpeed combined with the angle of which the car's direction is in.*/
+    /**
+     * The method move comes from the interface. In Car it uses trigonometry to calculate the new point which the vehicle travels to.
+     * It implements currentSpeed combined with the angle of which the car's direction is in
+     */
     public void move(){
         double x;
         double y;
