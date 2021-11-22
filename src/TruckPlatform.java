@@ -8,6 +8,11 @@ public class TruckPlatform {
     private double maxAngle;
     private Truck myTruck;
 
+    /**
+     * @param maxAngle max open angle for truck platform, 0 degrees being fully closed
+     * @param angleStep the angle speed for lowering and lifting truck platform
+     * @param myTruck the Truck object that uses the platform
+     */
     public TruckPlatform(double maxAngle, double angleStep, Truck myTruck){
         this.maxAngle = maxAngle;
         this.angleStep = angleStep;

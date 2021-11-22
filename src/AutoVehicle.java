@@ -11,8 +11,9 @@ public abstract class AutoVehicle implements Movable{
     private int turningRadius; //The turning radius of the vehicle
     private double breakFactor; //A factor that determine an arbitrary vehicle's breaking capability
     private boolean engineOn; //A boolean that serves as condition to drive the car
+    private int nrDoors;
 
-    public AutoVehicle(String modelName, int turningRadius, PointDouble location, Direction direction, Color color, double enginePower, double brakeFactor){
+    public AutoVehicle(String modelName, int turningRadius, PointDouble location, Direction direction, Color color, double enginePower, double brakeFactor, int nrDoors){
         this.modelName = modelName;
         this.turningRadius = turningRadius;
         this.location = location;
@@ -21,12 +22,20 @@ public abstract class AutoVehicle implements Movable{
         this.enginePower = enginePower;
         this.breakFactor = brakeFactor;
         this.engineOn = false;
+        this.nrDoors = nrDoors;
 
 
 
     }
 
     //All the getters and setters
+
+    /**
+     * @return number of doors
+     */
+    public int getNrDoors() {
+        return nrDoors;
+    }
 
     public double getEnginePower() {
         return enginePower;

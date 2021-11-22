@@ -6,7 +6,7 @@ import java.awt.*;
 public abstract class Truck extends AutoVehicle {
 
     private TruckPlatform platform;
-    private int nrDoors;
+
 
     /**
      * @param modelName name
@@ -25,8 +25,7 @@ public abstract class Truck extends AutoVehicle {
                  int nrDoors, Color color, int enginePower, double brakeFactor,
                  double truckPlatformMaxAngle, double truckPlatformAngleStep) {
 
-        super(modelName, turningRadius, location, direction, color, enginePower, brakeFactor);
-        this.nrDoors = nrDoors;
+        super(modelName, turningRadius, location, direction, color, enginePower, brakeFactor, nrDoors);
         this.platform = new TruckPlatform(truckPlatformMaxAngle, truckPlatformAngleStep, this);
     }
 
@@ -44,12 +43,18 @@ public abstract class Truck extends AutoVehicle {
         }
     }
 
+    /**
+     * This lowerPlatform method increases the angle attribute of the TruckPlatform object, when the trucks CurrentSpeed attribute is zero
+     */
+    public void lowerPlatform(){
+        platform.lowerPlatform();
+    }
 
     /**
-     * @return number of doors
+     * This raisePlatform method decreases the angle attribute of the TruckPlatform object
      */
-    public int getNrDoors() {
-        return nrDoors;
+    public void raisePlatform(){
+        platform.raisePlatform();
     }
 
 
