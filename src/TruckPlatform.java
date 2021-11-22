@@ -28,6 +28,10 @@ public class TruckPlatform {
     }
 
 
+    public boolean isPlatformFullyOpen(){
+        return angle == maxAngle;
+    }
+
     /**
      * This lowerPlatform method increases the angle attribute of the TruckPlatform object, when the trucks CurrentSpeed attribute is zero
      */
