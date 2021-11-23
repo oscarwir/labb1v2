@@ -51,7 +51,7 @@ public class CarHaulerX2000CargoPlatform implements CargoPlatform{
 
     public void unloadCargo(){
         if (isPlatformFullyOpen()){
-            if (cargoCars.size() == 1) {
+            if (cargoCars.size() > 0) {
 
             }
         }
