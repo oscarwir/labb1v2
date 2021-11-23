@@ -28,7 +28,7 @@ public abstract class AutoVehicle implements Movable{
 
     }
 
-    //All the getters and setters
+    //The getters getters
 
     /**
      * @return number of doors
@@ -74,6 +74,8 @@ public abstract class AutoVehicle implements Movable{
     public void setTurningRadius(int turningRadius){
         this.turningRadius = turningRadius;
     }
+
+    //The setters
 
     public void setColor(Color clr) {
         color = clr;
