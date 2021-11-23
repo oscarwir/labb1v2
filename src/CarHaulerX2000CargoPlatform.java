@@ -85,6 +85,7 @@ public class CarHaulerX2000CargoPlatform implements CargoPlatform{
                 loadCargo(car);
                 moveCargo();
                 turnCargo();
+                currentCarAmount++;
             }
         }
     }
