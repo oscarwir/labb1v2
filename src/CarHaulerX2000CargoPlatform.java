@@ -5,14 +5,17 @@ public class CarHaulerX2000CargoPlatform implements CargoPlatform{
     private double angle;
     private Truck myTruck;
     private ArrayList<Car> cargoCars = new ArrayList<Car>();
+    private int currentCarAmount;
 
-
+    private final int maxCarAmount = 10;
+    private final double maxLoadDistance = 15.0;
     /**
      * @param myTruck the Truck object that uses the platform
      */
     public CarHaulerX2000CargoPlatform(Truck myTruck){
         this.myTruck = myTruck;
         angle = 0;
+        currentCarAmount = 0;
     }
 
     /**
@@ -46,18 +49,19 @@ public class CarHaulerX2000CargoPlatform implements CargoPlatform{
     }
 
 
-    public Movable unloadCargo(){
+    public void unloadCargo(){
         if (isPlatformFullyOpen()){
             if (cargoCars.size() == 1) {
-                return cargoCars.remove(cargoCars.size() - 1);
+
             }
         }
-        return null;
     }
 
     public void loadCargo(Movable car){
         if (isPlatformFullyOpen()){
-            cargoCars.add((Car)car);
+            if (car instanceof Car){
+                loadCar((Car) car);
+            }
         }
     }
 
@@ -74,4 +78,16 @@ public class CarHaulerX2000CargoPlatform implements CargoPlatform{
             car.setDirection(new Direction(myTruck.getDirection()));
         }
     }
+
+    private void loadCar(Car car){
+        if (myTruck.getLocation().distanceBetweenPoints(car.getLocation()) < maxLoadDistance){
+            if(currentCarAmount < maxCarAmount){
+                loadCargo(car);
+                moveCargo();
+                turnCargo();
+            }
+        }
+    }
+
+
 }

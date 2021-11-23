@@ -49,8 +49,7 @@ public class ScaniaCargoPlatform implements CargoPlatform{
     }
 
 
-    public Movable unloadCargo(){
-        return null;
+    public void unloadCargo(){
     }
 
     public void loadCargo(Movable object){

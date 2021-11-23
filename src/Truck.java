@@ -90,8 +90,8 @@ public abstract class Truck extends AutoVehicle {
         return platform.isPlatformClosed();
     }
 
-    public Movable unloadCargo(){
-        return platform.unloadCargo();
+    public void unloadCargo(){
+        platform.unloadCargo();
     }
 
     public void loadCargo(Movable object){

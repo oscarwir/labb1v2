@@ -22,4 +22,8 @@ public class PointDouble {
         this.x = x;
         this.y = y;
     }
+
+    public double distanceBetweenPoints(PointDouble p2){
+        return Math.sqrt(Math.pow(this.getX() - p2.getX(),2) + Math.pow(this.getY() - p2.getY(),2));
+    }
 }

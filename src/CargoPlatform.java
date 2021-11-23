@@ -4,7 +4,7 @@ public interface CargoPlatform {
 
     void turnCargo();
 
-    Movable unloadCargo();
+    void unloadCargo();
 
     void loadCargo(Movable object);
 
