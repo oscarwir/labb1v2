@@ -1,0 +1,19 @@
+A text file so we easily can break down what we have to do, and then be able
+to assign different tasks to each other.
+
+Things that are outdated in the code and should get fixed:
+-Fix comments so that they are correct (U)
+-Change all CarGetTest and CarSetTest to vehicle (U)
+-Make everything organized with folders (jeez) (U)
+
+Things that are currently in progress:
+
+The next steps in the assignment:
+
+
+(O) - Oscar
+(A) - Adam
+(J) - Jacob
+(U) - Unassigned
+
+
