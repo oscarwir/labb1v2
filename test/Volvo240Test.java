@@ -3,6 +3,8 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.awt.geom.Point2D;
+
 public class Volvo240Test {
 
     Volvo240 testVolvo = new Volvo240();

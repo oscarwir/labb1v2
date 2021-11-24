@@ -10,8 +10,8 @@ public abstract class AutoVehicle implements Movable{
     private PointDouble location;   // The position the vehicle has using Java's built-in Point class
     private int turningRadius; //The turning radius of the vehicle
     private double breakFactor; //A factor that determine an arbitrary vehicle's breaking capability
-    private boolean engineOn; //A boolean that serves as condition to drive the car
-    private int nrDoors;
+    private boolean engineOn; //A boolean that serves as condition to drive the vehicle
+    private int nrDoors; //An integer of the number of doors the vehicle has
 
     public AutoVehicle(String modelName, int turningRadius, PointDouble location, Direction direction, Color color, double enginePower, double brakeFactor, int nrDoors){
         this.modelName = modelName;
@@ -28,10 +28,8 @@ public abstract class AutoVehicle implements Movable{
 
     }
 
-    //The getters getters
-
     /**
-     * @return number of doors
+     * @return value for all the getters
      */
     public int getNrDoors() {
         return nrDoors;
@@ -75,7 +73,9 @@ public abstract class AutoVehicle implements Movable{
         this.turningRadius = turningRadius;
     }
 
-    //The setters
+    /**
+    * All the setters
+    */
 
     public void setColor(Color clr) {
         color = clr;
@@ -103,8 +103,10 @@ public abstract class AutoVehicle implements Movable{
 
 
 
-    /*An abstract concept of which both cars utilize in different ways. Inherited by Volvo
-    and saab and its purpose is the implement Volvo's trim and Saab's turbo.*/
+    /**
+     *An abstract concept of which both cars utilize in different ways. For instance it's inherited by Volvo
+     *and saab and its purpose is the implement Volvo's trim and Saab's turbo.
+     */
     abstract double speedFactor();
 
 
@@ -163,10 +165,12 @@ public abstract class AutoVehicle implements Movable{
     }
 
 
-    /*The methods turnLeft and turnRight is inherited from the interface Movable. They change the direction the car
-    is directed in by using the old angle (the car's current direction) combined with the turning radius.
-    Whether you turn left or right it is plus or minus. This is based on the unit circle due to the
-    previous usage of radians.*/
+    /**
+     * The methods turnLeft and turnRight is inherited from the interface Movable. They change the direction the car
+     *is directed in by using the old angle (the car's current direction) combined with the turning radius.
+     * Whether you turn left or right it is plus or minus. This is based on the unit circle due to the
+    * previous usage of radians.
+     * */
     public void turnLeft(){
         direction.setDirection(direction.getDirection() + turningRadius);
     }
