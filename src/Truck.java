@@ -23,11 +23,10 @@ public abstract class Truck extends AutoVehicle {
                  int nrDoors, Color color, int enginePower, double brakeFactor) {
 
         super(modelName, turningRadius, location, direction, color, enginePower, brakeFactor, nrDoors);
+        this.platform = setCargoPlatform();
     }
 
-    protected void setCargoPlatform(CargoPlatform platform){
-        this.platform = platform;
-    }
+    protected abstract CargoPlatform setCargoPlatform();
 
     /**
      * Sets acceleration, 0 if platform is not closed
@@ -90,10 +89,18 @@ public abstract class Truck extends AutoVehicle {
         return platform.isPlatformClosed();
     }
 
+
+    /**
+     * When called will unload object
+     */
     public void unloadCargo(){
         platform.unloadCargo();
     }
 
+    /**
+     * When called will load object
+     * @param object that will be loaded
+     */
     public void loadCargo(Movable object){
         platform.loadCargo(object);
     }

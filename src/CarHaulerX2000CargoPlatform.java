@@ -49,6 +49,9 @@ public class CarHaulerX2000CargoPlatform implements CargoPlatform{
     }
 
 
+    /**
+     * Object next in line will be placed close to the platform
+     */
     public void unloadCargo(){
         if (isPlatformFullyOpen()){
             if (cargoCars.size() > 0) {
@@ -57,14 +60,22 @@ public class CarHaulerX2000CargoPlatform implements CargoPlatform{
         }
     }
 
-    public void loadCargo(Movable car){
+
+    /**
+     * If all conditions are met, then the movable object will be stored on the platform.
+     * @param object that attempts to be loaded
+     */
+    public void loadCargo(Movable object){
         if (isPlatformFullyOpen()){
-            if (car instanceof Car){
-                loadCar((Car) car);
+            if (object instanceof Car){
+                loadCar((Car) object);
             }
         }
     }
 
+    /**
+     * When called all cargo is moved to the same location as mytruck
+     */
     public void moveCargo() {
         for (int i = 0; i < cargoCars.size(); i++) {
             Car car = cargoCars.get(i);
@@ -72,6 +83,9 @@ public class CarHaulerX2000CargoPlatform implements CargoPlatform{
         }
     }
 
+    /**
+     * When called all cargo is oriented in the same direction as mytruck
+     */
     public void turnCargo(){
         for (int i = 0; i < cargoCars.size(); i++) {
             Car car = cargoCars.get(i);
