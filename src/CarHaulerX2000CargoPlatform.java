@@ -4,7 +4,7 @@ public class CarHaulerX2000CargoPlatform implements CargoPlatform{
 
     private double angle;
     private Truck myTruck;
-    private ArrayList<Car> cargoCars = new ArrayList<Car>();
+    private ArrayList<Car> cargoCars = new ArrayList<Car>(); //An Arraylist whereas order is significant
     private int currentCarAmount;
 
     private final int maxCarAmount = 10;
