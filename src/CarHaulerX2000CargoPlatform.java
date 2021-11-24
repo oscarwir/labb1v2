@@ -9,6 +9,7 @@ public class CarHaulerX2000CargoPlatform implements CargoPlatform{
 
     private final int maxCarAmount = 10;
     private final double maxLoadDistance = 15.0;
+    private final double spawnDistance = 20.0;
     /**
      * @param myTruck the Truck object that uses the platform
      */
@@ -55,8 +56,9 @@ public class CarHaulerX2000CargoPlatform implements CargoPlatform{
     public void unloadCargo(){
         if (isPlatformFullyOpen()){
             if (cargoCars.size() > 0) {
-                unloadedVehicle =
-                cargoCars = remove().cargoCars<len.>;
+                Car unloadedVehicle = cargoCars.remove(cargoCars.size()-1);
+                unloadedVehicle.setPosition(getUnloadedPos());
+
             }
         }
     }
@@ -101,6 +103,20 @@ public class CarHaulerX2000CargoPlatform implements CargoPlatform{
                 currentCarAmount++;
             }
         }
+    }
+
+    private PointDouble getUnloadedPos(){
+        double x = myTruck.getLocation().getX();
+        double y = myTruck.getLocation().getY();
+        int behindTruckDir = myTruck.getDirection() + 180;
+
+        x  = x + Math.cos(behindTruckDir) * spawnDistance;
+        y = y + Math.sin(behindTruckDir) * spawnDistance;
+
+        return new PointDouble(x, y);
+
+
+
     }
 
 
