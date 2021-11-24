@@ -19,11 +19,22 @@ public class CarHaulerX2000Test {
     }
 
     @Test
-    void lowering_platform_should_not_work_while_moveing(){
+    void lowering_platform_should_not_work_while_moving(){
         tesCarHaulerX2000.startEngine();
         tesCarHaulerX2000.gas(0.5);
         tesCarHaulerX2000.lowerPlatform();
-        assertEquals(false, tesCarHaulerX2000.isPlatformFullyOpen());
+        assertFalse(tesCarHaulerX2000.isPlatformFullyOpen());
     }
+
+    @Test
+    void lowering_platform_then_using_gas_should_not_move_Car(){
+        tesCarHaulerX2000.startEngine();
+        tesCarHaulerX2000.lowerPlatform();
+        tesCarHaulerX2000.gas(0.5);
+        assertEquals(100.0,tesCarHaulerX2000.getLocation().getX());
+        assertEquals(100.0, tesCarHaulerX2000.getLocation().getY());
+    }
+
+
 
 }
