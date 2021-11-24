@@ -1,15 +1,15 @@
 import java.util.ArrayList;
 
-public abstract class Workshop {
+public abstract class Workshop<T extends Car> {
 
     int amountCars = 0;
     int capacity;
-    private ArrayList<Car> workshopCars = new ArrayList<Car>();
+    private ArrayList<T> workshopCars = new ArrayList<T>();
 
     public Workshop(int capacity) {
         this.capacity = capacity;
     }
 
-    abstract void loadCar(Car car);
+    abstract void loadCar(T car);
 
 }

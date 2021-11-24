@@ -1,14 +1,13 @@
-public class ChalmersCustoms extends Workshop{
+public class ChalmersCustoms extends Workshop<Volvo240>{
 
     public ChalmersCustoms(){
         super(20);
     }
 
-    public void loadCar(Volvo240 car){
+
+    @Override
+    void loadCar(Volvo240 car) {
         if(amountCars < capacity){
-            if (car instanceof Volvo240) {
-                loadCar((Volvo240) car);
-            }
         }
     }
 }
