@@ -74,7 +74,7 @@ public class CarHaulerX2000CargoPlatform implements CargoPlatform{
     }
 
     /**
-     * When called all cargo is moved to the same location as mytruck
+     * When called all cargo is moved to the same location as myTruck
      */
     public void moveCargo() {
         for (int i = 0; i < cargoCars.size(); i++) {
@@ -84,7 +84,7 @@ public class CarHaulerX2000CargoPlatform implements CargoPlatform{
     }
 
     /**
-     * When called all cargo is oriented in the same direction as mytruck
+     * When called all cargo is oriented in the same direction as myTruck
      */
     public void turnCargo(){
         for (int i = 0; i < cargoCars.size(); i++) {
