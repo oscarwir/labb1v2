@@ -55,7 +55,7 @@ public class CarHaulerX2000CargoPlatform implements CargoPlatform{
     public void unloadCargo(){
         if (isPlatformFullyOpen()){
             if (cargoCars.size() > 0) {
-                cargoCars = remove().cargoCars[0];
+                cargoCars = remove().cargoCars<0>;
             }
         }
     }
@@ -77,8 +77,7 @@ public class CarHaulerX2000CargoPlatform implements CargoPlatform{
      * When called all cargo is moved to the same location as myTruck
      */
     public void moveCargo() {
-        for (int i = 0; i < cargoCars.size(); i++) {
-            Car car = cargoCars.get(i);
+        for (Car car : cargoCars) {
             car.setPosition(myTruck.getLocation());
         }
     }
@@ -87,8 +86,7 @@ public class CarHaulerX2000CargoPlatform implements CargoPlatform{
      * When called all cargo is oriented in the same direction as myTruck
      */
     public void turnCargo(){
-        for (int i = 0; i < cargoCars.size(); i++) {
-            Car car = cargoCars.get(i);
+        for (Car car : cargoCars) {
             car.setDirection(new Direction(myTruck.getDirection()));
         }
     }

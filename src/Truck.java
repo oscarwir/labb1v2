@@ -19,6 +19,7 @@ public abstract class Truck extends AutoVehicle {
      * @param enginePower Higher enginePower results in Higher max speed
      * @param brakeFactor Higher brakeFactor results in heavier deceleration
      */
+
     //A constructor for all the declared variables above
     public Truck(String modelName, int turningRadius, PointDouble location, Direction direction,
                  int nrDoors, Color color, int enginePower, double brakeFactor) {
