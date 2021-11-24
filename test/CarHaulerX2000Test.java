@@ -31,7 +31,7 @@ public class CarHaulerX2000Test {
         tesCarHaulerX2000.startEngine();
         tesCarHaulerX2000.lowerPlatform();
         tesCarHaulerX2000.gas(0.5);
-        assertEquals(100.0,tesCarHaulerX2000.getLocation().getX());
+        assertEquals(200.0,tesCarHaulerX2000.getLocation().getX());
         assertEquals(100.0, tesCarHaulerX2000.getLocation().getY());
     }
 
