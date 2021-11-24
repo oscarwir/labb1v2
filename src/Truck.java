@@ -6,7 +6,6 @@ import java.awt.*;
 public abstract class Truck extends AutoVehicle {
 
     private CargoPlatform platform;
-    private int cargoCapacity; //Kg
 
 
     /**

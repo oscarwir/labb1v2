@@ -35,6 +35,9 @@ public abstract class AutoVehicle implements Movable{
         return nrDoors;
     }
 
+    /**
+     * @return the value for the engine power for the vehicle
+     */
     public double getEnginePower() {
         return enginePower;
     }
