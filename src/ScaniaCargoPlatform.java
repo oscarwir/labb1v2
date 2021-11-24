@@ -50,6 +50,11 @@ public class ScaniaCargoPlatform implements CargoPlatform{
 
 
     public void unloadCargo(){
+        if (isPlatformFullyOpen()){
+            if (load.size() > 0) {
+
+            }
+        }
     }
 
     public void loadCargo(Movable object){

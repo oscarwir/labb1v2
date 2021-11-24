@@ -6,7 +6,7 @@ import java.awt.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class CarHaulerX2000Test {
-    //We randomly choose one car to be the subject of our conducted test.
+    //A new object that serves as a subject for our tests
     CarHaulerX2000 tesCarHaulerX2000= new CarHaulerX2000();
 
     @Test
