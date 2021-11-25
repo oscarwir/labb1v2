@@ -1,7 +1,7 @@
 import java.awt.*;
 
 /**
- *
+ * Ve
  */
 public abstract class AutoVehicle implements Movable{
 
