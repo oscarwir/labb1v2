@@ -1,5 +1,8 @@
 import java.awt.*;
 
+/**
+ *
+ */
 public abstract class AutoVehicle implements Movable{
 
     private double enginePower; // Engine power of the vehicle
@@ -13,6 +16,17 @@ public abstract class AutoVehicle implements Movable{
     private boolean engineOn; //A boolean that serves as condition to drive the vehicle
     private int nrDoors; //An integer of the number of doors the vehicle has
 
+    /**
+     * Constructor that creates an object of type AutoVehicle
+     * @param modelName
+     * @param turningRadius
+     * @param location
+     * @param direction
+     * @param color
+     * @param enginePower
+     * @param brakeFactor
+     * @param nrDoors
+     */
     public AutoVehicle(String modelName, int turningRadius, PointDouble location, Direction direction, Color color, double enginePower, double brakeFactor, int nrDoors){
         this.modelName = modelName;
         this.turningRadius = turningRadius;
@@ -43,51 +57,80 @@ public abstract class AutoVehicle implements Movable{
     }
 
 
+    /**
+     * @return
+     */
     public double getCurrentSpeed() {
         return currentSpeed;
     }
 
 
+    /**
+     * @return
+     */
     public String getModelName(){
         return modelName;
     }
 
+    /**
+     * @return
+     */
     public PointDouble getLocation(){
         return location;
     }
 
+    /**
+     * @return
+     */
     public int getDirection(){
         return direction.getDirection();
     }
 
+    /**
+     * @return
+     */
     public Color getColor() {
         return color;
     }
 
+    /**
+     * @return
+     */
     public int getTurningRadius(){
         return turningRadius;
     }
 
+    /**
+     * @return
+     */
     public boolean getEngineOn(){
         return engineOn;
     }
 
+    /**
+     * @param turningRadius
+     */
     public void setTurningRadius(int turningRadius){
         this.turningRadius = turningRadius;
     }
 
     /**
-    * All the setters
-    */
-
+     * @param clr
+     */
     public void setColor(Color clr) {
         color = clr;
     }
 
+    /**
+     * @param location
+     */
     public void setPosition(PointDouble location){
         this.location = location;
     }
 
+    /**
+     * @param direction
+     */
     public void setDirection(Direction direction){
         this.direction = direction;
     }
@@ -99,6 +142,9 @@ public abstract class AutoVehicle implements Movable{
         engineOn = true;
     }
 
+    /**
+     *
+     */
     public void stopEngine() {
         engineOn = false;
     }
@@ -178,6 +224,9 @@ public abstract class AutoVehicle implements Movable{
         direction.setDirection(direction.getDirection() + turningRadius);
     }
 
+    /**
+     *
+     */
     public void turnRight(){
         direction.setDirection(direction.getDirection() - turningRadius);
     }

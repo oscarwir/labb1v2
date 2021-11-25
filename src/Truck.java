@@ -7,7 +7,6 @@ public abstract class Truck extends AutoVehicle {
 
     private CargoPlatform platform;
 
-
     /**
      * @param modelName name
      * @param turningRadius Higher results in faster turning
@@ -18,8 +17,6 @@ public abstract class Truck extends AutoVehicle {
      * @param enginePower Higher enginePower results in Higher max speed
      * @param brakeFactor Higher brakeFactor results in heavier deceleration
      */
-
-    //A constructor for all the declared variables above
     public Truck(String modelName, int turningRadius, PointDouble location, Direction direction,
                  int nrDoors, Color color, int enginePower, double brakeFactor) {
 
@@ -27,6 +24,9 @@ public abstract class Truck extends AutoVehicle {
         this.platform = setCargoPlatform();
     }
 
+    /**
+     * @return
+     */
     protected abstract CargoPlatform setCargoPlatform();
 
     /**
@@ -43,18 +43,27 @@ public abstract class Truck extends AutoVehicle {
         }
     }
 
+    /**
+     *
+     */
     @Override
     public void move(){
         super.move();
         platform.moveCargo();
     }
 
+    /**
+     *
+     */
     @Override
     public void turnLeft(){
         super.turnLeft();
         platform.turnCargo();
     }
 
+    /**
+     *
+     */
     @Override
     public void turnRight(){
         super.turnRight();

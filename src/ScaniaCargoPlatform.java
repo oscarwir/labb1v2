@@ -49,18 +49,30 @@ public class ScaniaCargoPlatform implements CargoPlatform{
     }
 
 
+    /**
+     *
+     */
     public void unloadCargo(){
 
     }
 
+    /**
+     * @param object
+     */
     public void loadCargo(Movable object){
 
     }
 
+    /**
+     *
+     */
     public void moveCargo() {
 
     }
 
+    /**
+     *
+     */
     public void turnCargo(){
 
     }
