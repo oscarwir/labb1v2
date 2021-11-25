@@ -18,5 +18,8 @@ public class ChalmersCustoms extends Workshop<Volvo240>{
         if(amountCars < capacity){
             getWorkshopCars().add(car);
         }
+        else{
+            System.out.println("Workshop is out of space.");
+        }
     }
 }

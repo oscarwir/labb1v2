@@ -5,7 +5,7 @@ import java.awt.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class CarGetTest {
+public class AutoVehicleGetTest {
     //We randomly choose one car to be the subject of our conducted test.
     Saab95 testSaab = new Saab95();
 
