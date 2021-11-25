@@ -16,6 +16,10 @@ public abstract class Workshop<T extends Car> {
         this.capacity = capacity;
     }
 
+    public ArrayList<T> getWorkshopCars() {
+        return workshopCars;
+    }
+
     abstract void loadCar(T car);
 
 }
