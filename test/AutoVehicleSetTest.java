@@ -1,9 +1,9 @@
+import Cars.Saab95;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.shadow.com.univocity.parsers.common.processor.core.ColumnOrderDependent;
 
 import java.awt.*;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AutoVehicleSetTest {
     //We randomly choose one car to be the subject of our conducted test.

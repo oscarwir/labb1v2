@@ -1,3 +1,7 @@
+package Workshops;
+
+import Cars.Car;
+
 public class LoSantosCustoms extends Workshop<Car>{
 
     public LoSantosCustoms(){

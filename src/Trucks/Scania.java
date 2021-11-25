@@ -1,15 +1,17 @@
+package Trucks;
+import HelperClasses.*;
 import java.awt.*;
 
 /**
  *
  */
-public class Scania extends Truck{
+public class Scania extends Truck {
 
     /**
      *
      */
     public Scania() {
-        super("Scania", 5, new PointDouble(100,100), new Direction(0),
+        super("Trucks.Scania", 5, new PointDouble(100,100), new Direction(0),
                 4, Color.black,400, 3);
 
     }

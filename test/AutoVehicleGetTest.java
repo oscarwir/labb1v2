@@ -1,9 +1,10 @@
-import org.junit.jupiter.api.AfterEach;
+import Cars.Saab95;
 import org.junit.jupiter.api.Test;
 
 import java.awt.*;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 public class AutoVehicleGetTest {
     //We randomly choose one car to be the subject of our conducted test.
@@ -26,7 +27,7 @@ public class AutoVehicleGetTest {
 
     @Test
     void get_ModelName_should_return_Saab95(){
-        assertEquals("Saab95", testSaab.getModelName());
+        assertEquals("Car.Car.Saab95", testSaab.getModelName());
     }
 
     @Test

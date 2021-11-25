@@ -1,7 +1,5 @@
+import Trucks.CarHaulerX2000;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.shadow.com.univocity.parsers.common.processor.core.ColumnOrderDependent;
-
-import java.awt.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 

@@ -1,17 +1,19 @@
+package Trucks;
+import HelperClasses.*;
 import java.awt.*;
 
 
 /**
  * Class of car-haulers
- * Is a subclass of Truck.
+ * Is a subclass of Trucks.Truck.
  */
-public class CarHaulerX2000 extends Truck{
+public class CarHaulerX2000 extends Truck {
 
     /**
-     * Constructor of CarHaulerX2000
+     * Constructor of Trucks.CarHaulerX2000
      */
     public CarHaulerX2000(){
-        super("CarHaulerX2000", 5, new PointDouble(200,100), new Direction(0), 2, Color.black,400, 3);
+        super("Trucks.CarHaulerX2000", 5, new PointDouble(200,100), new Direction(0), 2, Color.black,400, 3);
     }
 
     /**

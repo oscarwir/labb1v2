@@ -1,5 +1,7 @@
-import javax.xml.stream.Location;
-import java.awt.*;
+package Head;
+
+import HelperClasses.Direction;
+import HelperClasses.PointDouble;
 
 interface Movable {
 

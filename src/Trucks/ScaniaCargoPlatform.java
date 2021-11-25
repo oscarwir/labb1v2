@@ -1,5 +1,7 @@
+package Trucks;
+
 /**
- * Represents a Truck Platform
+ * Represents a Trucks.Truck Platform
  */
 public class ScaniaCargoPlatform implements CargoPlatform{
 
@@ -9,7 +11,7 @@ public class ScaniaCargoPlatform implements CargoPlatform{
     private Truck myTruck;
 
     /**
-     * @param myTruck the Truck object that uses the platform
+     * @param myTruck the Trucks.Truck object that uses the platform
      */
     public ScaniaCargoPlatform(Truck myTruck){
         this.maxAngle = 70;
@@ -19,21 +21,21 @@ public class ScaniaCargoPlatform implements CargoPlatform{
     }
 
     /**
-     * @return True if the angle attribute of the CargoPlatform object is zero, else False
+     * @return True if the angle attribute of the Trucks.CargoPlatform object is zero, else False
      */
     public boolean isPlatformClosed(){
         return angle == 0;
     }
 
     /**
-     * @return True if the angle attribute of the CargoPlatform object is equal to maxAngle, else False
+     * @return True if the angle attribute of the Trucks.CargoPlatform object is equal to maxAngle, else False
      */
     public boolean isPlatformFullyOpen(){
         return angle == maxAngle;
     }
 
     /**
-     * This lowerPlatform method increases the angle attribute of the CargoPlatform object, when the trucks CurrentSpeed attribute is zero
+     * This lowerPlatform method increases the angle attribute of the Trucks.CargoPlatform object, when the trucks CurrentSpeed attribute is zero
      */
     public void raisePlatform(){
         if (myTruck.getCurrentSpeed() == 0.0){
@@ -42,7 +44,7 @@ public class ScaniaCargoPlatform implements CargoPlatform{
     }
 
     /**
-     * This raisePlatform method decreases the angle attribute of the CargoPlatform object
+     * This raisePlatform method decreases the angle attribute of the Trucks.CargoPlatform object
      */
     public void lowerPlatform(){
         angle = Math.max(angle - angleStep, 0);

@@ -1,6 +1,7 @@
+import HelperClasses.Direction;
+import HelperClasses.PointDouble;
 import org.junit.jupiter.api.Test;
-
-import java.awt.geom.Point2D;
+import Cars.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 

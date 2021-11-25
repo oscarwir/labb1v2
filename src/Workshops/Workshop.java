@@ -1,3 +1,7 @@
+package Workshops;
+
+import Cars.Car;
+
 import java.util.ArrayList;
 
 /**

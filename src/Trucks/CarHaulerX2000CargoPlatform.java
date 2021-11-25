@@ -1,3 +1,7 @@
+package Trucks;
+
+import Cars.*;
+import HelperClasses.*;
 import java.util.ArrayList;
 
 /**
@@ -14,7 +18,7 @@ public class CarHaulerX2000CargoPlatform implements CargoPlatform{
     private final double maxLoadDistance = 15.0;
     private final double spawnDistance = 20.0;
     /**
-     * @param myTruck the Truck object that uses the platform
+     * @param myTruck the Trucks.Truck object that uses the platform
      */
     public CarHaulerX2000CargoPlatform(Truck myTruck){
         this.myTruck = myTruck;
@@ -23,21 +27,21 @@ public class CarHaulerX2000CargoPlatform implements CargoPlatform{
     }
 
     /**
-     * @return True if the angle attribute of the CargoPlatform object is zero, else False
+     * @return True if the angle attribute of the Trucks.CargoPlatform object is zero, else False
      */
     public boolean isPlatformClosed(){
         return angle == 0;
     }
 
     /**
-     * @return True if the angle attribute of the CargoPlatform object is equal to maxAngle, else False
+     * @return True if the angle attribute of the Trucks.CargoPlatform object is equal to maxAngle, else False
      */
     public boolean isPlatformFullyOpen(){
         return angle == 120;
     }
 
     /**
-     * This lowerPlatform method increases the angle attribute of the CargoPlatform object, when the trucks CurrentSpeed attribute is zero
+     * This lowerPlatform method increases the angle attribute of the Trucks.CargoPlatform object, when the trucks CurrentSpeed attribute is zero
      */
     public void lowerPlatform(){
         if (myTruck.getCurrentSpeed() == 0.0){
@@ -46,7 +50,7 @@ public class CarHaulerX2000CargoPlatform implements CargoPlatform{
     }
 
     /**
-     * This raisePlatform method decreases the angle attribute of the CargoPlatform object
+     * This raisePlatform method decreases the angle attribute of the Trucks.CargoPlatform object
      */
     public void raisePlatform(){
         angle = 0;
@@ -100,7 +104,7 @@ public class CarHaulerX2000CargoPlatform implements CargoPlatform{
     private void loadCar(Car car){
         if (myTruck.getLocation().distanceBetweenPoints(car.getLocation()) < maxLoadDistance){
             if(currentCarAmount < maxCarAmount){
-                loadCargo(car);
+                cargoCars.add(car);
                 moveCargo();
                 turnCargo();
                 currentCarAmount++;

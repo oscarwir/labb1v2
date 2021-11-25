@@ -1,4 +1,7 @@
+package Cars;
+
 import java.awt.*;
+import HelperClasses.*;
 
 /**
  *
@@ -11,7 +14,7 @@ public class Saab95 extends Car {
      *
      */
     public Saab95() {
-        super("Saab95", 10, new PointDouble(100,100), new Direction(0),4,Color.white,170, 2);
+        super("Car.Car.Saab95", 10, new PointDouble(100,100), new Direction(0),4,Color.white,170, 2);
         turboOn = false;
     }
 

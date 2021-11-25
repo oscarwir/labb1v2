@@ -1,4 +1,4 @@
-//overriding Point due to the need of double.
+package HelperClasses;//overriding Point due to the need of double.
 
 /**
  *
