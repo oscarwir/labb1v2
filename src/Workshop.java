@@ -18,10 +18,11 @@ public abstract class Workshop<T extends Car> {
         this.capacity = capacity;
     }
 
-    public ArrayList<T> getWorkshopCars() {
-        return workshopCars;
+    public void loadCar(T car){
+        if (amountCars < capacity){
+            workshopCars.add(car);
+            amountCars++;
+        }
     }
-
-    abstract void loadCar(T car);
 
 }
