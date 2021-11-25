@@ -1,5 +1,8 @@
 import java.util.ArrayList;
 
+/**
+ *
+ */
 public class CarHaulerX2000CargoPlatform implements CargoPlatform{
 
     private double angle;
