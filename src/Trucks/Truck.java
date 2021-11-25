@@ -1,6 +1,6 @@
 package Trucks;
 
-import Head.AutoVehicle;
+import Head.*;
 import HelperClasses.*;
 
 import java.awt.*;

@@ -1,4 +1,5 @@
 package Trucks;
+import Head.Movable;
 
 /**
  *

@@ -3,7 +3,7 @@ package Head;
 import HelperClasses.Direction;
 import HelperClasses.PointDouble;
 
-interface Movable {
+public interface Movable {
 
     void move();
 

@@ -1,6 +1,7 @@
 package Cars;
 
-import HelperClasses.*;
+import HelperClasses.Direction;
+import HelperClasses.PointDouble;
 
 import java.awt.*;
 
