@@ -2,12 +2,12 @@ A text file so we easily can break down what we have to do, and then be able
 to assign different tasks to each other.
 
 Things that are outdated in the code and should get fixed:
--Fix comments so that they are correct (U)
--Change all AutoVehicleGetTest and AutoVehicleSetTest to vehicle (U)
--Make everything organized with folders (jeez) (U)
+-Fix comments so that they are correct (A)
+-Make everything organized with folders (is it possible?) (O)
+-Create new test files for everything (J)
 
 Things that are currently in progress:
--Change Pointdouble with <> (U)
+
 
 
 The next steps in the assignment:
@@ -20,4 +20,4 @@ The next steps in the assignment:
 (U) - Unassigned
 
 
-We can defend our way by using high cohesion as an argument
+We can defend our way by using high cohesion as an argdument
