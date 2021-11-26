@@ -49,7 +49,7 @@ public class CarHaulerX2000CargoPlatformTest {
     }
 
     @Test
-    void unload_cargo_should_not_operate_during_wrong_circumstances(){
+    void unload_cargo_should_not_operate_during_incorrect_circumstances(){
 
     }
 
