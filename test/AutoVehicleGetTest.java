@@ -60,9 +60,5 @@ public class AutoVehicleGetTest {
         assertFalse(testSaab.getEngineOn());
     }
 
-    //AfterEach uncertain if we must add these, but asked another group and they said
-    //it was mandatory...
-
-    //AfterAll
 
 }
