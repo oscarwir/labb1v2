@@ -129,5 +129,9 @@ public class CarHaulerX2000CargoPlatform implements CargoPlatform{
 
     }
 
+    public ArrayList getCargoCars(){
+        return cargoCars;
+    }
+
 
 }

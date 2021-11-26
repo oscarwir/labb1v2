@@ -1,6 +1,7 @@
 package Trucks;
 import HelperClasses.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 
 /**
@@ -32,5 +33,6 @@ public class CarHaulerX2000 extends Truck {
     protected double speedFactor() {
         return getEnginePower() * 0.01;
     }
+
 
 }
