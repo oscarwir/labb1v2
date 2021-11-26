@@ -4,14 +4,14 @@ import java.awt.*;
 import HelperClasses.*;
 
 /**
- * Represents a Saab95 car.
+ * Class that represents a Saab95 car.
  */
 public class Saab95 extends Car {
 
     public boolean turboOn;
 
     /**
-     * Constructor of Saab95
+     * Constructor of objects of type Saab95
      */
     public Saab95() {
         super("Car.Car.Saab95", 10, new PointDouble(100,100), new Direction(0),4,Color.white,170, 2);

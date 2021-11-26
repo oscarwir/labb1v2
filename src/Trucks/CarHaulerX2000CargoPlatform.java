@@ -6,7 +6,7 @@ import HelperClasses.*;
 import java.util.ArrayList;
 
 /**
- *
+ * Represents a CarHaulerX2000CargoPlatform. Platform mainly for CarHaulerX2000.
  */
 public class CarHaulerX2000CargoPlatform implements CargoPlatform{
 
@@ -28,6 +28,7 @@ public class CarHaulerX2000CargoPlatform implements CargoPlatform{
     }
 
     /**
+     * Method that checks if the platform is fully closed.
      * @return True if the angle attribute of the Trucks.CargoPlatform object is zero, else False
      */
     public boolean isPlatformClosed(){
@@ -35,6 +36,7 @@ public class CarHaulerX2000CargoPlatform implements CargoPlatform{
     }
 
     /**
+     * Method that checks if the platform is fully open.
      * @return True if the angle attribute of the Trucks.CargoPlatform object is equal to maxAngle, else False
      */
     public boolean isPlatformFullyOpen(){
