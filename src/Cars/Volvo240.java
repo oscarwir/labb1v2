@@ -6,7 +6,7 @@ import HelperClasses.PointDouble;
 import java.awt.*;
 
 /**
- *
+ * Represents a Volvo240 car
  */
 public class Volvo240 extends Car {
 
