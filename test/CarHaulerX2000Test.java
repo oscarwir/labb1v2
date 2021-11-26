@@ -33,6 +33,8 @@ public class CarHaulerX2000Test {
         assertEquals(100.0, testCarHaulerX2000.getLocation().getY());
     }
 
+    //lol
+
 
 
 }
