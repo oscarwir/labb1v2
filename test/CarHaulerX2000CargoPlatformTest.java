@@ -1,12 +1,7 @@
-import Trucks.CarHaulerX2000;
-
-import Head.*;
-import Cars.*;
-import HelperClasses.*;
-import java.util.ArrayList;
-
-import org.junit.jupiter.api.Test;
 import Cars.Saab95;
+import HelperClasses.PointDouble;
+import Trucks.CarHaulerX2000;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -51,7 +46,7 @@ public class CarHaulerX2000CargoPlatformTest {
         testCarHaulerX2000.loadCargo(testSaab);
         testCarHaulerX2000.unloadCargo();
 
-        assertEquals(0, testCarHaulerX2000.getCargoCars().size());
+        assertEquals(0, testCarHaulerX2000.getCargo().size());
         assertEquals(80, testSaab.getLocation().getX());
     }
 
