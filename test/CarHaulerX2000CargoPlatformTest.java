@@ -44,7 +44,7 @@ public class CarHaulerX2000CargoPlatformTest {
         testCarHaulerX2000.lowerPlatform();
         testCarHaulerX2000.loadCargo(testSaab);
         testCarHaulerX2000.unloadCargo();
-        assertEquals(0, testCarHaulerX2000.cargoCars.size());
+        assertEquals(0, testCarHaulerX2000.getCargoCars().size());
         assertEquals(75, );
     }
 
