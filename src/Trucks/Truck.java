@@ -4,6 +4,7 @@ import Head.*;
 import HelperClasses.*;
 
 import java.awt.*;
+import java.util.ArrayList;
 
 /**
  * Is a super class to all Trucks
@@ -120,8 +121,8 @@ public abstract class Truck extends AutoVehicle {
         platform.loadCargo(object);
     }
 
-    public CargoPlatform getPlatform(){
-        return platform;
+    public ArrayList getCargoCars(){
+        return platform.getCargo();
     }
 
 

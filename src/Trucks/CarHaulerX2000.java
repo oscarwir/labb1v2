@@ -1,7 +1,9 @@
 package Trucks;
-import HelperClasses.*;
+
+import HelperClasses.Direction;
+import HelperClasses.PointDouble;
+
 import java.awt.*;
-import java.util.ArrayList;
 
 
 /**
@@ -34,7 +36,4 @@ public class CarHaulerX2000 extends Truck {
         return getEnginePower() * 0.01;
     }
 
-    public ArrayList getCargoCars(){
-        return getPlatform().getCargo();
-    }
 }
