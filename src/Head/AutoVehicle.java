@@ -7,7 +7,7 @@ import java.awt.*;
 
 
 /**
- * Ve
+ * Class of arbitrary motorized vehicles.
  */
 public abstract class AutoVehicle implements Movable{
 
