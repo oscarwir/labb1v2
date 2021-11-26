@@ -23,15 +23,15 @@ public abstract class AutoVehicle implements Movable{
     private int nrDoors; //An integer of the number of doors the vehicle has
 
     /**
-     * Constructor that creates an object of type Head.AutoVehicle
-     * @param modelName
-     * @param turningRadius
-     * @param location
-     * @param direction
-     * @param color
-     * @param enginePower
-     * @param brakeFactor
-     * @param nrDoors
+     * Constructor that creates an object of type AutoVehicle.
+     * @param modelName name of Vehicle model
+     * @param turningRadius turning radius of Vehicle
+     * @param location location of Vehicle
+     * @param direction direction of Vehicle
+     * @param color color of Vehicle
+     * @param enginePower engine power of Vehicle
+     * @param brakeFactor brake factor of Vehicle
+     * @param nrDoors number of doors of Vehicle
      */
     public AutoVehicle(String modelName, int turningRadius, PointDouble location, Direction direction, Color color, double enginePower, double brakeFactor, int nrDoors){
         this.modelName = modelName;
@@ -43,20 +43,19 @@ public abstract class AutoVehicle implements Movable{
         this.breakFactor = brakeFactor;
         this.engineOn = false;
         this.nrDoors = nrDoors;
-
-
-
     }
 
     /**
-     * @return value for all the getters
+     * Method to get number of doors.
+     * @return number of doors
      */
     public int getNrDoors() {
         return nrDoors;
     }
 
     /**
-     * @return the value for the engine power for the vehicle
+     * Method to get enginePower.
+     * @return enginePower
      */
     public double getEnginePower() {
         return enginePower;
@@ -64,7 +63,8 @@ public abstract class AutoVehicle implements Movable{
 
 
     /**
-     * @return
+     * Method to get currentSpeed.
+     * @return currentSpeed
      */
     public double getCurrentSpeed() {
         return currentSpeed;
@@ -72,84 +72,94 @@ public abstract class AutoVehicle implements Movable{
 
 
     /**
-     * @return
+     * Method to get modelName.
+     * @return modelName
      */
     public String getModelName(){
         return modelName;
     }
 
     /**
-     * @return
+     * Method to get location.
+     * @return location
      */
     public PointDouble getLocation(){
         return location;
     }
 
     /**
-     * @return
+     * Method to get direction.
+     * @return direction
      */
     public int getDirection(){
         return direction.getDirection();
     }
 
     /**
-     * @return
+     * Method to get color.
+     * @return color
      */
     public Color getColor() {
         return color;
     }
 
     /**
-     * @return
+     * Method to get turning radius.
+     * @return turningRadius
      */
     public int getTurningRadius(){
         return turningRadius;
     }
 
     /**
-     * @return
+     * Method to see engine state.
+     * @return engineOn
      */
     public boolean getEngineOn(){
         return engineOn;
     }
 
     /**
-     * @param turningRadius
+     * Method to set turning radius.
+     * @param turningRadius new turning radius
      */
     public void setTurningRadius(int turningRadius){
         this.turningRadius = turningRadius;
     }
 
     /**
-     * @param clr
+     * Method to set color.
+     * @param clr new color
      */
     public void setColor(Color clr) {
         color = clr;
     }
 
     /**
-     * @param location
+     * Method to set location.
+     * @param location new location
      */
     public void setPosition(PointDouble location){
         this.location = location;
     }
 
     /**
-     * @param direction
+     * Method to set direction.
+     * @param direction new direction
      */
     public void setDirection(Direction direction){
         this.direction = direction;
     }
 
     /**
-     * Methods for starting or stopping an engine by changing the boolean to true or false.
+     * Method to start engine. This method sets the variable engineOn to true.
      */
     public void startEngine() {
         engineOn = true;
     }
 
     /**
-     *
+     * Method to stop engine. This method sets the variable engineOn to false.
      */
     public void stopEngine() {
         engineOn = false;
@@ -159,8 +169,7 @@ public abstract class AutoVehicle implements Movable{
 
 
     /**
-     *An abstract concept of which both cars utilize in different ways. For instance it's inherited by Volvo
-     *and saab and its purpose is the implement Volvo's trim and Saab's turbo.
+     * An abstract method only to be utilized by subclasses.
      */
     protected abstract double speedFactor();
 
@@ -175,8 +184,8 @@ public abstract class AutoVehicle implements Movable{
     }
 
     /**
-     * The method gas calls the method incrementSpeed to increase the speed. It purposely sets up boundaries
-     * for the amount that you can increaseSpeed and if the conditions are not met an Exception is raised
+     * Method to increase vehicle speed. This method increases the vehicle's speed if engine is on and throws
+     * IllegalArgumentException if parameter is out of bounds.
      * @param amount throttle percentage
      */
     public void gas(double amount) {
@@ -191,8 +200,8 @@ public abstract class AutoVehicle implements Movable{
 
 
     /**
-     * The method gas calls the method decrementSpeed to decrease the speed. It purposely sets up boundaries
-     * for the amount that you can decreaseSpeed and if the conditions are not met an Exception is raised
+     * Method to decrease vehicle speed. This method decreases the vehicle's speed and throws IllegalArgumentException
+     * if parameter is out of bounds.
      * @param amount brake percentage
      */
     public void brake(double amount) {
@@ -205,8 +214,8 @@ public abstract class AutoVehicle implements Movable{
     }
 
     /**
-     * The method move comes from the interface. In Car.Car it uses trigonometry to calculate the new point which the vehicle travels to.
-     * It implements currentSpeed combined with the angle of which the car's direction is in
+     * Method that moves the vehicle. This method moves the vehicle to a new point calculated based on currentSpeed,
+     * old position and direction. Direction and currentSpeed are unchanged.
      */
     public void move(){
         double x;
@@ -221,17 +230,14 @@ public abstract class AutoVehicle implements Movable{
 
 
     /**
-     * The methods turnLeft and turnRight is inherited from the interface Head.Movable. They change the direction the car
-     *is directed in by using the old angle (the car's current direction) combined with the turning radius.
-     * Whether you turn left or right it is plus or minus. This is based on the unit circle due to the
-    * previous usage of radians.
+     * Method to change direction to the left.
      * */
     public void turnLeft(){
         direction.setDirection(direction.getDirection() + turningRadius);
     }
 
     /**
-     *
+     * Method to change direction to the right.
      */
     public void turnRight(){
         direction.setDirection(direction.getDirection() - turningRadius);
