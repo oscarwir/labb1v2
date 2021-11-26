@@ -7,21 +7,22 @@ import java.awt.*;
 import java.util.ArrayList;
 
 /**
- * Is a super class to all Trucks
+ * Class that represents Truck objects.
  */
 public abstract class Truck extends AutoVehicle {
 
     private CargoPlatform platform;
 
     /**
-     * @param modelName name
-     * @param turningRadius Higher results in faster turning
-     * @param location HelperClasses.PointDouble object
-     * @param direction HelperClasses.Direction object
-     * @param nrDoors number of doors
-     * @param color color
-     * @param enginePower Higher enginePower results in Higher max speed
-     * @param brakeFactor Higher brakeFactor results in heavier deceleration
+     * Constructor of an arbitrary truck.
+     * @param modelName model name of truck
+     * @param turningRadius turning radius of truck
+     * @param location location of truck
+     * @param direction direction of truck
+     * @param nrDoors number of doors on truck
+     * @param color color of truck
+     * @param enginePower engine power of truck
+     * @param brakeFactor brake factor of truck
      */
     public Truck(String modelName, int turningRadius, PointDouble location, Direction direction,
                  int nrDoors, Color color, int enginePower, double brakeFactor) {
@@ -31,12 +32,13 @@ public abstract class Truck extends AutoVehicle {
     }
 
     /**
-     * @return
+     * An abstract method to be utilized by subclasses. Specifies the type of cargo platform used by truck.
+     * @return CargoPlatform
      */
     protected abstract CargoPlatform setCargoPlatform();
 
     /**
-     * Sets acceleration, 0 if platform is not closed
+     * Increases the speed of the truck.
      * @param amount throttle percentage
      */
     @Override
@@ -50,7 +52,7 @@ public abstract class Truck extends AutoVehicle {
     }
 
     /**
-     *
+     * Method to move the truck.
      */
     @Override
     public void move(){
@@ -59,7 +61,7 @@ public abstract class Truck extends AutoVehicle {
     }
 
     /**
-     *
+     * Method to turn the truck to the left.
      */
     @Override
     public void turnLeft(){
@@ -68,7 +70,7 @@ public abstract class Truck extends AutoVehicle {
     }
 
     /**
-     *
+     * Method to turn the truck to the right.
      */
     @Override
     public void turnRight(){
@@ -78,28 +80,30 @@ public abstract class Truck extends AutoVehicle {
 
 
     /**
-     * This lowerPlatform method increases the angle attribute of the Trucks.CargoPlatform object, when the trucks CurrentSpeed attribute is zero
+     * Method to lower the truck's cargo platform.
      */
     public void lowerPlatform(){
         platform.lowerPlatform();
     }
 
     /**
-     * This raisePlatform method decreases the angle attribute of the Trucks.CargoPlatform object
+     * Method to raise the truck's cargo platform.
      */
     public void raisePlatform(){
         platform.raisePlatform();
     }
 
     /**
-     * @return True if the angle attribute of the Trucks.CargoPlatform object is equal to maxAngle, else False
+     * Method to see if truck's cargoPlatform is fully open.
+     * @return boolean
      */
     public boolean isPlatformFullyOpen(){
         return platform.isPlatformFullyOpen();
     }
 
     /**
-     * @return True if the angle attribute of the Trucks.CargoPlatform object is zero, else False
+     * Method to see if truck's cargoPlatform is fully closed.
+     * @return boolean
      */
     public boolean isPlatformClosed(){
         return platform.isPlatformClosed();
@@ -107,20 +111,25 @@ public abstract class Truck extends AutoVehicle {
 
 
     /**
-     * When called will unload object
+     * Method to unload cargo from cargoPlatform.
      */
     public void unloadCargo(){
         platform.unloadCargo();
     }
 
     /**
-     * When called will load object
+     * Method to load cargo to cargoPlatform.
      * @param object that will be loaded
      */
     public void loadCargo(Movable object){
         platform.loadCargo(object);
     }
 
+
+    /**
+     * Method to get list of cargo on cargoPlatform.
+     * @return list of cargo on platform
+     */
     public ArrayList getCargo(){
         return platform.getCargo();
     }
