@@ -1,5 +1,8 @@
 package Trucks;
+
 import Head.Movable;
+
+import java.util.ArrayList;
 
 
 public interface CargoPlatform {
@@ -27,4 +30,6 @@ public interface CargoPlatform {
 
 
     boolean isPlatformClosed();
+
+    ArrayList getCargo();
 }

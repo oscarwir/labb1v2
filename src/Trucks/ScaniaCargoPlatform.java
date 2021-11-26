@@ -1,5 +1,8 @@
 package Trucks;
+
 import Head.Movable;
+
+import java.util.ArrayList;
 
 /**
  * Represents a Truck Platform
@@ -78,5 +81,9 @@ public class ScaniaCargoPlatform implements CargoPlatform{
      */
     public void turnCargo(){
 
+    }
+
+    public ArrayList getCargo(){
+        return new ArrayList();
     }
 }
