@@ -2,7 +2,7 @@ package Trucks;
 import Head.Movable;
 
 /**
- * Represents a Trucks.Truck Platform
+ * Represents a Truck Platform
  */
 public class ScaniaCargoPlatform implements CargoPlatform{
 
