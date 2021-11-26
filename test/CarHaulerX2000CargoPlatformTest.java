@@ -130,6 +130,7 @@ public class CarHaulerX2000CargoPlatformTest {
     @Test
     void method_load_car_should_operate_correctly_given_the_right_circumstances(){
 
+
     }
 
     @Test
