@@ -1,7 +1,7 @@
 package HelperClasses;//overriding Point due to the need of double.
 
 /**
- *
+ * Class that represents a Point with doubles.
  */
 public class PointDouble {
 
@@ -9,6 +9,7 @@ public class PointDouble {
     private double y;
 
     /**
+     * Constructor of a PointDouble.
      * @param x coordinate.
      * @param y coordinate.
      */
@@ -18,6 +19,7 @@ public class PointDouble {
     }
 
     /**
+     * Method to get x-coordinate.
      * @return x coordinate.
      */
     public double getX(){
@@ -25,6 +27,7 @@ public class PointDouble {
     }
 
     /**
+     * Method to get y-coordinate.
      * @return y coordinate.
      */
     public double getY(){
@@ -32,8 +35,9 @@ public class PointDouble {
     }
 
     /**
-     * @param x coordinate.
-     * @param y coordinate.
+     * Method to set x and y coordinates.
+     * @param x new coordinate.
+     * @param y new coordinate.
      */
     public void setLocation(double x, double y){
         this.x = x;
@@ -41,6 +45,7 @@ public class PointDouble {
     }
 
     /**
+     * Method to calculate distance between this and another Point.
      * @param p2 Point to measure against.
      * @return distance between points.
      */
