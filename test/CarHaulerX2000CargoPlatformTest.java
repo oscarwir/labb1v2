@@ -44,12 +44,12 @@ public class CarHaulerX2000CargoPlatformTest {
         testCarHaulerX2000.lowerPlatform();
         testCarHaulerX2000.loadCargo(testSaab);
         testCarHaulerX2000.unloadCargo();
-        assertEquals(0, );
+        assertEquals(0, testCarHaulerX2000.cargoCars.size());
         assertEquals(75, );
     }
 
     @Test
-    void unload_cargo_should_not_operate_during_wrong_circumstances(){
+    void unload_cargo_should_not_operate_during_incorrect_circumstances(){
 
     }
 
