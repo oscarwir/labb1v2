@@ -1,4 +1,5 @@
 import Cars.Saab95;
+import Cars.Volvo240;
 import HelperClasses.PointDouble;
 import Trucks.CarHaulerX2000;
 import org.junit.jupiter.api.Test;
@@ -9,6 +10,7 @@ public class CarHaulerX2000CargoPlatformTest {
 
     CarHaulerX2000 testCarHaulerX2000 = new CarHaulerX2000();
     Saab95 testSaab = new Saab95();
+    Volvo240 testVolvo = new Volvo240();
 
     @Test
     void is_platform_closed_should_initially_return_true(){
