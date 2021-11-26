@@ -1,12 +1,7 @@
-import Trucks.CarHaulerX2000;
-
-import Head.*;
-import Cars.*;
-import HelperClasses.*;
-import java.util.ArrayList;
-
-import org.junit.jupiter.api.Test;
 import Cars.Saab95;
+import HelperClasses.PointDouble;
+import Trucks.CarHaulerX2000;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -41,15 +36,24 @@ public class CarHaulerX2000CargoPlatformTest {
 
     @Test
     void unload_cargo_should_operate_correctly_given_the_right_circumstances(){
+
+        //They are within the correct distance of each other
+        testCarHaulerX2000.setPosition(new PointDouble(100, 100));
+        testSaab.setPosition(new PointDouble(99,99));
+
         testCarHaulerX2000.lowerPlatform();
+
         testCarHaulerX2000.loadCargo(testSaab);
         testCarHaulerX2000.unloadCargo();
+
         assertEquals(0, testCarHaulerX2000.getCargo().size());
-        assertEquals(75, );
+        assertEquals(80, testSaab.getLocation().getX());
     }
 
     @Test
     void unload_cargo_should_not_operate_during_incorrect_circumstances(){
+
+
 
     }
 

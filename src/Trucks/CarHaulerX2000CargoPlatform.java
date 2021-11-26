@@ -120,8 +120,9 @@ public class CarHaulerX2000CargoPlatform implements CargoPlatform{
         double y = myTruck.getLocation().getY();
         int behindTruckDir = myTruck.getDirection() + 180;
 
-        x = x + Math.cos(behindTruckDir) * spawnDistance;
-        y = y + Math.sin(behindTruckDir) * spawnDistance;
+
+        x = x + Math.cos(Math.toRadians(behindTruckDir)) * spawnDistance;
+        y = y + Math.sin(Math.toRadians(behindTruckDir)) * spawnDistance;
 
         return new PointDouble(x, y);
 
