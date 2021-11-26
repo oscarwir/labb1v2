@@ -121,7 +121,7 @@ public abstract class Truck extends AutoVehicle {
         platform.loadCargo(object);
     }
 
-    public ArrayList getCargoCars(){
+    public ArrayList getCargo(){
         return platform.getCargo();
     }
 
