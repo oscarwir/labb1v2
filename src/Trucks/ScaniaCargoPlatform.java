@@ -56,13 +56,14 @@ public class ScaniaCargoPlatform implements CargoPlatform{
 
 
     /**
-     *
+     * Method to unload cargo. As this platform can not contain cargo this method does nothing.
      */
     public void unloadCargo(){
 
     }
 
     /**
+     * Method to load cargo to platform. As this platforn can not contain cargo this method does nothing.
      * @param object
      */
     public void loadCargo(Movable object){
@@ -70,19 +71,23 @@ public class ScaniaCargoPlatform implements CargoPlatform{
     }
 
     /**
-     *
+     * Method to move cargo. As this platforn can not contain cargo this method does nothing.
      */
     public void moveCargo() {
 
     }
 
     /**
-     *
+     * Method to turn cargo. As this platforn can not contain cargo this method does nothing.
      */
     public void turnCargo(){
 
     }
 
+    /**
+     * Method to get cargo. As this platforn can not contain cargo this method will always return an empty ArrayList.
+     * @return an empty ArrayList
+     */
     public ArrayList getCargo(){
         return new ArrayList();
     }

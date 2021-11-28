@@ -3,21 +3,20 @@ import HelperClasses.*;
 import java.awt.*;
 
 /**
- * Class that represents a Scania. Is a truck.
+ * Class that represents a Scania.
  */
 public class Scania extends Truck {
 
     /**
-     * Constructor for Scania
+     * Constructor for Scania.
      */
     public Scania() {
-        super("Trucks.Scania", 5, new PointDouble(100,100), new Direction(0),
+        super("Scania", 5, new PointDouble(100,100), new Direction(0),
                 4, Color.black,400, 3);
-
     }
 
     /**
-     * Creates an arbitrary CargoPlatform
+     * Creates an arbitrary CargoPlatform.
      * @return the arbitrary cargoPlatform
      */
     @Override

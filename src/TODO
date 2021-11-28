@@ -15,16 +15,16 @@ Classes to be documented:
     - Saab95                        Done
     - Volvo240                      Done
     - AutoVehicle                   Done
-    - Direction                     Not Done
+    - Direction                     Done
     - PointDouble                   Done
     - CarHaulerX2000                Done
     - CarHaulerX2000CargoPlatform   Done
-    - Scania
-    - ScaniaCargoPlatform
-    - Truck
-    - ChalmersCustoms
-    - LosSantosCustoms
-    - Workshop
+    - Scania                        Done
+    - ScaniaCargoPlatform           Done
+    - Truck                         Done
+    - ChalmersCustoms               Done
+    - LosSantosCustoms              Done
+    - Workshop                      Done
 
 The next steps in the assignment:
 

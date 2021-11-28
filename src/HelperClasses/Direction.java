@@ -2,7 +2,7 @@ package HelperClasses;
 //To get the value of the direction between 0 and 360 degrees.
 
 /**
- *
+ * Class representing a direction in degrees.
  */
 public class Direction {
 
@@ -17,6 +17,7 @@ public class Direction {
     }
 
     /**
+     * Method to set direction. Uses degrees and will always be in range 0-360.
      * @param angle in degrees.
      */
     public void setDirection(int angle){
@@ -24,7 +25,8 @@ public class Direction {
     }
 
     /**
-     * @return current angle of direction.
+     * Method to get the current direction.
+     * @return current direction.
      */
     public int getDirection(){
         return angle;

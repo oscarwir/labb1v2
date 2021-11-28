@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 /**
  * Class that represents an arbitrary workshop.
- * @param <T> a car
+ * @param <T> any car
  */
 public abstract class Workshop<T extends Car> {
 

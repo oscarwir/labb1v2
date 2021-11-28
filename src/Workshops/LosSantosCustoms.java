@@ -3,7 +3,7 @@ package Workshops;
 import Cars.Car;
 
 /**
- * A LosSantosCustoms Workshop.That takes any car.
+ * A LosSantosCustoms Workshop.
  */
 public class LosSantosCustoms extends Workshop<Car>{
     /**
