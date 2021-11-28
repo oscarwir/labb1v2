@@ -1,4 +1,5 @@
 import Cars.Saab95;
+import Cars.Volvo240;
 import HelperClasses.PointDouble;
 import Trucks.CarHaulerX2000;
 import org.junit.jupiter.api.Test;
@@ -9,6 +10,7 @@ public class CarHaulerX2000CargoPlatformTest {
 
     CarHaulerX2000 testCarHaulerX2000 = new CarHaulerX2000();
     Saab95 testSaab = new Saab95();
+    Volvo240 testVolvo = new Volvo240();
 
     @Test
     void is_platform_closed_should_initially_return_true(){
@@ -52,33 +54,84 @@ public class CarHaulerX2000CargoPlatformTest {
 
     @Test
     void unload_cargo_should_not_operate_during_incorrect_circumstances(){
+        testCarHaulerX2000.setPosition(new PointDouble(100, 100));
+        testSaab.setPosition(new PointDouble(99,99));
 
+        testCarHaulerX2000.raisePlatform();
 
+        testCarHaulerX2000.loadCargo(testSaab);
+        testCarHaulerX2000.unloadCargo();
+
+        assertEquals(0, testCarHaulerX2000.getCargo().size());
+        assertEquals(99, testSaab.getLocation().getX());
 
     }
 
     @Test
     void load_cargo_should_load_given_object_type_car(){
+        testCarHaulerX2000.setPosition(new PointDouble(100, 100));
+        testSaab.setPosition(new PointDouble(99,99));
+
+        testCarHaulerX2000.lowerPlatform();
+
+        testCarHaulerX2000.loadCargo(testSaab);
+
+        assertEquals(1, testCarHaulerX2000.getCargo().size());
 
     }
 
     @Test
     void load_cargo_should_not_given_object_type_truck(){
+        testCarHaulerX2000.setPosition(new PointDouble(100, 100));
+        testSaab.setPosition(new PointDouble(99,99));
+
+        testCarHaulerX2000.lowerPlatform();
+
+        testCarHaulerX2000.loadCargo(testCarHaulerX2000);
+
+        assertEquals(0, testCarHaulerX2000.getCargo().size());
+
 
     }
 
     @Test
     void objects_on_truck_should_have_same_position_as_truck(){
+        testCarHaulerX2000.setPosition(new PointDouble(100, 100));
+        testSaab.setPosition(new PointDouble(99, 99));
+
+        testCarHaulerX2000.lowerPlatform();
+        testCarHaulerX2000.loadCargo(testSaab);
+
+        testCarHaulerX2000.turnRight();
+        testCarHaulerX2000.turnLeft();
+        testCarHaulerX2000.turnRight();
+        testCarHaulerX2000.move();
+
+        assertEquals(testCarHaulerX2000.getLocation(), testSaab.getLocation());
 
     }
 
     @Test
     void objects_on_truck_should_have_same_direction_as_truck(){
+        testCarHaulerX2000.setPosition(new PointDouble(100, 100));
+        testSaab.setPosition(new PointDouble(99, 99));
+
+        testCarHaulerX2000.lowerPlatform();
+        testCarHaulerX2000.loadCargo(testSaab);
+
+        testCarHaulerX2000.turnRight();
+        testCarHaulerX2000.turnLeft();
+        testCarHaulerX2000.turnRight();
+        testCarHaulerX2000.move();
+
+        assertEquals(testCarHaulerX2000.getDirection(), testSaab.getDirection());
+
 
     }
 
     @Test
     void method_load_car_should_operate_correctly_given_the_right_circumstances(){
+
 
     }
 
