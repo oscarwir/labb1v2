@@ -98,9 +98,11 @@ public class CarHaulerX2000CargoPlatformTest {
     void objects_on_truck_should_have_same_position_as_truck(){
         testCarHaulerX2000.setPosition(new PointDouble(100, 100));
         testSaab.setPosition(new PointDouble(99, 99));
+        testVolvo.setPosition((new PointDouble(101, 101)));
 
         testCarHaulerX2000.lowerPlatform();
         testCarHaulerX2000.loadCargo(testSaab);
+        testCarHaulerX2000.loadCargo(testVolvo);
 
         testCarHaulerX2000.turnRight();
         testCarHaulerX2000.turnLeft();
