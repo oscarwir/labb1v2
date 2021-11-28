@@ -2,6 +2,7 @@ import Cars.Saab95;
 import Cars.Volvo240;
 import HelperClasses.PointDouble;
 import Trucks.CarHaulerX2000;
+import Trucks.CargoPlatform;
 import Trucks.Scania;
 import org.junit.jupiter.api.Test;
 
@@ -10,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class ScaniaCargoPlatformTest {
 
     Scania testScania = new Scania();
-    Saab95 testSaab = new Saab95();
+
 
     @Test
     void is_platform_closed_should_initially_return_true(){
