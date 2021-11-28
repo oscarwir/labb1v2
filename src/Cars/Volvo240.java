@@ -16,7 +16,7 @@ public class Volvo240 extends Car {
      * Constructor for Volvo240
      */
     public Volvo240(){
-        super("Car.Volvo240", 20, new PointDouble(150,100), new Direction(180),4,Color.red,150, 1.5);
+        super("Volvo240", 20, new PointDouble(150,100), new Direction(180),4,Color.red,150, 1.5);
     }
 
     /**

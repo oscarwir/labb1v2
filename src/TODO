@@ -8,7 +8,23 @@ Things that are outdated in the code and should get fixed:
 
 Things that are currently in progress:
 
+JavaDocs Comments
 
+Classes to be documented:
+    - Car                           Done
+    - Saab95                        Done
+    - Volvo240                      Done
+    - AutoVehicle                   Done
+    - Direction                     Not Done
+    - PointDouble                   Done
+    - CarHaulerX2000                Done
+    - CarHaulerX2000CargoPlatform   Done
+    - Scania
+    - ScaniaCargoPlatform
+    - Truck
+    - ChalmersCustoms
+    - LosSantosCustoms
+    - Workshop
 
 The next steps in the assignment:
 

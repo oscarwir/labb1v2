@@ -19,7 +19,8 @@ public class CarHaulerX2000CargoPlatform implements CargoPlatform{
     private final double maxLoadDistance = 15.0;
     private final double spawnDistance = 20.0;
     /**
-     * @param myTruck the Trucks.Truck object that uses the platform
+     * Constructor of a CarHaulerX2000CargoPlatform
+     * @param myTruck the Truck object that uses the platform
      */
     public CarHaulerX2000CargoPlatform(Truck myTruck){
         this.myTruck = myTruck;
@@ -29,7 +30,7 @@ public class CarHaulerX2000CargoPlatform implements CargoPlatform{
 
     /**
      * Method that checks if the platform is fully closed.
-     * @return True if the angle attribute of the Trucks.CargoPlatform object is zero, else False
+     * @return boolean
      */
     public boolean isPlatformClosed(){
         return angle == 0;
@@ -37,14 +38,14 @@ public class CarHaulerX2000CargoPlatform implements CargoPlatform{
 
     /**
      * Method that checks if the platform is fully open.
-     * @return True if the angle attribute of the Trucks.CargoPlatform object is equal to maxAngle, else False
+     * @return boolean
      */
     public boolean isPlatformFullyOpen(){
         return angle == 120;
     }
 
     /**
-     * This lowerPlatform method increases the angle attribute of the Trucks.CargoPlatform object, when the trucks CurrentSpeed attribute is zero
+     * Method to lower platform. Only works if truck's speed is zero,
      */
     public void lowerPlatform(){
         if (myTruck.getCurrentSpeed() == 0.0){
@@ -53,7 +54,7 @@ public class CarHaulerX2000CargoPlatform implements CargoPlatform{
     }
 
     /**
-     * This raisePlatform method decreases the angle attribute of the Trucks.CargoPlatform object
+     * Method to raise platform.
      */
     public void raisePlatform(){
         angle = 0;
@@ -61,7 +62,7 @@ public class CarHaulerX2000CargoPlatform implements CargoPlatform{
 
 
     /**
-     * Object next in line will be placed close to the platform
+     * Method to unload cargo from platform. Only works if platform has cargo and is fully open.
      */
     public void unloadCargo(){
         if (isPlatformFullyOpen()){
@@ -75,7 +76,7 @@ public class CarHaulerX2000CargoPlatform implements CargoPlatform{
 
 
     /**
-     * If all conditions are met, then the movable object will be stored on the platform.
+     * Method to load object on platform. If all conditions are met, then the movable object will be stored on the platform.
      * @param object that attempts to be loaded
      */
     public void loadCargo(Movable object){
@@ -87,7 +88,7 @@ public class CarHaulerX2000CargoPlatform implements CargoPlatform{
     }
 
     /**
-     * When called all cargo is moved to the same location as myTruck
+     * Method to move cargo. When called all cargo is moved to the same location as myTruck
      */
     public void moveCargo() {
         for (Car car : cargoCars) {
@@ -96,7 +97,7 @@ public class CarHaulerX2000CargoPlatform implements CargoPlatform{
     }
 
     /**
-     * When called all cargo is oriented in the same direction as myTruck
+     * Method to turn cargo. When called all cargo is oriented in the same direction as myTruck
      */
     public void turnCargo(){
         for (Car car : cargoCars) {
@@ -130,6 +131,10 @@ public class CarHaulerX2000CargoPlatform implements CargoPlatform{
 
     }
 
+    /**
+     * Method to get cargo.
+     * @return ArrayList of cars in cargo
+     */
     public ArrayList getCargo(){
         return cargoCars;
     }

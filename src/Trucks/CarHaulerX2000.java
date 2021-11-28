@@ -5,15 +5,13 @@ import HelperClasses.PointDouble;
 
 import java.awt.*;
 
-
 /**
- * Class of car-haulers
- * Is a subclass of Trucks.Truck.
+ * Class representing car-haulers
  */
 public class CarHaulerX2000 extends Truck {
 
     /**
-     * Constructor of Trucks.CarHaulerX2000
+     * Constructor of CarHaulerX2000
      */
     public CarHaulerX2000(){
         super("Trucks.CarHaulerX2000", 5, new PointDouble(200,100), new Direction(0), 2, Color.black,400, 3);
