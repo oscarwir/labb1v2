@@ -12,85 +12,85 @@ import static org.junit.jupiter.api.Assertions.*;
 public class ScaniaCargoPlatformTest {
 
     //The platform is attached to the truck
-    Scania testPlatform = new Scania();
+    Scania testScania = new Scania();
 
 
     @Test
     void is_platform_closed_should_initially_return_true(){
-        assertTrue(testPlatform.isPlatformClosed());
+        assertTrue(testScania.isPlatformClosed());
     }
 
     @Test
     void is_platform_fully_open_should_initially_return_false(){
-        assertFalse(testPlatform.isPlatformFullyOpen());
+        assertFalse(testScania.isPlatformFullyOpen());
     }
 
     @Test
-    void lower_platform_should_in_14_steps_result_in_a_fully_opened(){
+    void raise_platform_should_in_14_steps_result_in_a_fully_opened(){
         for(int i = 0; i < 14; i++){
-            testPlatform.lowerPlatform();
+            testScania.raisePlatform();
         }
 
-        assertFalse(testPlatform.isPlatformClosed());
-        assertTrue(testPlatform.isPlatformFullyOpen());
+        assertFalse(testScania.isPlatformClosed());
+        assertTrue(testScania.isPlatformFullyOpen());
     }
 
     @Test
-    void lower_platform_should_in_14_steps_followed_by_raised_14_steps_should_result_in_fully_closed(){
+    void raise_platform_should_in_14_steps_followed_by_lowered_14_steps_should_result_in_fully_closed(){
         for(int i = 0; i < 14; i++){
-            testPlatform.lowerPlatform();
+            testScania.raisePlatform();
         }
 
         for(int i = 0; i < 14; i++){
-            testPlatform.raisePlatform();
+            testScania.lowerPlatform();
         }
 
 
-        assertTrue(testPlatform.isPlatformClosed());
-        assertFalse(testPlatform.isPlatformFullyOpen());
+        assertTrue(testScania.isPlatformClosed());
+        assertFalse(testScania.isPlatformFullyOpen());
     }
 
     @Test
-    void lower_platform_halfway_should_return_false_in_both_platform_closed_and_open(){
+    void raise_platform_halfway_should_return_false_in_both_platform_closed_and_open(){
 
-        testPlatform.lowerPlatform();
-        testPlatform.lowerPlatform();
+        testScania.raisePlatform();
+        testScania.raisePlatform();
 
-        assertFalse(testPlatform.isPlatformClosed());
-        assertFalse(testPlatform.isPlatformFullyOpen());
-
-    }
-
-
-    @Test
-    void lower_platform_during_movement_should_not_in_14_steps_result_in_a_fully_opened(){
-
-        testPlatform.move();
-        for(int i = 0; i < 14; i++){
-            testPlatform.lowerPlatform();
-        }
-
-        assertFalse(testPlatform.isPlatformClosed());
-        assertFalse(testPlatform.isPlatformFullyOpen());
-
+        assertFalse(testScania.isPlatformClosed());
+        assertFalse(testScania.isPlatformFullyOpen());
 
     }
+
 
     @Test
     void raise_platform_during_movement_should_not_in_14_steps_result_in_a_fully_opened(){
 
-        testPlatform.move();
+        testScania.move();
+        for(int i = 0; i < 14; i++){
+            testScania.raisePlatform();
+        }
+
+        assertFalse(testScania.isPlatformClosed());
+        assertFalse(testScania.isPlatformFullyOpen());
+
+
+    }
+
+    @Test
+    void lower_platform_during_movement_should_not_in_14_steps_result_in_a_fully_opened(){
+
+        testScania.move();
 
         for(int i = 0; i < 14; i++){
-            testPlatform.lowerPlatform();
+            testScania.raisePlatform();
         }
 
         for(int i = 0; i < 14; i++){
-            testPlatform.raisePlatform();
+            testScania.lowerPlatform();
         }
 
-        assertFalse(testPlatform.isPlatformClosed());
-        assertFalse(testPlatform.isPlatformFullyOpen());
+        assertFalse(testScania.isPlatformClosed());
+        assertFalse(testScania.isPlatformFullyOpen());
 
     }
 
