@@ -49,6 +49,11 @@ public class ScaniaCargoPlatformTest {
         assertFalse(testPlatform.isPlatformFullyOpen());
     }
 
+    @Test
+    void lower_platform_halfway_should_return_false_in_both_platform_closed_and_open(){
+
+    }
+
 
     @Test
     void lower_platform_during_movement_should_not_in_14_steps_result_in_a_fully_opened(){
