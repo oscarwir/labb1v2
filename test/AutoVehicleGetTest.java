@@ -27,7 +27,7 @@ public class AutoVehicleGetTest {
 
     @Test
     void get_ModelName_should_return_Saab95(){
-        assertEquals("Car.Car.Saab95", testSaab.getModelName());
+        assertEquals("Saab95", testSaab.getModelName());
     }
 
     @Test

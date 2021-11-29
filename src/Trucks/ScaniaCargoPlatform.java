@@ -24,6 +24,10 @@ public class ScaniaCargoPlatform implements CargoPlatform{
         angle = 0;
     }
 
+    public ScaniaCargoPlatform() {
+
+    }
+
     /**
      * @return True if the angle attribute of the Trucks.CargoPlatform object is zero, else False
      */
@@ -90,5 +94,10 @@ public class ScaniaCargoPlatform implements CargoPlatform{
      */
     public ArrayList getCargo(){
         return new ArrayList();
+    }
+
+
+    public double getAngle(){
+        return angle;
     }
 }

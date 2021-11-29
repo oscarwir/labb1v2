@@ -135,5 +135,4 @@ public abstract class Truck extends AutoVehicle {
     }
 
 
-
 }
