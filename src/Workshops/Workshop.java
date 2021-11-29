@@ -33,8 +33,8 @@ public abstract class Workshop<T extends Car> {
         }
     }
 
-    public ArrayList getWorkshopCars(){
-        return Workshop<T>;
+    public int getAmountCars(){
+        return amountCars;
     }
 
 }
