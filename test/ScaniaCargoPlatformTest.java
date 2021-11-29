@@ -65,7 +65,7 @@ public class ScaniaCargoPlatformTest {
     @Test
     void raise_platform_during_movement_should_not_in_14_steps_result_in_a_fully_opened(){
 
-        testScania.gas(100);
+        testScania.gas(1);
         for(int i = 0; i < 14; i++){
             testScania.raisePlatform();
         }
@@ -79,7 +79,7 @@ public class ScaniaCargoPlatformTest {
     @Test
     void raise_platform_14_times_during_movement_followed_by_one_lower_should_result_in_closed(){
 
-        testScania.gas(100);
+        testScania.gas(1);
 
         for(int i = 0; i < 14; i++){
             testScania.raisePlatform();
