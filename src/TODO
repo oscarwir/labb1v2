@@ -38,5 +38,6 @@ The next steps in the assignment:
 
 We can defend our way by using high cohesion as an argdument
 
+We should write descriptions to all our tests
 
 The very last thing is to check every file for unused imports
