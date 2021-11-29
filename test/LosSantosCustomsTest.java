@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class LosSantosCustomsTest {
 
-    LosSantosCustomsTest testWorkshop = new LosSantosCustomsTest();
+    LosSantosCustoms testWorkshop = new LosSantosCustoms();
     Volvo240 testVolvo = new Volvo240();
     Saab95 testSaab = new Saab95();
 
