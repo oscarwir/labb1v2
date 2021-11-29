@@ -45,18 +45,16 @@ public class PointDouble {
     }
 
     /**
-     * Method to calculate distance between this and another Point.
+     * Method to get distance between this and another Point.
      * @param p2 Point to measure against.
      * @return distance between points.
      */
-    public double distanceBetweenPoints(PointDouble p2){
+    public double getDistanceBetweenPoints(PointDouble p2){
+        return calculateDistanceBetweenPoints(p2);
+    }
+
+    private double calculateDistanceBetweenPoints(PointDouble p2) {
         return Math.sqrt(Math.pow(this.getX() - p2.getX(),2) + Math.pow(this.getY() - p2.getY(),2));
     }
 
-/* We need a getter and make distance between point private
-    public double getDistanceBetweenPoints(){
-        return distanceBetweenPoints(PointDouble p2);
-    }
-
- */
 }
