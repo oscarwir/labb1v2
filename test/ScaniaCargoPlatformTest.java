@@ -77,7 +77,7 @@ public class ScaniaCargoPlatformTest {
     }
 
     @Test
-    void lower_platform_during_movement_should_not_in_14_steps_result_in_a_fully_opened(){
+    void raise_platform_14_times_during_movement_followed_by_one_lower_should_result_in_closed(){
 
         testScania.gas(100);
 
@@ -85,9 +85,7 @@ public class ScaniaCargoPlatformTest {
             testScania.raisePlatform();
         }
 
-        for(int i = 0; i < 14; i++){
-            testScania.lowerPlatform();
-        }
+        testScania.lowerPlatform();
 
         assertTrue(testScania.isPlatformClosed());
         assertFalse(testScania.isPlatformFullyOpen());
