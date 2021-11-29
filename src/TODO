@@ -37,3 +37,6 @@ The next steps in the assignment:
 
 
 We can defend our way by using high cohesion as an argdument
+
+
+The very last thing is to check every file for unused imports
