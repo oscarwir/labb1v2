@@ -59,4 +59,5 @@ public class ScaniaCargoPlatformTest {
     void raise_platform_during_movement_should_not_in_14_steps_result_in_a_fully_opened(){
 
     }
+
 }
