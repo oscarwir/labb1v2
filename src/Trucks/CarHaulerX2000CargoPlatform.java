@@ -106,7 +106,7 @@ public class CarHaulerX2000CargoPlatform implements CargoPlatform{
     }
 
     private void loadCar(Car car){
-        if (myTruck.getLocation().distanceBetweenPoints(car.getLocation()) < maxLoadDistance){
+        if (myTruck.getLocation().getDistanceBetweenPoints(car.getLocation()) < maxLoadDistance){
             if(currentCarAmount < maxCarAmount){
                 cargoCars.add(car);
                 moveCargo();
