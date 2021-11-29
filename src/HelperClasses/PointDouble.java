@@ -44,11 +44,6 @@ public class PointDouble {
         this.y = y;
     }
 
-
-    private double calculateDistanceBetweenPoints(PointDouble p2) {
-        return Math.sqrt(Math.pow(this.getX() - p2.getX(),2) + Math.pow(this.getY() - p2.getY(),2));
-    }
-
     /**
      * Method to get distance between this and another Point.
      * @param p2 Point to measure against.
@@ -58,5 +53,8 @@ public class PointDouble {
         return calculateDistanceBetweenPoints(p2);
     }
 
+    private double calculateDistanceBetweenPoints(PointDouble p2) {
+        return Math.sqrt(Math.pow(this.getX() - p2.getX(),2) + Math.pow(this.getY() - p2.getY(),2));
+    }
 
 }
