@@ -2,8 +2,6 @@ import Cars.Saab95;
 import Cars.Volvo240;
 import HelperClasses.PointDouble;
 import Trucks.CarHaulerX2000;
-import Trucks.CarHaulerX2000CargoPlatform;
-import Trucks.CargoPlatform;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -138,13 +136,44 @@ public class CarHaulerX2000CargoPlatformTest {
 
     @Test
     void method_load_car_should_operate_correctly_given_the_right_circumstances(){
+        testCarHaulerX2000.setPosition(new PointDouble(100, 100));
+        testSaab.setPosition(new PointDouble(99, 99));
+        testVolvo.setPosition(new PointDouble(101, 101));
 
+        testCarHaulerX2000.lowerPlatform();
+        testCarHaulerX2000.loadCargo(testSaab);
+        testCarHaulerX2000.loadCargo(testVolvo);
+        testCarHaulerX2000.loadCargo(testVolvo);
 
+        assertEquals(3, testCarHaulerX2000.getCargo().size());
+    }
+
+    @Test
+    void method_load_car_should_not_operate_given_too_many_objects(){
+        testCarHaulerX2000.setPosition(new PointDouble(100, 100));
+        testSaab.setPosition(new PointDouble(100, 100));
+
+        testCarHaulerX2000.lowerPlatform();
+        testCarHaulerX2000.loadCargo(testSaab);
+        testCarHaulerX2000.loadCargo(testSaab);
+        testCarHaulerX2000.loadCargo(testSaab);
+        testCarHaulerX2000.loadCargo(testSaab);
+        testCarHaulerX2000.loadCargo(testSaab);
+        testCarHaulerX2000.loadCargo(testSaab);
+        testCarHaulerX2000.loadCargo(testSaab);
+
+        assertEquals(6, testCarHaulerX2000.getCargo().size());
 
     }
 
     @Test
-    void method_load_car_should_not_operate_at_all_given_wrong_circumstances(){
+    void method_load_car_should_not_operate_if_distance_between_objects_is_too_great(){
+        testCarHaulerX2000.setPosition(new PointDouble(100, 100));
+        testSaab.setPosition(new PointDouble(200, 100));
+
+        testCarHaulerX2000.lowerPlatform();
+        testCarHaulerX2000.loadCargo(testSaab);
+        assertEquals(0, testCarHaulerX2000.getCargo().size());
 
     }
 
