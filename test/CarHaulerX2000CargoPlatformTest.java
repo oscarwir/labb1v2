@@ -2,6 +2,8 @@ import Cars.Saab95;
 import Cars.Volvo240;
 import HelperClasses.PointDouble;
 import Trucks.CarHaulerX2000;
+import Trucks.CarHaulerX2000CargoPlatform;
+import Trucks.CargoPlatform;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -95,7 +97,7 @@ public class CarHaulerX2000CargoPlatformTest {
     }
 
     @Test
-    void objects_on_truck_should_have_same_position_as_truck(){
+    void objects_on_platform_should_have_same_position_as_truck(){
         testCarHaulerX2000.setPosition(new PointDouble(100, 100));
         testSaab.setPosition(new PointDouble(99, 99));
         testVolvo.setPosition((new PointDouble(101, 101)));
@@ -110,16 +112,19 @@ public class CarHaulerX2000CargoPlatformTest {
         testCarHaulerX2000.move();
 
         assertEquals(testCarHaulerX2000.getLocation(), testSaab.getLocation());
+        assertEquals(testCarHaulerX2000.getLocation(), testVolvo.getLocation());
 
     }
 
     @Test
-    void objects_on_truck_should_have_same_direction_as_truck(){
+    void objects_on_platform_should_have_same_direction_as_truck(){
         testCarHaulerX2000.setPosition(new PointDouble(100, 100));
         testSaab.setPosition(new PointDouble(99, 99));
+        testVolvo.setPosition(new PointDouble(101, 101));
 
         testCarHaulerX2000.lowerPlatform();
         testCarHaulerX2000.loadCargo(testSaab);
+        testCarHaulerX2000.loadCargo(testVolvo);
 
         testCarHaulerX2000.turnRight();
         testCarHaulerX2000.turnLeft();
@@ -127,12 +132,13 @@ public class CarHaulerX2000CargoPlatformTest {
         testCarHaulerX2000.move();
 
         assertEquals(testCarHaulerX2000.getDirection(), testSaab.getDirection());
-
+        assertEquals(testCarHaulerX2000.getDirection(), testVolvo.getDirection());
 
     }
 
     @Test
     void method_load_car_should_operate_correctly_given_the_right_circumstances(){
+
 
 
     }
@@ -143,7 +149,37 @@ public class CarHaulerX2000CargoPlatformTest {
     }
 
     @Test
-    void get_unloaded_position_should_result_in_the_right_position(){
+    void get_unloaded_position_after_movement_should_result_in_the_right_position(){
+        testCarHaulerX2000.setPosition(new PointDouble(100, 100));
+        testSaab.setPosition(new PointDouble(101, 101));
 
+        testCarHaulerX2000.lowerPlatform();
+        testCarHaulerX2000.loadCargo(testSaab);
+
+        testCarHaulerX2000.move();
+        testCarHaulerX2000.move();
+
+        testCarHaulerX2000.unloadCargo();
+
+        assertEquals(100 + (Math.cos(Math.toRadians(testCarHaulerX2000.getDirection() + 180)) * 20), testSaab.getLocation().getX());
+        assertEquals(100 + (Math.sin(Math.toRadians(testCarHaulerX2000.getDirection() + 180)) * 20), testSaab.getLocation().getY());
+    }
+
+    @Test
+    void get_unloaded_position_should_result_in_the_right_position_with_angle(){
+        testCarHaulerX2000.setPosition(new PointDouble(100, 100));
+        testSaab.setPosition(new PointDouble(101, 101));
+
+        testCarHaulerX2000.lowerPlatform();
+        testCarHaulerX2000.loadCargo(testSaab);
+
+        testCarHaulerX2000.turnRight();
+        testCarHaulerX2000.turnLeft();
+        testCarHaulerX2000.turnLeft();
+
+        testCarHaulerX2000.unloadCargo();
+
+        assertEquals(100 + (Math.cos(Math.toRadians(testCarHaulerX2000.getDirection() + 180)) * 20), testSaab.getLocation().getX());
+        assertEquals(100 + (Math.sin(Math.toRadians(testCarHaulerX2000.getDirection() + 180)) * 20), testSaab.getLocation().getY());
     }
 }

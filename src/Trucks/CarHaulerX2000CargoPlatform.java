@@ -15,7 +15,7 @@ public class CarHaulerX2000CargoPlatform implements CargoPlatform{
     private ArrayList<Car> cargoCars = new ArrayList<Car>(); //An Arraylist whereas order is significant
     private int currentCarAmount;
 
-    private final int maxCarAmount = 10;
+    private final int maxCarAmount = 6;
     private final double maxLoadDistance = 15.0;
     private final double spawnDistance = 20.0;
     /**
