@@ -11,7 +11,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class ScaniaCargoPlatformTest {
 
-    ScaniaCargoPlatform testPlatform = new ScaniaCargoPlatform();
+    //The platform is attached to the truck
+    Scania testPlatform = new Scania();
 
 
     @Test
