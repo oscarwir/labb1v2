@@ -53,16 +53,44 @@ public class ScaniaCargoPlatformTest {
     @Test
     void lower_platform_halfway_should_return_false_in_both_platform_closed_and_open(){
 
+        testPlatform.lowerPlatform();
+        testPlatform.lowerPlatform();
+
+        assertFalse(testPlatform.isPlatformClosed());
+        assertFalse(testPlatform.isPlatformFullyOpen());
+
     }
 
 
     @Test
     void lower_platform_during_movement_should_not_in_14_steps_result_in_a_fully_opened(){
 
+        testPlatform.move();
+        for(int i = 0; i < 14; i++){
+            testPlatform.lowerPlatform();
+        }
+
+        assertFalse(testPlatform.isPlatformClosed());
+        assertFalse(testPlatform.isPlatformFullyOpen());
+
+
     }
 
     @Test
     void raise_platform_during_movement_should_not_in_14_steps_result_in_a_fully_opened(){
+
+        testPlatform.move();
+
+        for(int i = 0; i < 14; i++){
+            testPlatform.lowerPlatform();
+        }
+
+        for(int i = 0; i < 14; i++){
+            testPlatform.raisePlatform();
+        }
+
+        assertFalse(testPlatform.isPlatformClosed());
+        assertFalse(testPlatform.isPlatformFullyOpen());
 
     }
 

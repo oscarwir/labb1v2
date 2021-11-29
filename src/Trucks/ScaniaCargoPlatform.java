@@ -97,7 +97,4 @@ public class ScaniaCargoPlatform implements CargoPlatform{
     }
 
 
-    public double getAngle(){
-        return angle;
-    }
 }
