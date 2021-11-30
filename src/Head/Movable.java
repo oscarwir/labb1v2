@@ -4,32 +4,34 @@ import HelperClasses.Direction;
 import HelperClasses.PointDouble;
 
 /**
- *
+ * Interface of all movable objects
  */
 public interface Movable {
 
     /**
-     *
+     * Method to move this.
      */
     void move();
 
     /**
-     *
+     * Method to turn this to the left.
      */
     void turnLeft();
 
     /**
-     *
+     * Method to turn this to the right.
      */
     void turnRight();
 
     /**
-     * @param location
+     * Method to set this' position.
+     * @param location new coordinates of this
      */
     void setPosition(PointDouble location);
 
     /**
-     * @param direction
+     * Method to set direction of this.
+     * @param direction new direction of this
      */
     void setDirection(Direction direction);
 
