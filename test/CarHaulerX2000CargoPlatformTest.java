@@ -154,13 +154,9 @@ public class CarHaulerX2000CargoPlatformTest {
         testSaab.setPosition(new PointDouble(100, 100));
 
         testCarHaulerX2000.lowerPlatform();
-        testCarHaulerX2000.loadCargo(testSaab);
-        testCarHaulerX2000.loadCargo(testSaab);
-        testCarHaulerX2000.loadCargo(testSaab);
-        testCarHaulerX2000.loadCargo(testSaab);
-        testCarHaulerX2000.loadCargo(testSaab);
-        testCarHaulerX2000.loadCargo(testSaab);
-        testCarHaulerX2000.loadCargo(testSaab);
+        for(int i=0; i < 9; i++){
+            testCarHaulerX2000.loadCargo(testSaab);
+        }
 
         assertEquals(6, testCarHaulerX2000.getCargo().size());
 
