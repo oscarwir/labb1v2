@@ -24,6 +24,7 @@ public class ScaniaCargoPlatform implements CargoPlatform{
         angle = 0;
     }
 
+    //Används denna?
     public ScaniaCargoPlatform() {
 
     }
