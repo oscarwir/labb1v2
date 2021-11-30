@@ -40,4 +40,6 @@ We can defend our way by using high cohesion as an argument
 
 We should write descriptions to all our tests
 
+Is it better code to have constructors in each test file that initiates each object?
+
 The very last thing is to check every file for unused imports

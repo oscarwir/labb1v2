@@ -93,4 +93,15 @@ public class ScaniaCargoPlatformTest {
 
     }
 
+    @Test
+    void raise_platform_more_than_14_times_should_still_result_in_70_degrees(){
+        testScania.startEngine();
+
+        for(int i = 0; i < 17; i++){
+            testScania.raisePlatform();
+        }
+
+        assertTrue(testScania.isPlatformFullyOpen());
+    }
+
 }
