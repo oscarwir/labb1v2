@@ -16,8 +16,8 @@ public class Scania extends Truck {
     }
 
     /**
-     * Creates an arbitrary CargoPlatform.
-     * @return the arbitrary cargoPlatform
+     * Creates an ScaniaCargoPlatform.
+     * @return the ScaniaCargoPlatform
      */
     @Override
     protected CargoPlatform setCargoPlatform(){

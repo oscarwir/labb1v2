@@ -18,8 +18,8 @@ public class CarHaulerX2000 extends Truck {
     }
 
     /**
-     * Creates an arbitrary CargoPlatform
-     * @return the arbitrary cargoPlatform
+     * Creates an CarHaulerX2000CargoPlatform
+     * @return the CarHaulerX2000CargoPlatform
      */
     @Override
     protected CargoPlatform setCargoPlatform(){
