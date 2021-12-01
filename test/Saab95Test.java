@@ -3,6 +3,8 @@ import HelperClasses.PointDouble;
 import org.junit.jupiter.api.Test;
 import Cars.*;
 
+import java.util.IllformedLocaleException;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class Saab95Test {
@@ -52,6 +54,7 @@ public class Saab95Test {
         testSaab.gas(0.5);
         assertTrue(oldSpeed <= testSaab.getCurrentSpeed());
     }
+
 
     @Test
     void gas_should_not_increase_car_speed_if_given_amount_is_zero() {

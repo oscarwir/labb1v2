@@ -104,4 +104,9 @@ public class ScaniaCargoPlatformTest {
         assertTrue(testScania.isPlatformFullyOpen());
     }
 
+    @Test
+    void get_cargo_should_return_empty_array(){
+        assertEquals(0, testScania.getCargo().size());
+    }
+
 }
