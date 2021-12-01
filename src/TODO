@@ -49,3 +49,6 @@ Is it better code to have constructors in each test file that initiates each obj
 gorilla banana problem with our code.
 
 The very last thing is to check every file for unused imports
+
+Gå igenom:
+Movable Object
