@@ -33,6 +33,9 @@ public abstract class Workshop<T extends Car> {
         }
     }
 
+    /**
+     * @return Amount of cars
+     */
     public int getAmountCars(){
         return amountCars;
     }
