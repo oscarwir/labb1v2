@@ -24,11 +24,6 @@ public class ScaniaCargoPlatform implements CargoPlatform{
         angle = 0;
     }
 
-    //Används denna?
-    public ScaniaCargoPlatform() {
-
-    }
-
     /**
      * @return True if the angle attribute of the Trucks.CargoPlatform object is zero, else False
      */
