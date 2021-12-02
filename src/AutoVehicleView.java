@@ -18,7 +18,7 @@ public class AutoVehicleView extends JFrame{
     private static final int Y = 800;
 
     // The controller member
-    AutoVehicleController carC;
+    AutoVehicleController autoVehicleC;
 
     DrawPanel drawPanel = new DrawPanel(X, Y-240);
 
@@ -42,7 +42,7 @@ public class AutoVehicleView extends JFrame{
 
     // Constructor
     public AutoVehicleView(String framename, AutoVehicleController cc){
-        this.carC = cc;
+        this.autoVehicleC = cc;
         initComponents(framename);
     }
 
@@ -105,14 +105,14 @@ public class AutoVehicleView extends JFrame{
         gasButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                carC.gas(gasAmount);
+                autoVehicleC.gas(gasAmount);
             }
         });
 
         brakeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                carC.brake();
+                autoVehicleC.brake();
             }
         });
 
@@ -133,14 +133,14 @@ public class AutoVehicleView extends JFrame{
         startButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                carC.startCarEngine();
+                autoVehicleC.startCarEngine();
             }
         });
 
         stopButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                carC.stopCarEngine();
+                autoVehicleC.stopCarEngine();
             }
         });
 
