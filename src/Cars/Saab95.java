@@ -1,5 +1,6 @@
 package Cars;
 
+import Head.HaveTurbo;
 import HelperClasses.Direction;
 import HelperClasses.PointDouble;
 
@@ -8,12 +9,11 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.Objects;
 
 /**
  * Class that represents a Saab95 car.
  */
-public class Saab95 extends Car {
+public class Saab95 extends Car implements HaveTurbo {
 
     public boolean turboOn;
 

@@ -115,19 +115,19 @@ public class AutoVehicleView extends JFrame{
             }
         });
 
-        /* turboOnButton.addActionListener(new ActionListener() {
+        turboOnButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 autoVehicleC.setTurboOn();
             }
-        }); */
+        });
 
-        /*turboOffButton.addActionListener(new ActionListener() {
+        turboOffButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                carC.setTurboOff();
+                autoVehicleC.setTurboOff();
             }
-        });*/
+        });
 
         startButton.addActionListener(new ActionListener() {
             @Override

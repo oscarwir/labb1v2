@@ -4,6 +4,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import Cars.*;
 import Head.AutoVehicle;
+import Head.HaveTurbo;
 import Trucks.Scania;
 
 /*
@@ -68,24 +69,26 @@ public class AutoVehicleController {
 
     // Calls the brake method for each car once
     void brake() {
-        for (AutoVehicle autoVehicle : autoVehicles)
+        for (AutoVehicle autoVehicle : autoVehicles) {
             autoVehicle.brake(0.50);
+        }
     }
 
-    /*void setTurboOn() {
-        for (Car car : cars) {
-
+    void setTurboOn() {
+        for (AutoVehicle autoVehicle : autoVehicles) {
+            if (autoVehicle instanceof HaveTurbo){
+                ((HaveTurbo) autoVehicle).setTurboOn();
+            }
         }
     }
 
     void setTurboOff() {
-        for (Car car : cars) {
-            if (car istanceOf(Saab95)){
-
+        for (AutoVehicle autoVehicle : autoVehicles) {
+            if (autoVehicle instanceof HaveTurbo){
+                ((HaveTurbo) autoVehicle).setTurboOff();
             }
         }
-
-    }*/
+    }
 
     // Calls the start engine method for each car once
     void startCarEngine() {
