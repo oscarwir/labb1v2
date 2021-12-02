@@ -27,6 +27,7 @@ public class CarView extends JFrame{
     JPanel gasPanel = new JPanel();
     JSpinner gasSpinner = new JSpinner();
     int gasAmount = 0;
+    int currentSpeed = 0;
     JLabel gasLabel = new JLabel("Amount of gas");
 
     JButton gasButton = new JButton("Gas");
@@ -142,6 +143,8 @@ public class CarView extends JFrame{
                 carC.stopCarEngine();
             }
         });
+
+
 
 
 

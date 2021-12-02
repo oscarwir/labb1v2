@@ -32,9 +32,10 @@ public class CarController {
         CarController cc = new CarController();
 
         cc.cars.add(new Volvo240());
+        cc.cars.add(new Saab95());
 
         // Start a new view and send a reference of self
-        cc.frame = new CarView("CarSim 1.0", cc);
+        cc.frame = new CarView("Bandana Rallyt", cc);
 
         // Start the timer
         cc.timer.start();
@@ -97,4 +98,5 @@ public class CarController {
         for (Car car : cars)
             car.stopEngine();
     }
+
 }

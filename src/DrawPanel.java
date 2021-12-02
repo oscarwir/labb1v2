@@ -1,3 +1,5 @@
+import Cars.Saab95;
+
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -10,6 +12,7 @@ public class DrawPanel extends JPanel{
 
     // Just a single image, TODO: Generalize
     BufferedImage volvoImage;
+    BufferedImage saabImage;
     // To keep track of a singel cars position
     Point carPoint = new Point();
 
@@ -23,7 +26,7 @@ public class DrawPanel extends JPanel{
     public DrawPanel(int x, int y) {
         this.setDoubleBuffered(true);
         this.setPreferredSize(new Dimension(x, y));
-        this.setBackground(Color.green);
+        this.setBackground(Color.darkGray);
         // Print an error message in case file is not found with a try/catch block
         try {
             // You can remove the "pics" part if running outside of IntelliJ and
@@ -33,6 +36,8 @@ public class DrawPanel extends JPanel{
             // Rememember to rightclick src New -> Package -> name: pics -> MOVE *.jpg to pics.
             // if you are starting in IntelliJ.
             volvoImage = ImageIO.read(DrawPanel.class.getResourceAsStream("pics/Volvo240.jpg"));
+            saabImage = ImageIO.read(DrawPanel.class.getResourceAsStream("pics/Saab95.jpg"));
+
         } catch (IOException ex)
         {
             ex.printStackTrace();
@@ -46,5 +51,6 @@ public class DrawPanel extends JPanel{
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         g.drawImage(volvoImage, carPoint.x, carPoint.y, null); // see javadoc for more info on the parameters
+        g.drawImage(saabImage, carPoint.x, carPoint.y, null);
     }
 }
