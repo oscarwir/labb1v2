@@ -11,7 +11,7 @@ import Head.AutoVehicle;
 * modifying the model state and the updating the view.
  */
 
-public class CarController {
+public class AutoVehicleController {
     // member fields:
 
     // The delay (ms) corresponds to 20 updates a sec (hz)
@@ -21,21 +21,21 @@ public class CarController {
     private Timer timer = new Timer(delay, new TimerListener());
 
     // The frame that represents this instance View of the MVC pattern
-    CarView frame;
+    AutoVehicleView frame;
     // A list of cars, modify if needed
-    ArrayList<Car> cars = new ArrayList<>();
+    ArrayList<AutoVehicle> autoVehicles = new ArrayList<>();
 
     //methods:
 
     public static void main(String[] args) {
         // Instance of this class
-        CarController cc = new CarController();
+        AutoVehicleController cc = new AutoVehicleController();
 
-        cc.cars.add(new Volvo240());
-        cc.cars.add(new Saab95());
+        cc.autoVehicles.add(new Volvo240());
+        cc.autoVehicles.add(new Saab95());
 
         // Start a new view and send a reference of self
-        cc.frame = new CarView("Bandana Rallyt", cc);
+        cc.frame = new AutoVehicleView("Bandana Rallyt", cc);
 
         // Start the timer
         cc.timer.start();
@@ -46,10 +46,10 @@ public class CarController {
     * */
     private class TimerListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            for (Car car : cars) {
-                car.move();
-                int x = (int) Math.round(car.getLocation().getX());
-                int y = (int) Math.round(car.getLocation().getY());
+            for (AutoVehicle autoVehicle : autoVehicles) {
+                autoVehicle.move();
+                int x = (int) Math.round(autoVehicle.getLocation().getX());
+                int y = (int) Math.round(autoVehicle.getLocation().getY());
                 frame.drawPanel.moveit(x, y);
                 // repaint() calls the paintComponent method of the panel
                 frame.drawPanel.repaint();
@@ -60,16 +60,16 @@ public class CarController {
     // Calls the gas method for each car once
     void gas(int amount) {
         double gas = ((double) amount) / 100;
-        for (Car car : cars
+        for (AutoVehicle autoVehicle : autoVehicles
                 ) {
-            car.gas(gas);
+            autoVehicle.gas(gas);
         }
     }
 
     // Calls the brake method for each car once
     void brake() {
-        for (Car car : cars)
-            car.brake(0.50);
+        for (AutoVehicle autoVehicle : autoVehicles)
+            autoVehicle.brake(0.50);
     }
 
     /*void setTurboOn() {
@@ -80,7 +80,7 @@ public class CarController {
 
     void setTurboOff() {
         for (Car car : cars) {
-            if (car.equals(Saab95)){
+            if (car istanceOf(Saab95)){
 
             }
         }
@@ -89,14 +89,14 @@ public class CarController {
 
     // Calls the start engine method for each car once
     void startCarEngine() {
-        for (Car car : cars)
-            car.startEngine();
+        for (AutoVehicle autoVehicle : autoVehicles)
+            autoVehicle.startEngine();
     }
 
     // Calls the stop engine method for each car once
     void stopCarEngine() {
-        for (Car car : cars)
-            car.stopEngine();
+        for (AutoVehicle autoVehicle : autoVehicles)
+            autoVehicle.stopEngine();
     }
 
 }

@@ -6,19 +6,17 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
-// This panel represent the animated part of the view with the car images.
+// This panel represents the animated part of the view with the car images.
 
 public class DrawPanel extends JPanel{
 
     // Just a single image, TODO: Generalize
-    BufferedImage volvoImage;
-    BufferedImage saabImage;
-    BufferedImage scaniaImage;
+    BufferedImage volvoImage, saabImage, scaniaImage;
 
-    // To keep track of a singel cars position
+    // To keep track of a single cars position
     Point carPoint = new Point();
 
-    // TODO: Make this genereal for all cars
+    // TODO: Make this general for all cars
     void moveit(int x, int y){
         carPoint.setLocation(x,y);
 
