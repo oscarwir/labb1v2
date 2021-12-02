@@ -11,7 +11,7 @@ public class Scania extends Truck {
      * Constructor for Scania.
      */
     public Scania() {
-        super("Scania", 5, new PointDouble(100,100), new Direction(0),
+        super("Scania", 5, new PointDouble(0,300), new Direction(0),
                 4, Color.black,400, 3);
     }
 
