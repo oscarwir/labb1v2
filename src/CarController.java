@@ -71,6 +71,21 @@ public class CarController {
             car.brake(0.50);
     }
 
+    /*void setTurboOn() {
+        for (Car car : cars) {
+
+        }
+    }
+
+    void setTurboOff() {
+        for (Car car : cars) {
+            if (car.equals(Saab95)){
+
+            }
+        }
+
+    }*/
+
     // Calls the start engine method for each car once
     void startCarEngine() {
         for (Car car : cars)
