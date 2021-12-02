@@ -1,7 +1,9 @@
 package Cars;
 
+import HelperClasses.Direction;
+import HelperClasses.PointDouble;
+
 import java.awt.*;
-import HelperClasses.*;
 
 /**
  * Class that represents a Saab95 car.
@@ -14,7 +16,7 @@ public class Saab95 extends Car {
      * Constructor of objects of type Saab95
      */
     public Saab95() {
-        super("Saab95", 10, new PointDouble(0,200), new Direction(0),4,Color.white,170, 2);
+        super("Saab95", 10, new PointDouble(20,200), new Direction(0),4,Color.white,170, 2);
         turboOn = false;
     }
 

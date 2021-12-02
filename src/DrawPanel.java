@@ -1,10 +1,8 @@
-import Cars.Saab95;
-
+import javax.imageio.ImageIO;
+import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
-import javax.imageio.ImageIO;
-import javax.swing.*;
 
 // This panel represents the animated part of the view with the car images.
 
@@ -54,6 +52,7 @@ public class DrawPanel extends JPanel{
         g.drawImage(volvoImage, autoVehiclePoint.x, autoVehiclePoint.y, null); // see javadoc for more info on the parameters
         g.drawImage(saabImage, autoVehiclePoint.x, autoVehiclePoint.y+100, null);
         g.drawImage(scaniaImage, autoVehiclePoint.x, autoVehiclePoint.y+200, null);
+
 
     }
 }
