@@ -3,7 +3,13 @@ package Trucks;
 import HelperClasses.Direction;
 import HelperClasses.PointDouble;
 
+import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.util.Objects;
 
 /**
  * Class representing car-haulers
@@ -32,6 +38,19 @@ public class CarHaulerX2000 extends Truck {
     @Override
     protected double speedFactor() {
         return getEnginePower() * 0.01;
+    }
+
+    @Override
+    protected BufferedImage setImage(){
+        try {
+            return ImageIO.read(new File("src/pics/Saab95.jpg"));
+
+
+        } catch (IOException ex)
+        {
+            ex.printStackTrace();
+            return null;
+        }
     }
 
 }

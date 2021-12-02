@@ -48,14 +48,12 @@ public class AutoVehicleController {
     * */
     private class TimerListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            for (AutoVehicle autoVehicle : autoVehicles) {
+            for (AutoVehicle autoVehicle : autoVehicles){
                 autoVehicle.move();
-                int x = (int) Math.round(autoVehicle.getLocation().getX());
-                int y = (int) Math.round(autoVehicle.getLocation().getY());
-                frame.drawPanel.moveit(x, y);
-                // repaint() calls the paintComponent method of the panel
-                frame.drawPanel.repaint();
             }
+            frame.drawAutoVehiclesPanel.updateAutoVehicles(autoVehicles);
+            frame.drawAutoVehiclesPanel.repaint();
+
         }
     }
 

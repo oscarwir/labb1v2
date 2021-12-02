@@ -20,7 +20,7 @@ public class AutoVehicleView extends JFrame{
     // The controller member
     AutoVehicleController autoVehicleC;
 
-    DrawPanel drawPanel = new DrawPanel(X, Y-240);
+    DrawAutoVehiclesPanel drawAutoVehiclesPanel = new DrawAutoVehiclesPanel(X, Y-240);
 
     JPanel controlPanel = new JPanel();
 
@@ -53,7 +53,7 @@ public class AutoVehicleView extends JFrame{
         this.setPreferredSize(new Dimension(X,Y));
         this.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 
-        this.add(drawPanel);
+        this.add(drawAutoVehiclesPanel);
 
 
 

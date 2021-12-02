@@ -1,6 +1,13 @@
 package Trucks;
+import Cars.Saab95;
 import HelperClasses.*;
+
+import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.util.Objects;
 
 /**
  * Class that represents a Scania.
@@ -31,6 +38,18 @@ public class Scania extends Truck {
     @Override
     protected double speedFactor() {
         return getEnginePower() * 0.01;
+    }
+
+    @Override
+    protected BufferedImage setImage(){
+        try {
+            return ImageIO.read(new File("src/pics/Scania.jpg"));
+
+        } catch (IOException ex)
+        {
+            ex.printStackTrace();
+            return null;
+        }
     }
 
 

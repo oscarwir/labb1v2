@@ -2,7 +2,7 @@ package Head;
 
 import HelperClasses.Direction;
 import HelperClasses.PointDouble;
-
+import java.awt.image.BufferedImage;
 import java.awt.*;
 
 
@@ -21,6 +21,7 @@ public abstract class AutoVehicle implements Movable{
     private double breakFactor; //A factor that determine an arbitrary vehicle's breaking capability
     private boolean engineOn; //A boolean that serves as condition to drive the vehicle
     private int nrDoors; //An integer of the number of doors the vehicle has
+    private BufferedImage image;
 
     /**
      * Constructor that creates an object of type AutoVehicle.
@@ -43,6 +44,16 @@ public abstract class AutoVehicle implements Movable{
         this.breakFactor = brakeFactor;
         this.engineOn = false;
         this.nrDoors = nrDoors;
+        this.image = setImage();
+    }
+
+
+    /**
+     * Method to retrieve image of AutoVehicle
+     * @return BufferedImage
+     */
+    public BufferedImage getImage(){
+        return image;
     }
 
     /**
@@ -172,6 +183,11 @@ public abstract class AutoVehicle implements Movable{
      * An abstract method only to be utilized by subclasses.
      */
     protected abstract double speedFactor();
+
+    /**
+     * An abstract method only to be utilized by subclasses.
+     */
+    protected abstract BufferedImage setImage();
 
 
     //Increment- and DecrementSpeed increases or decreases the speed based on the current speed.

@@ -3,7 +3,12 @@ package Cars;
 import HelperClasses.Direction;
 import HelperClasses.PointDouble;
 
+import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.util.Objects;
 
 /**
  * Class that represents a Saab95 car.
@@ -43,6 +48,18 @@ public class Saab95 extends Car {
         double turbo = 1;
         if (turboOn) turbo = 1.3;
         return getEnginePower() * 0.01 * turbo;
+    }
+
+    @Override
+    protected BufferedImage setImage(){
+        try {
+            return ImageIO.read(new File("src/pics/Saab95.jpg"));
+
+        } catch (IOException ex)
+        {
+            ex.printStackTrace();
+            return null;
+        }
     }
 
 }
