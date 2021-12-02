@@ -27,7 +27,6 @@ public class AutoVehicleView extends JFrame{
     JPanel gasPanel = new JPanel();
     JSpinner gasSpinner = new JSpinner();
     int gasAmount = 0;
-    int currentSpeed = 0;
     JLabel gasLabel = new JLabel("Amount of gas");
 
     JButton gasButton = new JButton("Gas");
@@ -116,12 +115,12 @@ public class AutoVehicleView extends JFrame{
             }
         });
 
-        turboOnButton.addActionListener(new ActionListener() {
+        /* turboOnButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                autoVehicleC.setTurboOn();
             }
-        });
+        }); */
 
         /*turboOffButton.addActionListener(new ActionListener() {
             @Override
