@@ -4,6 +4,7 @@ import Head.AutoVehicle;
 import Head.IHaveTurbo;
 import HelperClasses.Direction;
 import Trucks.Scania;
+import Trucks.Truck;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -41,7 +42,7 @@ public class AutoVehicleController {
         cc.autoVehicles.add(new Scania());
 
         // Start a new view and send a reference of self
-        cc.frame = new AutoVehicleView("Bandana Rallyt", cc);
+        cc.frame = new AutoVehicleView("Banana Rally", cc);
 
         // Start the timer
         cc.timer.start();
@@ -113,6 +114,29 @@ public class AutoVehicleController {
     void stopCarEngine() {
         for (AutoVehicle autoVehicle : autoVehicles)
             autoVehicle.stopEngine();
+    }
+
+    void raisePlatform(){
+        for (AutoVehicle autoVehicle : autoVehicles){
+            if (autoVehicle instanceof Truck){
+                ((Truck) autoVehicle).raisePlatform();
+                System.out.println("Platform raised");
+            }
+
+        }
+
+    }
+
+    void lowerPlatform(){
+        for (AutoVehicle autoVehicle : autoVehicles){
+            if (autoVehicle instanceof Truck){
+                ((Truck) autoVehicle).lowerPlatform();
+                System.out.println("Platform lowered");
+
+            }
+
+        }
+
     }
 
 }
