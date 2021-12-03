@@ -135,6 +135,9 @@ public class AutoVehicleController {
     }
 
     private void breakAndChangeDirectionAtEdgeOfDrawAutoVehiclesPanel(AutoVehicle autoVehicle){
+
+        System.out.println(autoVehicle.getMinBreakDistance());
+
         if (autoVehicle.getLocation().getX() >= frame.drawAutoVehiclesPanel.getWidth() - autoVehicle.getImage().getWidth()) {
             autoVehicle.setDirection(new Direction(autoVehicle.getDirection() + 180));
         }

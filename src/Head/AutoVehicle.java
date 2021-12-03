@@ -139,9 +139,11 @@ public abstract class AutoVehicle implements IMovable {
             return 0.0;
         }
 
+
         while (speed > 0){
-            totalBreakDistance += speed;
-            speed -= decrement;
+            totalBreakDistance = totalBreakDistance + speed;
+            speed = speed - decrement;
+
         }
 
         return totalBreakDistance;
@@ -213,11 +215,11 @@ public abstract class AutoVehicle implements IMovable {
     }
 
     private void decrementSpeed(double amount) {
-        currentSpeed = decrementSpeedAmount(amount);
+        currentSpeed = Math.max(getCurrentSpeed() - decrementSpeedAmount(amount),0);
     }
 
     private double decrementSpeedAmount(double amount){
-        return Math.max(getCurrentSpeed() - breakFactor * amount,0);
+        return breakFactor * amount;
     }
     /**
      * Method to increase vehicle speed. This method increases the vehicle's speed if engine is on and throws
