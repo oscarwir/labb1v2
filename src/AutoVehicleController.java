@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import Cars.*;
 import Head.AutoVehicle;
 import Head.IHaveTurbo;
+import HelperClasses.Direction;
 import Trucks.Scania;
 
 /*
@@ -50,6 +51,8 @@ public class AutoVehicleController {
     private class TimerListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             for (AutoVehicle autoVehicle : autoVehicles){
+                if (autoVehicle.getLocation().getX() >= frame.getWidth() || autoVehicle.getLocation().getX() < 0)
+                    autoVehicle.setDirection(new Direction(autoVehicle.getDirection()+180));
                 autoVehicle.move();
             }
             frame.drawAutoVehiclesPanel.updateAutoVehicles(autoVehicles);
