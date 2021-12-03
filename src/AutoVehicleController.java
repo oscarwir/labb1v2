@@ -1,14 +1,14 @@
-import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
-import java.util.ArrayList;
-import Cars.*;
+import Cars.Saab95;
+import Cars.Volvo240;
 import Head.AutoVehicle;
 import Head.IHaveTurbo;
 import HelperClasses.Direction;
-import HelperClasses.PointDouble;
 import Trucks.Scania;
+
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 /*
 * This class represents the Controller part in the MVC pattern.
@@ -54,7 +54,7 @@ public class AutoVehicleController {
         public void actionPerformed(ActionEvent e) {
             for (AutoVehicle autoVehicle : autoVehicles){
 
-                if (autoVehicle.getLocation().getX() >= frame.getWidth() - autoVehicle.getImage().getWidth()) {
+                if (autoVehicle.getLocation().getX() >= frame.drawAutoVehiclesPanel.getWidth() - autoVehicle.getImage().getWidth()) {
                     autoVehicle.setDirection(new Direction(autoVehicle.getDirection() + 180));
                 }
                 else if (autoVehicle.getLocation().getX() < 0){

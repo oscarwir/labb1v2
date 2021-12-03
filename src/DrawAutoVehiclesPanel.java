@@ -1,11 +1,9 @@
-import javax.imageio.ImageIO;
+import Head.AutoVehicle;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Objects;
-import Head.*;
 
 // This panel represents the animated part of the view with the car images.
 
@@ -37,7 +35,6 @@ public class DrawAutoVehiclesPanel extends JPanel{
         super.paintComponent(g);
         for (AutoVehicle autoVehicle : autoVehicles){
             BufferedImage image = autoVehicle.getImage();
-            System.out.println(image.getWidth());
             g.drawImage(image, (int) autoVehicle.getLocation().getX(), (int) autoVehicle.getLocation().getY(), null);
         }
 
