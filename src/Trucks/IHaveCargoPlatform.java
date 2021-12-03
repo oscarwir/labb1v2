@@ -8,7 +8,7 @@ import java.util.ArrayList;
 /**
  * Interface of all CargoPlatforms.
  */
-public interface CargoPlatform {
+public interface IHaveCargoPlatform {
 
 
     /**

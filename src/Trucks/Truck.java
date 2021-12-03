@@ -11,7 +11,7 @@ import java.util.ArrayList;
  */
 public abstract class Truck extends AutoVehicle {
 
-    private CargoPlatform platform;
+    private IHaveCargoPlatform platform;
 
     /**
      * Constructor of an arbitrary truck.
@@ -35,7 +35,7 @@ public abstract class Truck extends AutoVehicle {
      * An abstract method to be utilized by subclasses. Specifies the type of cargo platform used by truck.
      * @return CargoPlatform
      */
-    protected abstract CargoPlatform setCargoPlatform();
+    protected abstract IHaveCargoPlatform setCargoPlatform();
 
     /**
      * Increases the speed of the truck.

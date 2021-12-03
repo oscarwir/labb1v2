@@ -7,7 +7,7 @@ import java.util.ArrayList;
 /**
  * Represents a Truck Platform
  */
-public class ScaniaCargoPlatform implements CargoPlatform{
+public class ScaniaCargoPlatform implements IHaveCargoPlatform {
 
     private double angle;
     private double angleStep;

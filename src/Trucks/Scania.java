@@ -1,5 +1,4 @@
 package Trucks;
-import Cars.Saab95;
 import HelperClasses.*;
 
 import javax.imageio.ImageIO;
@@ -7,7 +6,6 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.Objects;
 
 /**
  * Class that represents a Scania.
@@ -27,7 +25,7 @@ public class Scania extends Truck {
      * @return the ScaniaCargoPlatform
      */
     @Override
-    protected CargoPlatform setCargoPlatform(){
+    protected IHaveCargoPlatform setCargoPlatform(){
         return new ScaniaCargoPlatform(this);
     }
 

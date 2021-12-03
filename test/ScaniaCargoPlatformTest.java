@@ -1,10 +1,4 @@
-import Cars.Saab95;
-import Cars.Volvo240;
-import HelperClasses.PointDouble;
-import Trucks.CarHaulerX2000;
-import Trucks.CargoPlatform;
 import Trucks.Scania;
-import Trucks.ScaniaCargoPlatform;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

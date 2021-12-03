@@ -77,7 +77,7 @@ public class AutoVehicleController {
         }
     }
 
-    // Calls the set tubo on method once per car that has a tubo
+    // Calls the set turbo on method once per car that has a tubo
     void setTurboOn() {
         for (AutoVehicle autoVehicle : autoVehicles) {
             if (autoVehicle instanceof IHaveTurbo){

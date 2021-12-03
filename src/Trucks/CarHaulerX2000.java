@@ -8,8 +8,6 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Path;
-import java.util.Objects;
 
 /**
  * Class representing car-haulers
@@ -28,7 +26,7 @@ public class CarHaulerX2000 extends Truck {
      * @return the CarHaulerX2000CargoPlatform
      */
     @Override
-    protected CargoPlatform setCargoPlatform(){
+    protected IHaveCargoPlatform setCargoPlatform(){
         return new CarHaulerX2000CargoPlatform(this);
     }
 

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 /**
  * Represents a CarHaulerX2000CargoPlatform. Platform mainly for CarHaulerX2000.
  */
-public class CarHaulerX2000CargoPlatform implements CargoPlatform{
+public class CarHaulerX2000CargoPlatform implements IHaveCargoPlatform {
 
     private double angle;
     private Truck myTruck;
