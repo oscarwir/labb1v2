@@ -2,8 +2,6 @@ package Head;
 
 public interface HaveTurbo {
 
-
-
     /**
      * Method that turns on turbo.
      */
