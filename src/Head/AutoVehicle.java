@@ -130,8 +130,21 @@ public abstract class AutoVehicle implements IMovable {
         return engineOn;
     }
 
-    public double getBreakDistance(){
+    public double getMinBreakDistance(){
+        double decrement = decrementSpeedAmount(1);
+        double speed = currentSpeed;
+        double totalBreakDistance = 0;
 
+        if (currentSpeed == 0.0){
+            return 0.0;
+        }
+
+        while (speed > 0){
+            totalBreakDistance += speed;
+            speed -= decrement;
+        }
+
+        return totalBreakDistance;
     }
 
     /**
@@ -200,9 +213,12 @@ public abstract class AutoVehicle implements IMovable {
     }
 
     private void decrementSpeed(double amount) {
-        currentSpeed = Math.max(getCurrentSpeed() - breakFactor * amount,0);
+        currentSpeed = decrementSpeedAmount(amount);
     }
 
+    private double decrementSpeedAmount(double amount){
+        return Math.max(getCurrentSpeed() - breakFactor * amount,0);
+    }
     /**
      * Method to increase vehicle speed. This method increases the vehicle's speed if engine is on and throws
      * IllegalArgumentException if parameter is out of bounds.
