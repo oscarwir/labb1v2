@@ -37,9 +37,9 @@ public class DrawAutoVehiclesPanel extends JPanel{
         super.paintComponent(g);
         for (AutoVehicle autoVehicle : autoVehicles){
             BufferedImage image = autoVehicle.getImage();
+            System.out.println(image.getWidth());
             g.drawImage(image, (int) autoVehicle.getLocation().getX(), (int) autoVehicle.getLocation().getY(), null);
         }
-
 
     }
 }

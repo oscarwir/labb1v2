@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import Cars.*;
 import Head.AutoVehicle;
@@ -51,7 +52,7 @@ public class AutoVehicleController {
     private class TimerListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             for (AutoVehicle autoVehicle : autoVehicles){
-                if (autoVehicle.getLocation().getX() >= frame.getWidth() || autoVehicle.getLocation().getX() < 0)
+                if (autoVehicle.getLocation().getX() >= frame.getWidth() - autoVehicle.getImage().getWidth() || autoVehicle.getLocation().getX() < 0)
                     autoVehicle.setDirection(new Direction(autoVehicle.getDirection()+180));
                 autoVehicle.move();
             }
