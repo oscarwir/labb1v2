@@ -130,6 +130,10 @@ public abstract class AutoVehicle implements IMovable {
         return engineOn;
     }
 
+    public double getBreakDistance(){
+
+    }
+
     /**
      * Method to set turning radius.
      * @param turningRadius new turning radius

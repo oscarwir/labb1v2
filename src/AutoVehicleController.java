@@ -54,14 +54,7 @@ public class AutoVehicleController {
     private class TimerListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             for (AutoVehicle autoVehicle : autoVehicles){
-
-                if (autoVehicle.getLocation().getX() >= frame.drawAutoVehiclesPanel.getWidth() - autoVehicle.getImage().getWidth()) {
-                    autoVehicle.setDirection(new Direction(autoVehicle.getDirection() + 180));
-                }
-                else if (autoVehicle.getLocation().getX() < 0){
-                    autoVehicle.setDirection(new Direction(autoVehicle.getDirection() + 180));
-                }
-
+                breakAndChangeDirectionAtEdgeOfDrawAutoVehiclesPanel(autoVehicle);
                 autoVehicle.move();
             }
             frame.drawAutoVehiclesPanel.updateAutoVehicles(autoVehicles);
@@ -138,5 +131,15 @@ public class AutoVehicleController {
         }
 
     }
+
+    private void breakAndChangeDirectionAtEdgeOfDrawAutoVehiclesPanel(AutoVehicle autoVehicle){
+        if (autoVehicle.getLocation().getX() >= frame.drawAutoVehiclesPanel.getWidth() - autoVehicle.getImage().getWidth()) {
+            autoVehicle.setDirection(new Direction(autoVehicle.getDirection() + 180));
+        }
+        else if (autoVehicle.getLocation().getX() < 0){
+            autoVehicle.setDirection(new Direction(autoVehicle.getDirection() + 180));
+        }
+    }
+
 
 }
