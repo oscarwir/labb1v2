@@ -4,7 +4,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import Cars.*;
 import Head.AutoVehicle;
-import Head.HaveTurbo;
+import Head.IHaveTurbo;
 import Trucks.Scania;
 
 /*
@@ -74,18 +74,20 @@ public class AutoVehicleController {
         }
     }
 
+    // Calls the set tubo on method once per car that has a tubo
     void setTurboOn() {
         for (AutoVehicle autoVehicle : autoVehicles) {
-            if (autoVehicle instanceof HaveTurbo){
-                ((HaveTurbo) autoVehicle).setTurboOn();
+            if (autoVehicle instanceof IHaveTurbo){
+                ((IHaveTurbo) autoVehicle).setTurboOn();
             }
         }
     }
 
+    // Calls the set turgo off method once per car that has a turbo
     void setTurboOff() {
         for (AutoVehicle autoVehicle : autoVehicles) {
-            if (autoVehicle instanceof HaveTurbo){
-                ((HaveTurbo) autoVehicle).setTurboOff();
+            if (autoVehicle instanceof IHaveTurbo){
+                ((IHaveTurbo) autoVehicle).setTurboOff();
             }
         }
     }

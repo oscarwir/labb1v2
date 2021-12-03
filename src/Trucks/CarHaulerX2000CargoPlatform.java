@@ -79,7 +79,7 @@ public class CarHaulerX2000CargoPlatform implements CargoPlatform{
      * Method to load object on platform. If all conditions are met, then the movable object will be stored on the platform.
      * @param object that attempts to be loaded
      */
-    public void loadCargo(Movable object){
+    public void loadCargo(IMovable object){
         if (isPlatformFullyOpen()){
             if (object instanceof Car){
                 loadCar((Car) object);

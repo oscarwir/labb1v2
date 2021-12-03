@@ -6,7 +6,7 @@ import HelperClasses.PointDouble;
 /**
  * Interface of all movable objects
  */
-public interface Movable {
+public interface IMovable {
 
     /**
      * Method to move this.

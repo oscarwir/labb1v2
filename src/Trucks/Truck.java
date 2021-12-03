@@ -121,7 +121,7 @@ public abstract class Truck extends AutoVehicle {
      * Method to load cargo to cargoPlatform.
      * @param object that will be loaded
      */
-    public void loadCargo(Movable object){
+    public void loadCargo(IMovable object){
         platform.loadCargo(object);
     }
 

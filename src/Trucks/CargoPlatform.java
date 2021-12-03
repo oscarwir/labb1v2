@@ -1,6 +1,6 @@
 package Trucks;
 
-import Head.Movable;
+import Head.IMovable;
 
 import java.util.ArrayList;
 
@@ -33,7 +33,7 @@ public interface CargoPlatform {
      * Method to load cargo to platform.
      * @param object
      */
-    void loadCargo(Movable object);
+    void loadCargo(IMovable object);
 
 
     /**

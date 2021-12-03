@@ -9,7 +9,7 @@ import java.awt.*;
 /**
  * Class of arbitrary motorized vehicles.
  */
-public abstract class AutoVehicle implements Movable{
+public abstract class AutoVehicle implements IMovable {
 
     private double enginePower; // Engine power of the vehicle
     private double currentSpeed; // The current speed of the vehicle

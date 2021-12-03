@@ -1,6 +1,6 @@
 package Cars;
 
-import Head.HaveTurbo;
+import Head.IHaveTurbo;
 import HelperClasses.Direction;
 import HelperClasses.PointDouble;
 
@@ -13,7 +13,7 @@ import java.io.IOException;
 /**
  * Class that represents a Saab95 car.
  */
-public class Saab95 extends Car implements HaveTurbo {
+public class Saab95 extends Car implements IHaveTurbo {
 
     public boolean turboOn;
 

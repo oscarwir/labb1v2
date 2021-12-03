@@ -1,6 +1,6 @@
 package Trucks;
 
-import Head.Movable;
+import Head.IMovable;
 
 import java.util.ArrayList;
 
@@ -66,7 +66,7 @@ public class ScaniaCargoPlatform implements CargoPlatform{
      * Method to load cargo to platform. As this platforn can not contain cargo this method does nothing.
      * @param object
      */
-    public void loadCargo(Movable object){
+    public void loadCargo(IMovable object){
 
     }
 
