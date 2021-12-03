@@ -116,6 +116,7 @@ public class AutoVehicleController {
             autoVehicle.stopEngine();
     }
 
+    // Calls the raise platform method once per car that has a platform
     void raisePlatform(){
         for (AutoVehicle autoVehicle : autoVehicles){
             if (autoVehicle instanceof Truck){
@@ -127,6 +128,7 @@ public class AutoVehicleController {
 
     }
 
+    // Calls the lower platform method once per car that has a platform
     void lowerPlatform(){
         for (AutoVehicle autoVehicle : autoVehicles){
             if (autoVehicle instanceof Truck){
