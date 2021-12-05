@@ -1,12 +1,15 @@
 import Cars.Saab95;
 import Cars.Volvo240;
+import DistanceQuadrantHandler.DistanceQuadrantHandler;
 import Head.AutoVehicle;
 import Head.IHaveTurbo;
 import HelperClasses.Direction;
+import HelperClasses.PointDouble;
 import Trucks.Scania;
 import Trucks.Truck;
 
 import javax.swing.*;
+import javax.swing.text.Position;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -146,5 +149,16 @@ public class AutoVehicleController {
         }
     }
 
+    private double distanceFromAutoVehiclePosDirToEdge(AutoVehicle autoVehicle){
+        PointDouble pos = autoVehicle.getLocation();
+        int dir = autoVehicle.getDirection();
+
+        int width = frame.drawAutoVehiclesPanel.getWidth();
+        int hight = frame.drawAutoVehiclesPanel.getHeight();
+
+        return DistanceQuadrantHandler.getDistanceQuadrant(dir).getDistance(pos, width, hight);
+
+
+    }
 
 }
