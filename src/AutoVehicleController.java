@@ -80,7 +80,7 @@ public class AutoVehicleController {
     // Calls the brake method for each car once
     void brake() {
         for (AutoVehicle autoVehicle : autoVehicles) {
-            autoVehicle.brake(0.50);
+            autoVehicle.brake(1.0);
         }
     }
 
@@ -140,6 +140,7 @@ public class AutoVehicleController {
     }
 
     private void breakAndChangeDirectionAtEdgeOfDrawAutoVehiclesPanel(AutoVehicle autoVehicle){
+
 
         PointDouble pos = autoVehicle.getLocation();
         int dir = autoVehicle.getDirection();
