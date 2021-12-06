@@ -39,7 +39,7 @@ public class Saab95 extends Car implements IHaveTurbo {
         turboOn = false;
     }
 
-    public boolean getTurbo() {
+    public boolean getTurboState() {
         return turboOn;
     }
 

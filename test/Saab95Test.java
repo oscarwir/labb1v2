@@ -3,8 +3,6 @@ import HelperClasses.PointDouble;
 import org.junit.jupiter.api.Test;
 import Cars.*;
 
-import java.util.IllformedLocaleException;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 public class Saab95Test {
@@ -31,14 +29,14 @@ public class Saab95Test {
     @Test
     void setTurboOn_should_enable_turbo() {
         testSaab.setTurboOn();
-        assertTrue(testSaab.getTurbo());
+        assertTrue(testSaab.getTurboState());
     }
 
     @Test
     void setTurboOff_should_disable_turbo() {
         testSaab.setTurboOn();
         testSaab.setTurboOff();
-        assertFalse(testSaab.getTurbo());
+        assertFalse(testSaab.getTurboState());
     }
 
     @Test
