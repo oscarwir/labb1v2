@@ -6,7 +6,7 @@ package HelperClasses;
  */
 public class Direction {
 
-    protected int angle;
+    private int angle;
 
     /**
      * Constructor for Direction.
