@@ -131,9 +131,8 @@ public abstract class AutoVehicle implements IMovable {
     }
 
     public double getMinBreakDistance(){
-        double decrement = decrementSpeedAmount(1);
         double speed = currentSpeed;
-        double totalBreakDistance = 0;
+        double totalBreakDistance = speed;
 
         if (currentSpeed == 0.0){
             return 0.0;
@@ -142,7 +141,7 @@ public abstract class AutoVehicle implements IMovable {
 
         while (speed > 0){
             totalBreakDistance = totalBreakDistance + speed;
-            speed = speed - decrement;
+            speed = speed - decrementSpeedAmount(1);
 
         }
 

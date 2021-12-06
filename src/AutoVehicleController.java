@@ -38,7 +38,7 @@ public class AutoVehicleController {
         AutoVehicleController cc = new AutoVehicleController();
 
         AutoVehicle d = new Volvo240();
-        d.setDirection(new Direction(0));
+        d.setDirection(new Direction(180));
         d.setPosition(new PointDouble(400,280));
         cc.autoVehicles.add(d);
         //cc.autoVehicles.add(new Saab95());
@@ -139,22 +139,23 @@ public class AutoVehicleController {
 
     private void breakAndChangeDirectionAtEdgeOfDrawAutoVehiclesPanel(AutoVehicle autoVehicle){
 
-        //System.out.println(autoVehicle.getMinBreakDistance());
-        //System.out.println(distanceFromAutoVehiclePosDirToEdge(autoVehicle));
 
         PointDouble pos = autoVehicle.getLocation();
         int dir = autoVehicle.getDirection();
         int width = frame.drawAutoVehiclesPanel.getWidth();
         int hight = frame.drawAutoVehiclesPanel.getHeight();
 
-        double distance = DistanceInDirectionToCoordinateSystemEdge.getDistance(dir, pos, width, hight);
+        double distanceToEdge = DistanceInDirectionToCoordinateSystemEdge.getDistance(dir, pos, width, hight);
+        double minBreakDistance = autoVehicle.getMinBreakDistance();
 
-        if (autoVehicle.getLocation().getX() >= frame.drawAutoVehiclesPanel.getWidth() - autoVehicle.getImage().getWidth()) {
-            autoVehicle.setDirection(new Direction(autoVehicle.getDirection() + 180));
+        System.out.println(minBreakDistance);
+        System.out.println(distanceToEdge);
+
+        if (distanceToEdge < minBreakDistance){
+            System.out.println("BREAKING");
+            autoVehicle.brake(1.0);
         }
-        else if (autoVehicle.getLocation().getX() < 0){
-            autoVehicle.setDirection(new Direction(autoVehicle.getDirection() + 180));
-        }
+
     }
 
 
