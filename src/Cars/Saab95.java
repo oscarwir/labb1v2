@@ -15,7 +15,7 @@ import java.io.IOException;
  */
 public class Saab95 extends Car implements IHaveTurbo {
 
-    public boolean turboOn;
+    private boolean turboOn;
 
     /**
      * Constructor of objects of type Saab95
@@ -37,6 +37,10 @@ public class Saab95 extends Car implements IHaveTurbo {
      */
     public void setTurboOff() {
         turboOn = false;
+    }
+
+    public boolean getTurbo() {
+        return turboOn;
     }
 
     /**

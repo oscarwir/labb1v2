@@ -31,14 +31,14 @@ public class Saab95Test {
     @Test
     void setTurboOn_should_enable_turbo() {
         testSaab.setTurboOn();
-        assertTrue(testSaab.turboOn);
+        assertTrue(testSaab.getTurbo());
     }
 
     @Test
     void setTurboOff_should_disable_turbo() {
         testSaab.setTurboOn();
         testSaab.setTurboOff();
-        assertFalse(testSaab.turboOn);
+        assertFalse(testSaab.getTurbo());
     }
 
     @Test
