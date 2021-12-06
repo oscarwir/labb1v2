@@ -33,6 +33,8 @@ public class AutoVehicleController {
     // A list of cars, modify if needed
     ArrayList<AutoVehicle> autoVehicles = new ArrayList<>();
 
+    boolean gasLock = false;
+
     //methods:
 
     public static void main(String[] args) {
@@ -70,17 +72,22 @@ public class AutoVehicleController {
 
     // Calls the gas method for each car once
     void gas(int amount) {
-        double gas = ((double) amount) / 100;
-        for (AutoVehicle autoVehicle : autoVehicles
-                ) {
-            autoVehicle.gas(gas);
+        if (gasLock == false) {
+            double gas = ((double) amount) / 100;
+            for (AutoVehicle autoVehicle : autoVehicles
+            ) {
+                autoVehicle.gas(gas);
+            }
         }
     }
 
     // Calls the brake method for each car once
     void brake() {
         for (AutoVehicle autoVehicle : autoVehicles) {
-            autoVehicle.brake(1.0);
+            for (int i = 0; i < 10; i++) {
+                autoVehicle.brake(1.0);
+            }
+
         }
     }
 
@@ -153,10 +160,16 @@ public class AutoVehicleController {
         System.out.println(minBreakDistance);
         System.out.println(distanceToEdge);
 
+        if (autoVehicle.getCurrentSpeed() == 0.0){
+            gasLock = false;
+        }
+
         if (distanceToEdge < minBreakDistance){
+            gasLock = true;
             System.out.println("BREAKING");
             autoVehicle.brake(1.0);
             if (autoVehicle.getCurrentSpeed() == 0.0){
+                gasLock = false;
                 autoVehicle.setDirection(new Direction(autoVehicle.getDirection() + 180));
                 autoVehicle.gas(0.5);
             }
