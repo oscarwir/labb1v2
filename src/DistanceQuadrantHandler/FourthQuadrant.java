@@ -2,7 +2,7 @@ package DistanceQuadrantHandler;
 
 import HelperClasses.PointDouble;
 
-class FourthQuadrant extends Quadrant{
+class FourthQuadrant extends Quadrant {
     public FourthQuadrant(double dir) {
         super(dir);
     }
@@ -16,6 +16,11 @@ class FourthQuadrant extends Quadrant{
     @Override
     double numeratorX(PointDouble pos,double width, double height){
         return width - pos.getX();
+    }
+
+    @Override
+    public boolean isCorrectInterval(double dir){
+        return (dir >= 0 && dir <= 90);
     }
 
 

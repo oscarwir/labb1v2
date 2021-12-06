@@ -1,15 +1,12 @@
-import Cars.Saab95;
 import Cars.Volvo240;
-import DistanceQuadrantHandler.DistanceQuadrantHandler;
+import DistanceQuadrantHandler.DistanceInDirectionToCoordinateSystemEdge;
 import Head.AutoVehicle;
 import Head.IHaveTurbo;
 import HelperClasses.Direction;
 import HelperClasses.PointDouble;
-import Trucks.Scania;
 import Trucks.Truck;
 
 import javax.swing.*;
-import javax.swing.text.Position;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -24,7 +21,7 @@ public class AutoVehicleController {
     // member fields:
 
     // The delay (ms) corresponds to 20 updates a sec (hz)
-    private final int delay = 50;
+    private final int delay = 500;
     // The timer is started with a listener (see below) that executes the statements
     // each step between delays.
     private Timer timer = new Timer(delay, new TimerListener());
@@ -40,9 +37,12 @@ public class AutoVehicleController {
         // Instance of this class
         AutoVehicleController cc = new AutoVehicleController();
 
-        cc.autoVehicles.add(new Volvo240());
-        cc.autoVehicles.add(new Saab95());
-        cc.autoVehicles.add(new Scania());
+        AutoVehicle d = new Volvo240();
+        d.setDirection(new Direction(0));
+        d.setPosition(new PointDouble(400,280));
+        cc.autoVehicles.add(d);
+        //cc.autoVehicles.add(new Saab95());
+        //cc.autoVehicles.add(new Scania());
 
         // Start a new view and send a reference of self
         cc.frame = new AutoVehicleView("Banana Rally", cc);
@@ -139,7 +139,10 @@ public class AutoVehicleController {
 
     private void breakAndChangeDirectionAtEdgeOfDrawAutoVehiclesPanel(AutoVehicle autoVehicle){
 
-        System.out.println(autoVehicle.getMinBreakDistance());
+        //System.out.println(autoVehicle.getMinBreakDistance());
+        //System.out.println(distanceFromAutoVehiclePosDirToEdge(autoVehicle));
+
+        System.out.println(distanceFromAutoVehiclePosDirToEdge(autoVehicle));
 
         if (autoVehicle.getLocation().getX() >= frame.drawAutoVehiclesPanel.getWidth() - autoVehicle.getImage().getWidth()) {
             autoVehicle.setDirection(new Direction(autoVehicle.getDirection() + 180));
@@ -156,7 +159,9 @@ public class AutoVehicleController {
         int width = frame.drawAutoVehiclesPanel.getWidth();
         int hight = frame.drawAutoVehiclesPanel.getHeight();
 
-        return DistanceQuadrantHandler.getDistanceQuadrant(dir).getDistance(pos, width, hight);
+        double distance = DistanceInDirectionToCoordinateSystemEdge.getDistance(dir, pos, width, hight);
+
+        return distance;
 
 
     }

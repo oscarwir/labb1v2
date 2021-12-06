@@ -2,43 +2,45 @@ package DistanceQuadrantHandler;
 
 import HelperClasses.PointDouble;
 
-abstract class Quadrant implements DistanceQuadrantHandler{
+abstract class Quadrant implements DistanceQuadrant{
 
     double dir;
 
     public Quadrant(double dir){
-        this.dir = dir;
+        setDir(dir);
+    }
+
+    public void setDir(double dir){
+        if (isCorrectInterval(dir))
+            this.dir = dir;
+        else
+            throw new IllegalArgumentException("given angle is not in correct interval for quadrant");
     }
 
     public double getDistance(PointDouble pos, double width, double height){
 
-        double sy;
-        double sx;
+        double sy = numeratorY(pos, width, height) / Math.sin(Math.toRadians(dir));
+        double sx = numeratorX(pos, width, height) / Math.cos(Math.toRadians(dir));
 
-        try {
-            sy = numeratorY(pos, width, height) / Math.sin(Math.toRadians(dir));
+        if (Double.isInfinite(sy)){
+            return sx;
         }
 
-        catch (ArithmeticException e){
-            return numeratorX(pos, width, height)/(Math.cos(Math.toRadians(dir)));
+        else if (Double.isInfinite(sx)){
+            return sy;
         }
 
-        try {
-            sx = numeratorX(pos, width, height)/(Math.cos(Math.toRadians(dir)));
+        else {
+            return Math.min(sy, sx);
         }
-
-        catch (ArithmeticException e){
-            return numeratorY(pos, width, height) / Math.sin(Math.toRadians(dir));
-        }
-
-        return Math.min(sy, sx);
 
     }
 
     abstract double numeratorY(PointDouble pos,double width, double height);
 
-
     abstract double numeratorX(PointDouble pos,double width, double height);
+
+    public abstract boolean isCorrectInterval(double dir);
 
 
 
