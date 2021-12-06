@@ -35,7 +35,7 @@ public class CarHaulerX2000 extends Truck {
      */
     @Override
     protected double speedFactor() {
-        return getEnginePower() * 0.01;
+        return getEnginePower() * 0.001;
     }
 
     @Override

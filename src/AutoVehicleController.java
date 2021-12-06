@@ -168,7 +168,7 @@ public class AutoVehicleController {
             gasLock = true;
             System.out.println("BREAKING");
             autoVehicle.brake(1.0);
-            if (autoVehicle.getCurrentSpeed() == 0.0){
+            if (autoVehicle.getCurrentSpeed() < 0.0001){
                 gasLock = false;
                 autoVehicle.setDirection(new Direction(autoVehicle.getDirection() + 180));
                 autoVehicle.gas(0.5);

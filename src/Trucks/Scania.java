@@ -17,7 +17,7 @@ public class Scania extends Truck {
      */
     public Scania() {
         super("Scania", 5, new PointDouble(0,300), new Direction(0),
-                4, Color.black,400, 0.02);
+                4, Color.black,400, 0.03);
     }
 
     /**
@@ -35,7 +35,7 @@ public class Scania extends Truck {
      */
     @Override
     protected double speedFactor() {
-        return getEnginePower() * 0.005;
+        return getEnginePower() * 0.001;
     }
 
     @Override
