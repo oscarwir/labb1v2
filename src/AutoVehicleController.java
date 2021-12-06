@@ -142,7 +142,12 @@ public class AutoVehicleController {
         //System.out.println(autoVehicle.getMinBreakDistance());
         //System.out.println(distanceFromAutoVehiclePosDirToEdge(autoVehicle));
 
-        System.out.println(distanceFromAutoVehiclePosDirToEdge(autoVehicle));
+        PointDouble pos = autoVehicle.getLocation();
+        int dir = autoVehicle.getDirection();
+        int width = frame.drawAutoVehiclesPanel.getWidth();
+        int hight = frame.drawAutoVehiclesPanel.getHeight();
+
+        double distance = DistanceInDirectionToCoordinateSystemEdge.getDistance(dir, pos, width, hight);
 
         if (autoVehicle.getLocation().getX() >= frame.drawAutoVehiclesPanel.getWidth() - autoVehicle.getImage().getWidth()) {
             autoVehicle.setDirection(new Direction(autoVehicle.getDirection() + 180));
@@ -152,18 +157,5 @@ public class AutoVehicleController {
         }
     }
 
-    private double distanceFromAutoVehiclePosDirToEdge(AutoVehicle autoVehicle){
-        PointDouble pos = autoVehicle.getLocation();
-        int dir = autoVehicle.getDirection();
-
-        int width = frame.drawAutoVehiclesPanel.getWidth();
-        int hight = frame.drawAutoVehiclesPanel.getHeight();
-
-        double distance = DistanceInDirectionToCoordinateSystemEdge.getDistance(dir, pos, width, hight);
-
-        return distance;
-
-
-    }
 
 }
