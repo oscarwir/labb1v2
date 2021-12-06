@@ -168,7 +168,7 @@ public class AutoVehicleController {
             if (autoVehicle.getCurrentSpeed() < 0.0001){
                 gasLock = false;
                 autoVehicle.setDirection(new Direction(autoVehicle.getDirection() + 180));
-                autoVehicle.gas(0.5);
+                autoVehicle.gas(1.0);
             }
         }
 
