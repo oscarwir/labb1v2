@@ -236,7 +236,6 @@ public abstract class AutoVehicle implements IMovable {
         }
     }
 
-
     /**
      * Method to decrease vehicle speed. This method decreases the vehicle's speed and throws IllegalArgumentException
      * if parameter is out of bounds.
@@ -263,9 +262,7 @@ public abstract class AutoVehicle implements IMovable {
         y = location.getY() + Math.sin(Math.toRadians(direction.getDirection())) * currentSpeed;
 
         location.setLocation(x, y);
-
     }
-
 
     /**
      * Method to change direction to the left.
