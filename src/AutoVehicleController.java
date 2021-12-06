@@ -141,7 +141,6 @@ public class AutoVehicleController {
 
     private void breakAndChangeDirectionAtEdgeOfDrawAutoVehiclesPanel(AutoVehicle autoVehicle){
 
-
         PointDouble pos = autoVehicle.getLocation();
         int dir = autoVehicle.getDirection();
         int width = frame.drawAutoVehiclesPanel.getWidth();
