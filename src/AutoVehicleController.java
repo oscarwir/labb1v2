@@ -21,7 +21,7 @@ public class AutoVehicleController {
     // member fields:
 
     // The delay (ms) corresponds to 20 updates a sec (hz)
-    private final int delay = 500;
+    private final int delay = 50;
     // The timer is started with a listener (see below) that executes the statements
     // each step between delays.
     private Timer timer = new Timer(delay, new TimerListener());
@@ -38,7 +38,7 @@ public class AutoVehicleController {
         AutoVehicleController cc = new AutoVehicleController();
 
         AutoVehicle d = new Volvo240();
-        d.setDirection(new Direction(180));
+        d.setDirection(new Direction(45));
         d.setPosition(new PointDouble(400,280));
         cc.autoVehicles.add(d);
         //cc.autoVehicles.add(new Saab95());
@@ -145,7 +145,7 @@ public class AutoVehicleController {
         int width = frame.drawAutoVehiclesPanel.getWidth();
         int hight = frame.drawAutoVehiclesPanel.getHeight();
 
-        double distanceToEdge = DistanceInDirectionToCoordinateSystemEdge.getDistance(dir, pos, width, hight);
+        double distanceToEdge = DistanceInDirectionToCoordinateSystemEdge.getDistance(dir, pos, width - autoVehicle.getImage().getWidth(), hight - autoVehicle.getImage().getHeight());
         double minBreakDistance = autoVehicle.getMinBreakDistance();
 
         System.out.println(minBreakDistance);

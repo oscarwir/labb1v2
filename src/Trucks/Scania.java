@@ -17,7 +17,7 @@ public class Scania extends Truck {
      */
     public Scania() {
         super("Scania", 5, new PointDouble(0,300), new Direction(0),
-                4, Color.black,400, 3);
+                4, Color.black,400, 0.02);
     }
 
     /**
