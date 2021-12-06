@@ -157,8 +157,6 @@ public class AutoVehicleController {
         double distanceToEdge = DistanceInDirectionToCoordinateSystemEdge.getDistance(dir, pos, width - autoVehicle.getImage().getWidth(), hight - autoVehicle.getImage().getHeight());
         double minBreakDistance = autoVehicle.getMinBreakDistance();
 
-        System.out.println(minBreakDistance);
-        System.out.println(distanceToEdge);
 
         if (autoVehicle.getCurrentSpeed() == 0.0){
             gasLock = false;
@@ -166,7 +164,6 @@ public class AutoVehicleController {
 
         if (distanceToEdge < minBreakDistance){
             gasLock = true;
-            System.out.println("BREAKING");
             autoVehicle.brake(1.0);
             if (autoVehicle.getCurrentSpeed() < 0.0001){
                 gasLock = false;
