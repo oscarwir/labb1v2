@@ -1,9 +1,11 @@
+import Cars.Saab95;
 import Cars.Volvo240;
 import DistanceQuadrantHandler.DistanceInDirectionToCoordinateSystemEdge;
 import Head.AutoVehicle;
 import Head.IHaveTurbo;
 import HelperClasses.Direction;
 import HelperClasses.PointDouble;
+import Trucks.Scania;
 import Trucks.Truck;
 
 import javax.swing.*;
@@ -41,8 +43,8 @@ public class AutoVehicleController {
         d.setDirection(new Direction(45));
         d.setPosition(new PointDouble(400,280));
         cc.autoVehicles.add(d);
-        //cc.autoVehicles.add(new Saab95());
-        //cc.autoVehicles.add(new Scania());
+        cc.autoVehicles.add(new Saab95());
+        cc.autoVehicles.add(new Scania());
 
         // Start a new view and send a reference of self
         cc.frame = new AutoVehicleView("Banana Rally", cc);
@@ -154,6 +156,10 @@ public class AutoVehicleController {
         if (distanceToEdge < minBreakDistance){
             System.out.println("BREAKING");
             autoVehicle.brake(1.0);
+            if (autoVehicle.getCurrentSpeed() == 0.0){
+                autoVehicle.setDirection(new Direction(autoVehicle.getDirection() + 180));
+                autoVehicle.gas(0.5);
+            }
         }
 
     }
