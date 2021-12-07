@@ -72,7 +72,7 @@ public class AutoVehicleController {
 
     // Calls the gas method for each car once
     void gas(int amount) {
-        if (gasLock == false) {
+        if (!gasLock) {
             double gas = ((double) amount) / 100;
             for (AutoVehicle autoVehicle : autoVehicles
             ) {
@@ -152,9 +152,9 @@ public class AutoVehicleController {
         PointDouble pos = autoVehicle.getLocation();
         int dir = autoVehicle.getDirection();
         int width = frame.drawAutoVehiclesPanel.getWidth();
-        int hight = frame.drawAutoVehiclesPanel.getHeight();
+        int height = frame.drawAutoVehiclesPanel.getHeight();
 
-        double distanceToEdge = DistanceInDirectionToCoordinateSystemEdge.getDistance(dir, pos, width - autoVehicle.getImage().getWidth(), hight - autoVehicle.getImage().getHeight());
+        double distanceToEdge = DistanceInDirectionToCoordinateSystemEdge.getDistance(dir, pos, width - autoVehicle.getImage().getWidth(), height - autoVehicle.getImage().getHeight());
         double minBreakDistance = autoVehicle.getMinBreakDistance();
 
 
