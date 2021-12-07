@@ -138,7 +138,6 @@ public abstract class AutoVehicle implements IMovable {
             return 0.0;
         }
 
-
         while (speed > 0){
             totalBreakDistance = totalBreakDistance + speed;
             speed = speed - decrementSpeedAmount(1);

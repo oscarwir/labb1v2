@@ -41,10 +41,8 @@ public class AutoVehicleController {
         // Instance of this class
         AutoVehicleController cc = new AutoVehicleController();
 
-        AutoVehicle d = new Volvo240();
-        d.setDirection(new Direction(45));
-        d.setPosition(new PointDouble(400,280));
-        cc.autoVehicles.add(d);
+
+        cc.autoVehicles.add(new Volvo240());
         cc.autoVehicles.add(new Saab95());
         cc.autoVehicles.add(new Scania());
 
@@ -173,6 +171,5 @@ public class AutoVehicleController {
         }
 
     }
-
 
 }
