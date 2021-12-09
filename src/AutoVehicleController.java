@@ -46,6 +46,8 @@ public class AutoVehicleController {
         // Start a new view and send a reference of self
         cc.frame = new AutoVehicleView("Banana Rally", cc, cc.model);
 
+        cc.model.addObserver(cc.frame);
+
     }
 
 

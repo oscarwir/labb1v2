@@ -15,7 +15,7 @@ public class WorldModel{
 
     private int worldWidth;
     private int worldHeight;
-    private ArrayList <IObserver> observers;
+    private ArrayList <IObserver> observers = new ArrayList<>();
     private final int delay = 50;
     private ArrayList <AutoVehicle> autoVehicles = new ArrayList<>();
 
