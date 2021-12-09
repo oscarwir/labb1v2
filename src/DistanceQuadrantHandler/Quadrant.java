@@ -4,7 +4,7 @@ import HelperClasses.PointDouble;
 
 abstract class Quadrant implements DistanceQuadrant{
 
-    double dir;
+    private double dir;
 
     public Quadrant(double dir){
         setDir(dir);

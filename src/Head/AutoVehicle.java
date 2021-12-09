@@ -22,6 +22,7 @@ public abstract class AutoVehicle implements IMovable {
     private boolean engineOn; //A boolean that serves as condition to drive the vehicle
     private int nrDoors; //An integer of the number of doors the vehicle has
     private BufferedImage image;
+    private boolean gasLock = false;
 
     /**
      * Constructor that creates an object of type AutoVehicle.
@@ -147,6 +148,10 @@ public abstract class AutoVehicle implements IMovable {
         return totalBreakDistance;
     }
 
+    public void setGasLock(boolean gasLock){
+        this.gasLock = gasLock;
+    }
+
     /**
      * Method to set turning radius.
      * @param turningRadius new turning radius
@@ -225,7 +230,7 @@ public abstract class AutoVehicle implements IMovable {
      * @param amount throttle percentage
      */
     public void gas(double amount) {
-        if (engineOn) {
+        if (engineOn && !gasLock) {
             if (amount >= 0 && amount <= 1) {
                 incrementSpeed(amount);
             } else {
