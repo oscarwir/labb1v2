@@ -15,6 +15,7 @@ public class WorldModel{
     private int worldHeight;
     private ArrayList <IObserver> observers;
     private final int delay = 50;
+    private ArrayList <AutoVehicle> autoVehicles;
 
     private javax.swing.Timer timer = new Timer(delay, new TimerListener());
 
@@ -56,14 +57,22 @@ public class WorldModel{
                 breakAndChangeDirectionAtEdgeOfDrawAutoVehiclesPanel(autoVehicle);
                 autoVehicle.move();
             }
-            frame.drawAutoVehiclesPanel.updateAutoVehicles(autoVehicles);
-            frame.drawAutoVehiclesPanel.repaint();
+            for (IObserver observer : observers){
+                observer.update();
+            }
         }
     }
 
     public void addObserver(IObserver observer){
         observers.add(observer);
+    }
 
+    public void addAutoVehicle(AutoVehicle autoVehicle){
+        this.autoVehicles.add(autoVehicle);
+    }
+
+    public ArrayList<AutoVehicle> getAutoVehicles(){
+        return this.autoVehicles;
     }
 
     private void breakAndChangeDirectionAtEdgeOfDrawAutoVehiclesPanel(AutoVehicle autoVehicle){

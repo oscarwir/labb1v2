@@ -40,7 +40,7 @@ public class AutoVehicleController {
         cc.model = new WorldModel(800, 560);
 
         // Start a new view and send a reference of self
-        cc.frame = new AutoVehicleView("Banana Rally", cc);
+        cc.frame = new AutoVehicleView("Banana Rally", cc, cc.model);
 
     }
 
