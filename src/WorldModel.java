@@ -28,13 +28,10 @@ public class WorldModel{
     }
 
     public void gas(double gasAmount) {
-        if (!gasLock) {
-            double gas = ((double) amount) / 100;
-            for (AutoVehicle autoVehicle : autoVehicles
-            ) {
+            double gas = ((double) gasAmount) / 100;
+            for (AutoVehicle autoVehicle : autoVehicles) {
                 autoVehicle.gas(gas);
             }
-        }
     }
 
     public void brake(double brakeAmount) {
