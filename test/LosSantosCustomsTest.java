@@ -19,6 +19,7 @@ public class LosSantosCustomsTest {
         testWorkshop.loadCar(testSaab);
 
         assertEquals(2, testWorkshop.getAmountCars());
+
     }
 
 }
