@@ -32,6 +32,24 @@ public class WorldModel{
 
     }
 
+    public void setTurboOn() {
+    }
+
+    public void setTurboOff() {
+    }
+
+    public void startCarEngine() {
+    }
+
+    public void stopCarEngine() {
+    }
+
+    public void raisePlatform() {
+    }
+
+    public void lowerPlatform() {
+    }
+
     private class TimerListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
 

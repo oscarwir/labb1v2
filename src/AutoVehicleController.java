@@ -58,56 +58,32 @@ public class AutoVehicleController {
 
     // Calls the set turbo on method once per car that has a tubo
     void setTurboOn() {
-        for (AutoVehicle autoVehicle : autoVehicles) {
-            if (autoVehicle instanceof IHaveTurbo){
-                ((IHaveTurbo) autoVehicle).setTurboOn();
-            }
-        }
+        model.setTurboOn();
     }
 
     // Calls the set turbo off method once per car that has a turbo
     void setTurboOff() {
-        for (AutoVehicle autoVehicle : autoVehicles) {
-            if (autoVehicle instanceof IHaveTurbo){
-                ((IHaveTurbo) autoVehicle).setTurboOff();
-            }
-        }
+        model.setTurboOff();
     }
 
     // Calls the start engine method for each car once
     void startCarEngine() {
-        for (AutoVehicle autoVehicle : autoVehicles)
-            autoVehicle.startEngine();
+        model.startCarEngine();
     }
 
     // Calls the stop engine method for each car once
     void stopCarEngine() {
-        for (AutoVehicle autoVehicle : autoVehicles)
-            autoVehicle.stopEngine();
+        model.stopCarEngine();
     }
 
     // Calls the raise platform method once per car that has a platform
     void raisePlatform(){
-        for (AutoVehicle autoVehicle : autoVehicles){
-            if (autoVehicle instanceof Truck){
-                ((Truck) autoVehicle).raisePlatform();
-                System.out.println("Platform raised");
-            }
-
-        }
-
+        model.raisePlatform();
     }
 
     // Calls the lower platform method once per car that has a platform
     void lowerPlatform(){
-        for (AutoVehicle autoVehicle : autoVehicles){
-            if (autoVehicle instanceof Truck){
-                ((Truck) autoVehicle).lowerPlatform();
-                System.out.println("Platform lowered");
-
-            }
-
-        }
+        model.lowerPlatform();
 
     }
 
