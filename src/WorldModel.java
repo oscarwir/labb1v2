@@ -52,7 +52,12 @@ public class WorldModel{
 
     private class TimerListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-
+            for (AutoVehicle autoVehicle : autoVehicles){
+                breakAndChangeDirectionAtEdgeOfDrawAutoVehiclesPanel(autoVehicle);
+                autoVehicle.move();
+            }
+            frame.drawAutoVehiclesPanel.updateAutoVehicles(autoVehicles);
+            frame.drawAutoVehiclesPanel.repaint();
         }
     }
 
