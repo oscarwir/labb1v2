@@ -1,7 +1,9 @@
 import DistanceQuadrantHandler.DistanceInDirectionToCoordinateSystemEdge;
 import Head.AutoVehicle;
+import Head.IHaveTurbo;
 import HelperClasses.Direction;
 import HelperClasses.PointDouble;
+import Trucks.Truck;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -26,29 +28,67 @@ public class WorldModel{
     }
 
     public void gas(double gasAmount) {
-
+        if (!gasLock) {
+            double gas = ((double) amount) / 100;
+            for (AutoVehicle autoVehicle : autoVehicles
+            ) {
+                autoVehicle.gas(gas);
+            }
+        }
     }
 
     public void brake(double brakeAmount) {
+        for (AutoVehicle autoVehicle : autoVehicles) {
+            for (int i = 0; i < 10; i++) {
+                autoVehicle.brake(1.0);
+            }
 
+        }
     }
 
     public void setTurboOn() {
+        for (AutoVehicle autoVehicle : autoVehicles) {
+            if (autoVehicle instanceof IHaveTurbo){
+                ((IHaveTurbo) autoVehicle).setTurboOn();
+            }
+        }
     }
 
     public void setTurboOff() {
+        for (AutoVehicle autoVehicle : autoVehicles) {
+            if (autoVehicle instanceof IHaveTurbo){
+                ((IHaveTurbo) autoVehicle).setTurboOff();
+            }
+        }
     }
 
     public void startCarEngine() {
+        for (AutoVehicle autoVehicle : autoVehicles)
+            autoVehicle.startEngine();
     }
 
     public void stopCarEngine() {
+        for (AutoVehicle autoVehicle : autoVehicles)
+            autoVehicle.stopEngine();
     }
 
     public void raisePlatform() {
+        for (AutoVehicle autoVehicle : autoVehicles){
+            if (autoVehicle instanceof Truck){
+                ((Truck) autoVehicle).raisePlatform();
+                System.out.println("Platform raised");
+            }
+        }
     }
 
     public void lowerPlatform() {
+        for (AutoVehicle autoVehicle : autoVehicles){
+            if (autoVehicle instanceof Truck){
+                ((Truck) autoVehicle).lowerPlatform();
+                System.out.println("Platform lowered");
+
+            }
+        }
     }
 
     private class TimerListener implements ActionListener {
