@@ -20,7 +20,7 @@ public class AutoVehicleView extends JFrame implements IObserver{
     // The controller member
     AutoVehicleController autoVehicleC;
 
-    DrawAutoVehiclesPanel drawAutoVehiclesPanel = new DrawAutoVehiclesPanel(X, Y-240);
+    DrawAutoVehiclesPanel drawAutoVehiclesPanel;
 
     JPanel controlPanel = new JPanel();
     WorldModel model;
@@ -44,6 +44,7 @@ public class AutoVehicleView extends JFrame implements IObserver{
     public AutoVehicleView(String framename, AutoVehicleController cc, WorldModel model){
         this.autoVehicleC = cc;
         this.model = model;
+        this.drawAutoVehiclesPanel = new DrawAutoVehiclesPanel(model.getWorldWidth(), model.getWorldHeight());
         initComponents(framename);
     }
 

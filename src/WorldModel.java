@@ -27,6 +27,14 @@ public class WorldModel{
         timer.start();
     }
 
+    public int getWorldHeight() {
+        return worldHeight;
+    }
+
+    public int getWorldWidth() {
+        return worldWidth;
+    }
+
     public void gas(double gasAmount) {
         for (AutoVehicle autoVehicle : autoVehicles) {
                 autoVehicle.gas((gasAmount));
