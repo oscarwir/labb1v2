@@ -1,17 +1,7 @@
 import Cars.Saab95;
 import Cars.Volvo240;
-import DistanceQuadrantHandler.DistanceInDirectionToCoordinateSystemEdge;
-import Head.AutoVehicle;
-import Head.IHaveTurbo;
-import HelperClasses.Direction;
-import HelperClasses.PointDouble;
 import Trucks.Scania;
-import Trucks.Truck;
 
-import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
 /*
 * This class represents the Controller part in the MVC pattern.
