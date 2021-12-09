@@ -17,7 +17,7 @@ public class WorldModel{
     private int worldHeight;
     private ArrayList <IObserver> observers;
     private final int delay = 50;
-    private ArrayList <AutoVehicle> autoVehicles;
+    private ArrayList <AutoVehicle> autoVehicles = new ArrayList<>();
 
     private javax.swing.Timer timer = new Timer(delay, new TimerListener());
 
@@ -108,7 +108,7 @@ public class WorldModel{
     }
 
     public void addAutoVehicle(AutoVehicle autoVehicle){
-        this.autoVehicles.add(autoVehicle);
+        autoVehicles.add(autoVehicle);
     }
 
     public ArrayList<AutoVehicle> getAutoVehicles(){

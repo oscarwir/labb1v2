@@ -39,6 +39,10 @@ public class AutoVehicleController {
 
         cc.model = new WorldModel(800, 560);
 
+        cc.model.addAutoVehicle(new Volvo240());
+        cc.model.addAutoVehicle(new Saab95());
+        cc.model.addAutoVehicle(new Scania());
+
         // Start a new view and send a reference of self
         cc.frame = new AutoVehicleView("Banana Rally", cc, cc.model);
 
