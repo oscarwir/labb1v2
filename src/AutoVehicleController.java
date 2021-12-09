@@ -98,7 +98,7 @@ public class AutoVehicleController {
         }
     }
 
-    // Calls the set turgo off method once per car that has a turbo
+    // Calls the set turbo off method once per car that has a turbo
     void setTurboOff() {
         for (AutoVehicle autoVehicle : autoVehicles) {
             if (autoVehicle instanceof IHaveTurbo){
