@@ -28,9 +28,8 @@ public class WorldModel{
     }
 
     public void gas(double gasAmount) {
-            double gas = ((double) gasAmount);
-            for (AutoVehicle autoVehicle : autoVehicles) {
-                autoVehicle.gas(gas);
+        for (AutoVehicle autoVehicle : autoVehicles) {
+                autoVehicle.gas((gasAmount));
             }
     }
 
