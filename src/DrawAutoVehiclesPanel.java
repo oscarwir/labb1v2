@@ -13,6 +13,7 @@ public class DrawAutoVehiclesPanel extends JPanel{
     // To keep track of a single cars position
     ArrayList<AutoVehicle> autoVehicles = new ArrayList<>();
 
+
     // TODO: Make this general for all cars
     public void updateAutoVehicles(ArrayList<AutoVehicle> autoVehicles){
         this.autoVehicles = autoVehicles;

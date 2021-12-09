@@ -24,6 +24,14 @@ public class WorldModel{
         timer.start();
     }
 
+    public void gas(double gasAmount) {
+
+    }
+
+    public void brake(double brakeAmount) {
+
+    }
+
     private class TimerListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
 

@@ -26,11 +26,10 @@ public class AutoVehicleController {
     private final int delay = 50;
 
     // The frame that represents this instance View of the MVC pattern
-    AutoVehicleView frame;
+    private AutoVehicleView frame;
     // A list of cars, modify if needed
-    WorldModel model;
+    private WorldModel model;
 
-    boolean gasLock = false;
 
     //methods:
 
@@ -38,7 +37,7 @@ public class AutoVehicleController {
         // Instance of this class
         AutoVehicleController cc = new AutoVehicleController();
 
-        cc.model = new WorldModel();
+        cc.model = new WorldModel(800, 560);
 
         // Start a new view and send a reference of self
         cc.frame = new AutoVehicleView("Banana Rally", cc);
@@ -48,23 +47,13 @@ public class AutoVehicleController {
 
     // Calls the gas method for each car once
     void gas(int amount) {
-        if (!gasLock) {
-            double gas = ((double) amount) / 100;
-            for (AutoVehicle autoVehicle : autoVehicles
-            ) {
-                autoVehicle.gas(gas);
-            }
-        }
+        double gasAmount = ((double) amount) / 100;
+        model.gas(gasAmount);
     }
 
     // Calls the brake method for each car once
     void brake() {
-        for (AutoVehicle autoVehicle : autoVehicles) {
-            for (int i = 0; i < 10; i++) {
-                autoVehicle.brake(1.0);
-            }
-
-        }
+        model.brake(1.0);
     }
 
     // Calls the set turbo on method once per car that has a tubo
