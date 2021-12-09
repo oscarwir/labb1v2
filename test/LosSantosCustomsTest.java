@@ -1,15 +1,14 @@
-import Cars.Car;
-import java.util.ArrayList;
-
 import Cars.Saab95;
 import Cars.Volvo240;
-import Workshops.LosSantosCustoms;
+import Workshops.Workshop;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class LosSantosCustomsTest {
 
-    LosSantosCustoms testWorkshop = new LosSantosCustoms();
+    Workshop testWorkshop = new Workshop<>(10);
+    Workshop<Saab95> saab95Workshop = new Workshop<>(10);
     Volvo240 testVolvo = new Volvo240();
     Saab95 testSaab = new Saab95();
 
@@ -21,4 +20,5 @@ public class LosSantosCustomsTest {
 
         assertEquals(2, testWorkshop.getAmountCars());
     }
+
 }

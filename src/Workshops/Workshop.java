@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * Class that represents an arbitrary workshop.
  * @param <T> any car
  */
-public abstract class Workshop<T extends Car> {
+public class Workshop<T extends Car> {
 
     private int amountCars = 0;
     private int capacity;

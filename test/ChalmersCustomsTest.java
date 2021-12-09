@@ -1,16 +1,13 @@
-import Cars.Car;
-import java.util.ArrayList;
-
 import Cars.Saab95;
 import Cars.Volvo240;
-import Workshops.ChalmersCustoms;
-import Workshops.LosSantosCustoms;
+import Workshops.Workshop;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ChalmersCustomsTest {
 
-    ChalmersCustoms testWorkshop = new ChalmersCustoms();
+    Workshop<Volvo240> testWorkshop = new Workshop<Volvo240>(10);
     Volvo240 testVolvo = new Volvo240();
     Saab95 testSaab = new Saab95();
 
