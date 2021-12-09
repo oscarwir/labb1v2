@@ -25,8 +25,7 @@ public class AutoVehicleController {
     // The delay (ms) corresponds to 20 updates a sec (hz)
     private final int delay = 50;
 
-    // The frame that represents this instance View of the MVC pattern
-    private AutoVehicleView frame;
+
     // A list of cars, modify if needed
     private WorldModel model;
 
@@ -43,10 +42,7 @@ public class AutoVehicleController {
         cc.model.addAutoVehicle(new Saab95());
         cc.model.addAutoVehicle(new Scania());
 
-        // Start a new view and send a reference of self
-        cc.frame = new AutoVehicleView("Banana Rally", cc, cc.model);
-
-        cc.model.addObserver(cc.frame);
+        cc.model.addObserver(new AutoVehicleView("Banana Rally", cc, cc.model));
 
     }
 
