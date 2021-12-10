@@ -12,11 +12,7 @@ import Trucks.Scania;
 public class AutoVehicleController {
     // member fields:
 
-    // The delay (ms) corresponds to 20 updates a sec (hz)
-    private final int delay = 50;
 
-
-    // A list of cars, modify if needed
     private WorldModel model;
 
 

@@ -41,11 +41,11 @@ public class AutoVehicleView extends JFrame implements IObserver{
     JButton stopButton = new JButton("Stop all cars");
 
     // Constructor
-    public AutoVehicleView(String framename, AutoVehicleController cc, WorldModel model){
+    public AutoVehicleView(String frameName, AutoVehicleController cc, WorldModel model){
         this.autoVehicleC = cc;
         this.model = model;
         this.drawAutoVehiclesPanel = new DrawAutoVehiclesPanel(model.getWorldWidth(), model.getWorldHeight());
-        initComponents(framename);
+        initComponents(frameName);
     }
 
     // Sets everything in place and fits everything
